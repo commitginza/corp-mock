@@ -1,0 +1,389 @@
+<!-- =====================================
+ Commit Group – Top Page  (index.html)
+ 2025-08-05 – consolidated with style.css below
+====================================== -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>株式会社コミット｜Commit Group</title>
+
+  <!--  favicon / og 省略  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- ===============================
+       1.  GLOBAL HEADER
+  ================================== -->
+
+  <!-- ===============================
+       1.  GLOBAL HEADER – white / centered logo+menu
+  ================================== -->
+  <input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+  <header class="site-header">
+    <!-- top row: hamburger (mobile) + logo -->
+    <div class="header-top">
+      <label for="burger-toggle" class="burger" aria-label="menu"><span></span></label>
+      <h1 class="brand"><a href="index.html"><img src="commit-group-logo.png" alt="Commit Group logo"></a></h1>
+    </div>
+
+    <!-- desktop primary nav -->
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="service.html">事業紹介</a></li>
+        <li><a href="works.html">実績</a></li>
+        <li><a href="news.html">ニュース</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <!-- mobile drawer nav (same links) -->
+    <nav class="drawer">
+      <ul>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="service.html">事業紹介</a></li>
+        <li><a href="works.html">実績</a></li>
+        <li><a href="news.html">ニュース</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html" class="btn btn--gold">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <label for="burger-toggle" class="drawer-overlay" aria-hidden="true"></label>
+  
+  <!-- ===============================
+       2.  HERO  – autoplay video, mobile‑full
+  ================================== -->
+  <main>
+    <section class="hero-video">
+      <video src="https://cdn.shopify.com/videos/c/o/v/e620f39426414725a80a31d8cc73d0ca.mp4" poster="commit-group-logo.png" autoplay muted loop playsinline></video>
+      <div class="hero-inner">
+        <h2 class="hero-title">魅せる。支える。彩る。</h2>
+        <p class="hero-lead">時計で時間を、スポーツで夢を、食と花で日常を豊かに。Commit Group は、3つの情熱で未来価値をデザインします。</p>
+        <a href="service.html" class="hero-btn">事業を見る</a>
+      </div>
+    </section>
+
+    <!-- ===============================
+         3.  BUSINESS / SERVICES SNAPSHOT
+    ================================== -->
+    <section class="services-modern">
+      <div class="heading-block">
+        <span class="heading-bg">BUSINESS</span>
+        <h2 class="heading-main">BUSINESS</h2>
+        <p class="heading-sub">事業領域</p>
+      </div>
+
+      <div class="services-grid">
+        <!--  Commit Ginza  -->
+        <article class="service-card">
+          <img src="https://cdn.shopify.com/s/files/1/0518/4844/6114/files/2407grqw_COMMIT_GINZA_06_M-1024x.jpg?v=1754382899" alt="コミット銀座" />
+          <div class="card-meta">
+            <h3 class="card-title">コミット銀座</h3>
+            <p class="card-text">ロレックスなど高級腕時計の買取・販売を展開。東京・銀座の路面店で一点一点丁寧に価値をつなぎます。</p>
+            <p class="card-address">〒104‑0061 東京都中央区銀座1‑7‑16 コミット銀座ビル</p>
+            <a href="https://commit-watch.co.jp/" target="_blank" class="card-btn">詳しく</a>
+          </div>
+        </article>
+
+        <!--  Football Assist  -->
+        <article class="service-card">
+          <img src="https://cdn.shopify.com/s/files/1/0518/4844/6114/files/mv_slide_01.jpg?v=1754382953" alt="フットボールアシスト" />
+          <div class="card-meta">
+            <h3 class="card-title">フットボールアシスト</h3>
+            <p class="card-text">サッカー選手のセカンドキャリアを支援。スタジアム運営やキャリアアドバイスで “引退後の未来” をデザインします。</p>
+            <p class="card-address">〒104‑0061 東京都中央区銀座1‑7‑16 コミット銀座ビル4F</p>
+            <a href="https://assist-sports.com/" target="_blank" class="card-btn">詳しく</a>
+          </div>
+        </article>
+
+        <!--  Cielo8  -->
+        <article class="service-card">
+          <img src="https://cdn.shopify.com/s/files/1/0518/4844/6114/files/s-2400x1602_v-frms_webp_f1407009.jpg?v=1754382906" alt="Cielo8" />
+          <div class="card-meta">
+            <h3 class="card-title">Cielo8</h3>
+            <p class="card-text">食・花・観葉植物で日常にワクワク体験を。“おいしい”“綺麗”“癒やし” の瞬間を届ける空間トータルカンパニーです。</p>
+            <p class="card-address">東京都目黒区東山1‑9‑11 2F</p>
+            <a href="https://cielo8.jp/" target="_blank" class="card-btn">詳しく</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===============================
+         4.  NEWS (latest 5)
+    ================================== -->
+    <section class="latest-news">
+      <div class="heading-block">
+        <span class="heading-bg">NEWS</span>
+        <h2 class="heading-main">NEWS</h2>
+        <p class="heading-sub">最新ニュース</p>
+      </div>
+      <ul class="news-list">
+        <li class="news-item"><span class="news-date">2025.06.12</span><a href="#" class="news-link">インスタグラム新規アカウントを開設いたしました！！</a></li>
+        <li class="news-item"><span class="news-date">2025.06.07</span><a href="#" class="news-link">日曜日・祝日における営業時間変更のお知らせ</a></li>
+        <li class="news-item"><span class="news-date">2025.05.29</span><a href="#" class="news-link">弊社名・商品画像を無断使用した偽サイトにご注意ください</a></li>
+        <li class="news-item"><span class="news-date">2025.04.02</span><a href="#" class="news-link">12:00~12:30の間に起きたシステム一部不具合について</a></li>
+        <li class="news-item"><span class="news-date">2025.03.10</span><a href="#" class="news-link">【2025年2月度版】 直近の高額販売実績を大公開！！</a></li>
+      </ul>
+    </section>
+
+    <!-- ===============================
+         5.  CTA BANNER
+    ================================== -->
+    <section class="rich-text--full-width section--accent">
+      <div class="rich-text__wrapper">
+        <h2 class="rich-text__heading">時計も、キャリアも、日常も——</h2>
+        <p class="rich-text__text">高級時計の「売る・買う」、アスリートのセカンドキャリア支援、<br>そして食と花で彩るライフスタイル提案。<br>私たちグループがあなたの“次の一歩”を伴走します。</p>
+        <a href="contact.html" class="hero-btn">ご相談・お問い合わせ</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===============================
+       6.  GLOBAL FOOTER
+  ================================== -->
+<footer class="footer-dark-custom">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://cdn.shopify.com/s/files/1/0518/4844/6114/files/commit-group-logo.png?v=1754373673" alt="Commit Group" class="footer-logo">
+    </div>
+    <div class="footer-sns-grid">
+      <div>
+        <span class="sns-label">コミット銀座</span>
+        <div class="sns-block">
+          <a href="https://x.com/commit_ginza" aria-label="Commit Ginza on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com/commit_ginza" aria-label="Commit Ginza on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://youtube.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <span class="sns-label">フットボールアシスト</span>
+        <div class="sns-block">
+          <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <span class="sns-label">大津祐樹</span>
+        <div class="sns-block">
+          <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <span class="sns-label">Cielo8</span>
+        <div class="sns-block">
+          <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="/pages/about-corp">会社概要</a></li>
+        <li><a href="/service">事業紹介</a></li>
+        <li><a href="/blogs/news">ニュース</a></li>
+        <li><a href="/recruit">採用情報</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <small class="footer-copy">
+      © <script>document.write(new Date().getFullYear())</script>2025&nbsp;Commit&nbsp;Group&nbsp;Ltd.
+    </small>
+  </div>
+</footer>
+
+<!-- ***************************************************
+  style.css  – consolidated below for convenience
+**************************************************** -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap');
+:root {
+  --container-max: 1200px;
+  --transition: 0.35s cubic-bezier(.25,.8,.25,1);
+  --radius: 0.6rem;
+  --shadow-elevated: 0 4px 14px rgba(0,0,0,.07);
+  --color-primary: #111;
+  --color-dark: #000;
+  --color-gray: #666;
+  --color-accent: #b48d59;
+  --color-bg: #fff;
+  --color-surface: #fff;
+}
+*{margin:0;padding:0;}
+html,body{overflow-x:hidden}
+body,button,input,select,textarea{
+  font-family: 'Noto Serif JP','游明朝','Yu Mincho','Hiragino Mincho ProN','BIZ UDMincho',serif;
+  line-height:1.7;
+  color:var(--color-primary);
+}
+h1,h2,h3,h4,h5,h6{font-weight:700;margin:0}
+img{max-width:100%;height:auto;vertical-align:middle}
+
+/*  =====  site-header  ===== */
+.site-header{position:fixed;top:0;left:0;right:0;background:rgba(0,0,0,.66);backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.1)}
+.header-inner{height:68px;max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;position:relative;padding:0 1.5rem}
+.brand img{height:40px;filter:invert(1);}
+
+.burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;display:none}
+.burger span,.burger::after{content:"";position:absolute;left:0;width:26px;height:2px;background:#111;transition:var(--transition)}
+.burger span{top:0}.burger::after{bottom:0}
+
+/* primary nav (desktop) */
+.primary-nav{border-top:1px solid #e5e5e5}
+.primary-nav ul{display:flex;justify-content:center;gap:2.5rem;list-style:none;padding:1rem 1rem;max-width:var(--container-max);margin:auto}
+.primary-nav a{color:#111;text-decoration:none;position:relative;font-weight:500}
+.primary-nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#111;transition:width .25s}
+.primary-nav a:hover::after{width:100%}
+
+/* ===== MOBILE ===== */
+@media(max-width:767px){
+  .burger{display:block}
+  .primary-nav{display:none}
+}
+
+/* ===== DRAWER ===== */
+.drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:#fff;padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transform:translateX(100%);transition:transform var(--transition);z-index:999}
+.drawer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.4rem}
+.drawer a{color:#111;text-decoration:none;font-weight:500}
+
+/* show drawer when burger checked */
+.burger-toggle:checked ~ .site-header .burger span{transform:translateY(9px) rotate(45deg)}
+.burger-toggle:checked ~ .site-header .burger::after{transform:translateY(-9px) rotate(-45deg)}
+.burger-toggle:checked ~ .site-header nav.drawer{transform:translateX(0)}
+
+/* overlay */
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:998}
+@media(max-width:767px){
+  .burger-toggle:checked ~ .drawer-overlay{display:block}
+}
+@media(min-width:768px){
+  .drawer{display:none}
+  .burger{display:none}
+}
+/*  hero video  */
+.hero-video{position:relative;aspect-ratio:16/9;overflow:hidden}
+.hero-video video{width:100%;height:100%;object-fit:cover}
+.hero-video::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);pointer-events:none}
+.hero-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 1rem;z-index:1}
+.hero-title{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.hero-lead{font-size:clamp(1.1rem,2.5vw,1.5rem);max-width:40rem;line-height:1.6;margin-bottom:2.5rem}
+.hero-btn{display:inline-block;padding:1rem 2.75rem;border:2px solid #fff;border-radius:9999px;font-weight:600;letter-spacing:.05em;color:#fff;text-decoration:none;transition:background .3s,color .3s}
+.hero-btn:hover{background:#fff;color:#000}
+
+/*  mobile full‑screen hero  */
+@media(max-width:767px){.hero-video{height:100vh;width: 100%;}.hero-title{font-size:clamp(1.8rem,6vw,2.4rem)}.hero-lead{font-size:clamp(1rem,3.8vw,1.2rem);max-width:26rem}.hero-btn{padding:.85rem 2.25rem}}
+
+/*  heading block  */
+.heading-block{position:relative;text-align:center;margin:4rem 0 7rem}
+.heading-bg{font-size:clamp(4rem,15vw,11rem);font-weight:800;line-height:1;letter-spacing:.05em;color:#d9d9d9;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;z-index:0}
+.heading-main{position:relative;z-index:1;font-size:clamp(1.75rem,5vw,3rem);font-weight:800;letter-spacing:.05em;margin:0;top:30%;transform:translateY(30%);text-shadow:0 2px 4px rgba(0,0,0,.25)}
+.heading-sub{position:relative;z-index:1;font-size:1.5rem;margin-top:.4rem;top:30%;transform:translateY(30%);text-shadow:0 2px 4px rgba(0,0,0,.25)}
+
+/*  services / business  */
+.services-modern{padding:5rem 10rem}
+@media(max-width:767px){.services-modern{padding:1rem}}
+.services-grid{display:grid;gap:2.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.service-card{position:relative;overflow:hidden;border-radius:12px;min-height:420px;cursor:pointer}
+.service-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,.2,.2,1)}
+.service-card:hover img{transform:scale(1.05)}
+.service-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65)0%,rgba(0,0,0,.15)60%);pointer-events:none;transition:opacity .6s}
+.service-card:hover::after{opacity:.85}
+.card-meta{position:absolute;left:0;bottom:0;z-index:2;width:100%;padding:2.25rem;color:#fff;font-family:'Noto Serif JP','游明朝',serif;transform:translateY(40%);opacity:0;transition:all .6s cubic-bezier(.4,.2,.2,1)}
+.service-card:hover .card-meta{transform:translateY(0);opacity:1}
+.card-title{font-size:2.2rem;font-weight:700;margin-bottom:.35rem}
+.card-text{font-size:1.15rem;line-height:1.6;margin-bottom:.75rem}
+.card-address{font-size:.85rem;opacity:.8;margin-bottom:1.5rem}
+.card-btn{display:inline-block;padding:.55rem 1.9rem;border:2px solid #fff;border-radius:9999px;color:#fff;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:background .3s,color .3s}
+.card-btn:hover{background:#fff;color:#000}
+
+/*  news list  */
+.latest-news{padding:4rem 0;background:#f9f9f9}
+.news-list{max-width:500px;margin:0 auto;list-style:none;padding:0}
+@media(max-width:767px){.news-list{padding:0 40px}}
+.news-item{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;align-items:baseline;margin-bottom:1.25rem}
+.news-date{font-size:.875rem;color:#666;white-space:nowrap}
+.news-link{text-decoration:none;color:#111;border-bottom:1px solid transparent;transition:border-color .25s}
+.news-link:hover{border-color:#111}
+
+/*  CTA banner (accent)  */
+.section--accent{background:#65604a;color:#fff;text-align:center;padding:4rem 1rem}
+.section--accent .hero-btn{border-color:#fff}
+.section--accent .hero-btn:hover{background:#fff;color:#000}
+
+/*  footer  */
+.footer-dark{background:#1d1d1d;color:#f1f1f1;padding:5rem 1rem 3rem;text-align:center;margin-top:6rem}
+.footer-inner{max-width:1200px;margin-inline:auto}
+.footer-logo{height:72px;margin-inline:auto;margin-bottom:1.75rem}
+.footer-sites{display:flex;justify-content:center;gap:2.5rem;margin-bottom:2.5rem;font-size:1rem;font-weight:500;flex-wrap:wrap}
+.footer-sites a{color:#f1f1f1;text-decoration:none;transition:opacity .25s}
+.footer-sites a:hover{opacity:.7}
+.footer-sns{display:grid;row-gap:1.4rem;justify-content:center}
+.sns-block{    margin-top: 10px;}
+.sns-label{text-align:right;font-size:.8rem;color:#c7c7c7}
+.sns-icon:hover{background:#f1f1f1;color:#1d1d1d}
+.footer-nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2.2rem 2.8rem;max-width:440px;margin:0 auto 2rem;padding:0;list-style:none}
+.footer-nav a{color:#f1f1f1;text-decoration:none;position:relative}
+.footer-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:#f1f1f1;transition:width .25s}
+.footer-nav a:hover::after{width:100%}
+.footer-copy{font-size:.85rem;color:#c7c7c7}
+@media(max-width:600px){.footer-sites{flex-direction:column;gap:1rem}.sns-block{grid-template-columns:1fr repeat(5,42px)}.sns-label{text-align:left}}
+/***** HEADER WHITE THEME *****/
+.site-header{background:#fff;color:#111;position:fixed;inset-inline:0;top:0;z-index:1000;border-bottom:1px solid #e5e5e5}
+.header-top{max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;height:72px;position:relative;padding-inline:1rem}
+.brand img{height:46px;filter:none}
+/* ベース（前回と同じなら不要） */
+.footer-dark-custom{background:#222;color:#d1d1d1;text-align:center;padding:4rem 1rem 2.5rem}
+.footer-dark-custom a {
+    color: #d1d1d1;
+    transition: color .3s;
+    text-decoration: none;
+}
+.sns-icon {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.footer-dark-custom a:hover{color:#fff}
+.footer-logo{max-width:180px;margin:0 auto 2rem}
+
+/* 事業リンク行 */
+.footer-sites{display:flex;justify-content:center;gap:2rem;margin-bottom:2.5rem;font-weight:500;font-size:.95rem}
+
+/* ── 事業ブロックをグリッドで3分割 ── */
+.footer-sns-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2.5rem;
+  margin:0 auto 6.5rem;
+}
+/* 下部ナビ */
+.footer-nav ul{display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;font-size:.9rem;list-style-type: none;}
+
+/* コピーライト */
+.footer-copy{font-size:1.35rem;color:#888}
+
+/* ── SP 調整 ── */
+@media(max-width:640px){
+  .footer-sites{flex-direction:column;gap:1rem}
+  .sns-icon{width:34px;height:34px;}
+}
+
+</style>
+</body>
+</html>

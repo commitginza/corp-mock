@@ -1,0 +1,947 @@
+/* --------------------------------------------------------
+   Commit Group – Imperial Hotel Inspired Theme (v5)
+   -------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root{
+  /* --- Colour Palette inspired by Imperial Hotel --- */
+  --color-bg:#f8f7f5;              /* warm off‑white */
+  --color-surface:#ffffff;
+  --color-dark:#0b1e1a;            /* almost black‑green */
+  --color-gray:#6e6e6e;
+  --color-primary:#004236;         /* imperial evergreen */
+  --color-accent:#a88946;          /* antique gold */
+  --color-link:#004236;
+
+  --font-heading:"Playfair Display","Meiryo",serif;
+  --font-body:"Noto Sans JP","Meiryo",sans-serif;
+
+  --container-max:1360px;
+  --radius:.75rem;
+  --shadow-elevated:0 8px 20px rgba(0,0,0,.06);
+  --transition:.28s cubic-bezier(.4,.2,.3,1)
+}
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--color-dark);background:var(--color-bg);line-height:1.8;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ---------- Layout Helpers ---------- */
+.container{width:88%;max-width:var(--container-max);margin-inline:auto}
+.section{padding:6rem 0}
+.section--tight{padding:3.5rem 0}
+.section--light{background:#f1f1ef}
+.section--accent{background:var(--color-primary);color:#fff}
+.section--angle{position:relative;clip-path:polygon(0 0,100% 4%,100% 100%,0 96%)}
+.flex{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 2px 6px rgba(0,0,0,.05)}
+header .container{display:flex;justify-content:space-between;align-items:center;padding-block:.75rem}
+.logo img{height:42px}
+nav ul{display:flex;gap:2.25rem;align-items:center;font-weight:500}
+nav li{position:relative}
+nav li::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--color-accent);transition:var(--transition)}
+nav li:hover::after{width:100%}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 2.2rem;border-radius:2rem;font-weight:600;font-size:1rem;letter-spacing:.04em;border:none;color:#fff;background:linear-gradient(135deg,var(--color-accent)0%,#8a6935 100%);box-shadow:0 4px 12px rgba(0,0,0,.07);transition:var(--transition)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.1)}
+.btn:active{transform:none;box-shadow:0 3px 8px rgba(0,0,0,.15) inset}
+.btn--outline{background:transparent;color:var(--color-primary);border:2px solid var(--color-primary)}
+.btn--outline:hover{background:var(--color-primary);color:#fff}
+.btn--gold{background:var(--color-accent)}
+.btn--sm{padding:.5rem 1.4rem;font-size:.9rem}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:75vh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55)}
+.hero__inner{position:relative;max-width:40rem;padding-inline:1rem;animation:fadeInUp .9s ease .2s both}
+.hero__title{font-family:var(--font-heading);font-weight:700;font-size:clamp(2.8rem,6vw,4.2rem);letter-spacing:.06em;margin-bottom:1.4rem}
+.hero__lead{font-size:1.15rem;margin-bottom:2.2rem}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ---------- Page Hero ---------- */
+.page-hero{background:#ecebe7;color:var(--color-dark);padding-block:7rem 5rem}
+.page-hero__breadcrumb{font-size:.85rem;color:#fff;display:flex;gap:.4rem;margin-bottom:1.2rem}
+.page-hero__breadcrumb li::before{content:"•";color:var(--color-accent);margin-inline-end:.35rem}
+.page-hero__title{font-family:var(--font-heading);font-size:clamp(2.5rem,5.5vw,4.5rem);color:var(--color-primary);margin-bottom:1.4rem}
+.page-hero__lead{font-size:1.05rem;max-width:48rem}
+
+/* Recruit hero bg remains */
+.page-hero--recruit{position:relative;color:#fff;overflow:hidden}
+.page-hero--recruit::before{content:"";position:absolute;inset:0;background:url(./recruit-hero-bg.png) center/cover no-repeat;filter:brightness(.55);z-index:-2}
+.page-hero--recruit::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35)0%,rgba(0,0,0,0)60%);z-index:-1}
+
+/* ---------- Sections Typography ---------- */
+.section h2{font-family:var(--font-heading);font-size:2.1rem;text-align:center;margin-bottom:2.4rem;color:var(--color-primary)}
+.section h3{font-family:var(--font-heading);font-size:1.6rem;margin-bottom:.8rem;color:var(--color-primary)}
+
+/* ---------- Card Grid ---------- */
+.card-grid{display:grid;gap:2.5rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--color-surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-elevated);transition:transform .25s ease}
+.card:hover{transform:translateY(-6px)}
+.card img{aspect-ratio:4/3;object-fit:cover}
+.card__body{padding:1.75rem}
+.card__title{font-size:1.25rem;font-weight:600;margin-bottom:.45rem;color:var(--color-primary)}
+.card__text{font-size:.95rem;color:var(--color-gray);margin-bottom:1rem}
+.arrow{font-size:.9rem;color:var(--color-accent)}
+
+/* ---------- Services Block ---------- */
+.service-block{display:flex;align-items:center;gap:3.5rem;padding-block:5.5rem;border-bottom:1px solid #deddda}
+.service-block:last-child{border-bottom:none}
+.service-block figure{flex:0 0 48%;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-elevated)}
+.service-block .text{flex:1}
+.service-block.reverse{flex-direction:row-reverse}
+@media(max-width:768px){.service-block{flex-direction:column;gap:2rem;padding-block:4rem}.service-block figure{width:100%}}
+
+.feature-list{display:flex;flex-wrap:wrap;gap:1rem;margin-block:1.4rem}
+.feature-list li{display:flex;align-items:center;gap:.4rem;font-size:.95rem}
+.feature-list li::before{content:"◆";color:var(--color-accent);font-size:.7rem}
+
+/* ---------- News List ---------- */
+.news-list{margin-top:1.2rem}
+.news-list li{display:grid;grid-template-columns:110px 90px 1fr;align-items:center;gap:1rem;padding:1.15rem 1.5rem;border-radius:.75rem;border:1px solid #deddda;margin-bottom:.75rem;transition:background var(--transition)}
+.news-list li:hover{background:#f3f2f0}
+.news-date{font-size:.9rem;color:var(--color-gray)}
+.news-cat{font-size:.75rem;padding:.28rem .8rem;border-radius:1rem;color:#fff;text-align:center}
+.news-cat--press{background:#8a6935}
+.news-cat--release{background:#417c91}
+.news-cat--blog{background:#4f7f57}
+
+/* ---------- Job Cards ---------- */
+.job-card{display:flex;align-items:center;gap:2rem;padding:2rem 2.5rem;border-radius:var(--radius);background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .25s ease}
+.job-card:hover{transform:translateY(-4px)}
+.job-thumb{width:120px;height:120px;border-radius:.5rem;object-fit:cover;flex-shrink:0}
+.job-info h4{font-size:1.2rem;color:var(--color-primary);margin-bottom:.35rem}
+.job-info p{font-size:.95rem;color:var(--color-gray)}
+.job-card .btn{margin-left:auto}
+@media(max-width:768px){.job-card{flex-direction:column;align-items:flex-start}.job-card .btn{margin-left:0;margin-top:1rem}}
+
+/* ---------- Timeline ---------- */
+.timeline{display:flex;gap:2rem;margin-top:2.5rem;position:relative;align-items:flex-start}
+.timeline::before{content:"";position:absolute;top:calc(50% -1px);left:0;right:0;height:2px;background:#deddda}
+.timeline-item{flex:1;text-align:center}
+.timeline-item::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:var(--color-accent);border:3px solid #fff;box-shadow:0 0 0 2px var(--color-accent)}
+.timeline-year{font-weight:700;color:var(--color-primary);display:block;margin-bottom:.25rem}
+.timeline-text{font-size:.95rem}
+@media(max-width:768px){.timeline{flex-direction:column;padding-left:2.5rem}.timeline::before{left:9px;right:auto;height:100%;width:2px;top:0}.timeline-item{text-align:left;margin-bottom:1.4rem}.timeline-item::before{left:-9px;top:0;transform:none}}
+
+/* ---------- Forms ---------- */
+form{max-width:640px;margin:auto}
+.form-row{margin-bottom:1.4rem}
+label{display:block;margin-bottom:.45rem;font-weight:600;color:var(--color-primary)}
+input,select,textarea{width:100%;padding:.8rem 1rem;border:1px solid #ccc;border-radius:var(--radius);font-size:1rem;transition:border var(--transition)}
+input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline:none}
+.checkbox{display:flex;align-items:center;gap:.5rem}
+
+/* ---------- Footer ---------- */
+footer{background:#1a1a1a;color:#fff;padding:3.5rem 0;margin-top:6rem}
+footer .flex{justify-content:space-between;align-items:center;gap:2rem}
+footer a{font-size:.85rem;color:#fff}
+
+/* ---------- Animations ---------- */
+[data-animate]{opacity:0;transform:translateY(18px);transition:var(--transition)}
+[data-animate].active{opacity:1;transform:none}
+
+/* ---------- Mobile Nav ---------- */
+.nav-toggle{display:none}
+.hamburger{display:none;flex-direction:column;gap:6px;width:30px;cursor:pointer}
+.hamburger span{width:100%;height:3px;background:var(--color-dark);border-radius:2px;transition:var(--transition)}
+@media(max-width:768px){header .container{gap:1rem}nav ul{position:fixed;top:0;right:-100%;width:70%;height:100vh;background:#fff;flex-direction:column;align-items:flex-start;padding:6rem 2rem;gap:2rem;box-shadow:-4px 0 12px rgba(0,0,0,.08);transition:right var(--transition)}.nav-toggle:checked + .hamburger + nav ul{right:0}.hamburger{display:flex}.nav-toggle:checked + .hamburger span:nth-child(1){transform:translateY(9px) rotate(45deg)}.nav-toggle:checked + .hamburger span:nth-child(2){opacity:0}.nav-toggle:checked + .hamburger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}}
+/* ====== Imperial-style Header ====== */
+.site-header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1100;
+  background:rgba(0,0,0,.66);          /* 半透明ブラック */
+  border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(6px);
+}
+.header-inner{
+  max-width:var(--container-max);
+  margin-inline:auto;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;              /* ロゴを中央寄せ */
+  position:relative;                   /* burger を絶対配置用 */
+}
+.brand img{height:40px;} /* 白ロゴが無ければ invert で簡易白抜き */
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:1.25rem;
+  position:absolute;
+  right:1.5rem;
+}
+.lang-btn{
+  background:none;border:none;color:#fff;cursor:pointer;
+  display:grid;place-items:center;
+}
+.lang-btn svg{width:18px;height:18px;stroke:#fff;}
+
+.burger{
+  width:22px;          /* ← 少し小さめに固定 */
+  height:16px;
+    position:absolute;       /* ← relative な .header-inner を基準 */
+  right:1.5rem;            /* お好みで余白調整 */
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  z-index:1002;        /* ドロワーより前に */
+}
+
+.burger span,
+.burger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:22px;          /* ✕ の長さも 22px で固定       */
+  height:2px;
+  background:#fff;
+  transition:var(--transition);
+}
+.burger span{top:0;}          /* 上線 */
+.burger::after{bottom:0;}     /* 下線（疑似要素） */
+
+/* ② open アニメ（チェック時に X へ）*/
+.burger-toggle:checked + .header-inner .burger span{
+  transform:translateY(8px) rotate(45deg);
+}
+.burger-toggle:checked + .header-inner .burger::after{
+  transform:translateY(-8px) rotate(-45deg);
+}
+
+/* ③ drawer を開く */
+.burger-toggle:checked ~ .site-header nav.drawer{
+  right:0;
+}
+
+/*  open  */
+.burger-toggle:checked ~ .site-header .burger span{
+  transform:translateY(7px) rotate(45deg);
+}
+.burger-toggle:checked ~ .site-header .burger::after{
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+/* drawer menu */
+.drawer{
+  position:fixed;top:0;right:-280px;width:280px;height:100vh;
+  background:var(--color-bg);
+  padding:6rem 2rem 3rem;
+  display:flex;flex-direction:column;          /* ← 縦並び */
+  gap:1.5rem;
+  transition:right var(--transition);
+  box-shadow:-4px 0 12px rgba(0,0,0,.15);
+  z-index:1101;
+}
+.drawer ul{display:flex;flex-direction:column;gap:1.5rem;}
+.drawer a{font-size:1rem;font-weight:500;color:var(--color-dark)}
+.drawer .btn{align-self:flex-start;margin-top:1rem}
+
+.drawer-overlay{
+  position:fixed;inset:0;                /* 画面全体 */
+  background:rgba(0,0,0,.45);
+  cursor:pointer;
+  display:none;
+  z-index:1000;
+  /* ↓ 追加 (念のため) */
+  width:100vw; height:100vh;
+}
+.burger-toggle:checked ~ .drawer-overlay{display:block;}
+
+/* =====================================================
+   Imperial-Hotel company-page style additions
+===================================================== */
+
+/* 1) about hero -------------------------------------------------- */
+.page-hero--about {
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  padding: 10rem 0 6rem;
+}
+.page-hero--about .page-hero__bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  filter:brightness(.55);
+  z-index:-2;
+}
+.page-hero--about::after{              /* 上下グラデで読みやすさUP */
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.4)0%,rgba(0,0,0,0)60%);
+  z-index:-1;
+}
+.page-hero--about .page-hero__title{color:#fff}
+.page-hero--about{
+  background:transparent;   /* ← 薄グレーを消して画像が見えるように */
+  min-height:60vh;          /* ← 高さを確保（60vh=画面縦の6割） */
+}
+/* 2) local nav --------------------------------------------------- */
+.local-nav-wrap{display:flex;gap:3.5rem;align-items:flex-start;margin-top:4rem}
+@media(max-width:1024px){.local-nav-wrap{flex-direction:column}}
+
+.local-nav{
+  flex:0 0 220px;
+  position:sticky;top:120px;
+}
+.local-nav ul{display:flex;flex-direction:column;gap:1.4rem}
+.local-nav a{
+  font-weight:600;
+  color:var(--color-dark);
+  position:relative;
+  padding-left:.5rem;
+}
+.local-nav a::before{
+  content:"";
+  position:absolute;left:0;bottom:-2px;
+  width:0;height:2px;background:var(--color-accent);
+  transition:width .25s ease;
+}
+.local-nav a:hover::before,
+.local-nav a:focus::before{width:100%}
+
+/* 3) section heading (見出し左寄せ + 英語サブ) -------------------- */
+.section-heading{
+  font-family:var(--font-heading);
+  font-size:1.9rem;
+  margin-bottom:2.2rem;
+  color:var(--color-primary);
+  display:flex;
+  align-items:baseline;
+  gap:.8rem;
+}
+.section-heading span{
+  font-family:var(--font-body);
+  font-size:.9rem;
+  color:var(--color-gray);
+  letter-spacing:.05em;
+}
+
+/* 4) philosophy block spacing ---------------------------------- */
+.philosophy-section .mv-cards{margin-top:2rem}
+/* =====================================================
+   ▼ 追加スタイル（about ページ専用）
+===================================================== */
+
+/* ── ① 企業理念カード横並び ───────────────── */
+.philosophy-grid{
+  display:grid;
+  gap:2.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+.ph-card{
+  background:#fff;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s ease;
+  display:flex;
+  flex-direction:column;
+}
+.ph-card:hover{transform:translateY(-4px)}
+.ph-card figure{aspect-ratio:4/3;overflow:hidden}
+.ph-card img{width:100%;height:100%;object-fit:cover}
+.ph-card__body{padding:1.5rem}
+.ph-card__body h3{
+  font-family:var(--font-heading);
+  font-size:1.4rem;
+  margin:0 0 .6rem;
+  color:var(--color-primary);
+}
+.ph-card__body p{font-size:.95rem;color:var(--color-gray)}
+
+
+/* ── ② 会社概要テーブルを読みやすく ───────────────── */
+.info-table.tidy{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:.95rem;
+}
+.info-table.tidy th,
+.info-table.tidy td{padding:.9rem 1rem;border-bottom:1px solid #e2e2e2}
+.info-table.tidy th{
+  width:28%;
+  font-weight:600;
+  color:var(--color-primary);
+  background:#f6f6f4;
+}
+.info-table.tidy tr:nth-child(odd) td{background:#fafafa}
+
+
+/* ── ③ 沿革：縦タイムライン ───────────────── */
+.timeline--vert{
+  position:relative;
+  display:block;
+  padding-left:3.5rem;
+}
+.timeline--vert::before{
+  content:"";
+  position:absolute;left:16px;top:0;bottom:0;
+  width:2px;background:#d5d5d5;
+}
+.timeline--vert .timeline-item{
+  position:relative;
+  margin-bottom:2rem;
+  padding-left:.5rem;
+}
+.timeline--vert .timeline-item::before{
+  content:"";
+  position:absolute;left:-24px;top:4px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--color-bg);
+  border:3px solid var(--color-accent);
+}
+.timeline--vert .timeline-year{
+  font-weight:700;
+  color:var(--color-primary);
+  margin-bottom:.3rem;
+}
+.timeline--vert .timeline-text{font-size:.95rem;color:var(--color-dark)}
+/* =====================================================
+   ▼ 会社概要レイアウト調整
+===================================================== */
+.corp-grid{
+  display:grid;
+  gap:3rem;
+  grid-template-columns:1fr 480px;   /* 左右２カラム */
+  padding-inline:2rem;               /* 左右にゆったり余白 */
+}
+
+.corp-data .section-heading{
+  margin-bottom:1.8rem;
+}
+
+.corp-map iframe{
+  width:100%;
+  height:100%;
+  min-height:360px;
+  border:0;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-elevated);
+}
+
+/* 768px 以下では縦並びに */
+@media(max-width:768px){
+  .corp-grid{
+    grid-template-columns:1fr;
+    padding-inline:1rem;
+  }
+  .corp-map{order:-1; margin-bottom:2rem;} /* Map → 上、テーブル → 下 */
+}
+/* =====================================================
+   ▼ History vertical timeline (with images)
+===================================================== */
+.history-timeline{
+  position:relative;
+  margin-top:2.5rem;
+  padding-left:2.5rem;              /* 点線からテキストまでのオフセット */
+  border-left:2px solid #deddda;    /* 縦ライン */
+  display:flex;
+  flex-direction:column;
+  gap:2.75rem;
+}
+
+.history-item{
+  display:grid;
+  grid-template-columns:auto 1fr 120px;   /* dot | text | img */
+  gap:1.25rem;
+  align-items:center;
+}
+
+.history-item .dot{
+  position:absolute;
+  left:-11px;                      /* ラインの中央に重ねる */
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#fff;
+  border:4px solid var(--color-accent);
+}
+
+.history-body .year{
+  font-weight:700;
+  color:var(--color-primary);
+  margin-bottom:.25rem;
+}
+
+.history-body .text{
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+.history-thumb img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-elevated);
+}
+
+/* ── 768px 未満は１カラムに折り返し ── */
+@media(max-width:768px){
+  .history-item{
+    grid-template-columns:auto 1fr;        /* 画像を下に落とす */
+    grid-template-areas:
+      "dot body"
+      ".   img";
+  }
+  .history-thumb{grid-column:2 / span 1; margin-top:1rem;}
+}
+/* ===== Social Feed grid ===== */
+.social-grid{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  margin-top:2.5rem;
+}
+.social-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+  overflow:hidden;
+}
+.social-card iframe,
+.social-card .twitter-timeline{
+  width:100%;
+}
+
+/* Instagramウィジェットに余白が入る場合はリセット */
+.ig-widget{
+  border:none; width:100%; height:500px;
+}
+/* =====================================================
+   Service Cards  –  Imperial-style version
+===================================================== */
+.svc-grid{
+  display:grid;
+  gap:4rem 2rem;
+  grid-template-columns:1fr;
+}
+.svc-card{
+  display:flex;
+  gap:3rem;
+  align-items:center;
+}
+.svc-card--reverse{flex-direction:row-reverse;}
+
+.svc-thumb{
+  flex:0 0 48%;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-elevated);
+}
+.svc-thumb img{width:100%;height:100%;object-fit:cover;}
+
+.svc-body{flex:1;display:flex;flex-direction:column;gap:1.4rem;}
+.svc-title{
+  font-family:var(--font-heading);
+  font-size:1.8rem;
+  color:var(--color-primary);
+}
+.svc-desc{font-size:1rem;line-height:1.75;}
+
+@media(max-width:768px){
+  .svc-card,
+  .svc-card--reverse{
+    flex-direction:column;
+  }
+  .svc-thumb{width:100%;}
+}
+
+/* 見出し共通 */
+.sec-heading{
+  text-align:center;
+  margin-bottom:3rem;
+}
+.sec-heading .jp{
+  display:block;
+  font-family:var(--font-heading);
+  font-size:2rem;
+  letter-spacing:.05em;
+}
+.sec-heading .en{
+  display:block;
+  font-size:.85rem;
+  letter-spacing:.2em;
+  margin-top:.3rem;
+  color:var(--color-gray);
+}
+/* =====================================================
+   Works  /  Case-study Cards
+===================================================== */
+.work-grid{
+  display:grid;
+  gap:3rem 2rem;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+}
+
+.work-card{
+  background:var(--color-surface);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s ease;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.work-card:hover{transform:translateY(-6px);}
+
+.work-thumb img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+.work-body{
+  padding:1.75rem;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  flex:1;
+}
+.work-title{
+  font-family:var(--font-heading);
+  font-size:1.25rem;
+  color:var(--color-primary);
+}
+.work-text{font-size:.95rem;color:var(--color-gray);}
+/* =====================================================
+   News  /  Archive Cards
+===================================================== */
+.news-cards{
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+  max-width:920px;
+  margin-inline:auto;
+}
+.news-card{
+  display:grid;
+  grid-template-columns:140px 100px 1fr;
+  align-items:center;
+  gap:1.2rem;
+  padding:1.35rem 1.6rem;
+  border:1px solid #deddda;
+  border-radius:.85rem;
+  background:var(--color-surface);
+  transition:background .2s ease, transform .25s ease;
+}
+.news-card:hover{
+  background:#f4f4f2;
+  transform:translateY(-3px);
+}
+
+.news-meta span{
+  font-size:.9rem;
+  color:var(--color-gray);
+  letter-spacing:.01em;
+}
+
+.news-tag{
+  font-size:.75rem;
+  font-weight:600;
+  color:#fff;
+  padding:.3rem .9rem;
+  border-radius:2rem;
+  text-align:center;
+  min-width:80px;
+}
+.news-tag.press{background:#8a6935;}
+.news-tag.release{background:#417c91;}
+.news-tag.blog{background:#4f7f57;}
+
+.news-title{
+  font-size:1rem;
+  line-height:1.6;
+  transition:color .25s ease;
+}
+.news-card:hover .news-title{color:var(--color-primary);}
+
+/* セクション共通見出し（既出） */
+.sec-heading{
+  text-align:center;
+  margin-bottom:3rem;
+}
+.sec-heading .jp{font-family:var(--font-heading);font-size:2rem;color:var(--color-primary);}
+.sec-heading .en{font-size:.85rem;color:var(--color-gray);display:block;margin-top:.3rem;}
+/* =====================================================
+   Recruit  /  Environment & Positions
+===================================================== */
+
+/* --- リード文（共通で流用可） --- */
+.lead-copy{
+  font-size:1.05rem;
+  margin:0 0 1.8rem;
+  text-align:center;
+  color:var(--color-dark);
+}
+
+/* --- Open Positions Grid --- */
+.positions-grid{
+  display:grid;
+  gap:2rem 2.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  max-width:1100px;
+  margin-inline:auto;
+}
+
+.job-card{
+  display:flex;
+  align-items:center;
+  gap:1.6rem;
+  padding:1.75rem 2rem;
+  background:var(--color-surface);
+  border:1px solid #deddda;
+  border-radius:var(--radius);
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.job-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+.job-thumb{
+  width:110px;height:110px;
+  border-radius:.5rem;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.job-info{flex:1;}
+.job-title{
+  font-size:1.15rem;
+  font-family:var(--font-heading);
+  color:var(--color-primary);
+  margin:0 0 .35rem;
+}
+.job-desc{font-size:.95rem;color:var(--color-gray);margin:0;}
+/* =====================================================
+   Recruit – quick hot-fix (2025-05-08)
+===================================================== */
+
+/* --- ＜働く環境＞：パークスリストを中央寄せに ---------- */
+.perks-list{
+  justify-content:center;          /* 横方向中央 */
+  text-align:center;               /* テキストも中央 */
+}
+
+/* --- ＜募集職種＞カードのレイアウト調整 -------------- */
+
+/* ① グリッド幅を少し縮めて 2〜3 列切り替え */
+.positions-grid{
+  gap:2rem 2rem;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  max-width:1200px;                /* カードに十分な横幅を与える */
+}
+
+/* ② カードを縦積み型に（画像→タイトル→説明→ボタン） */
+.job-card{
+  flex-direction:column;           /* ← 横並び → 縦並び */
+  text-align:center;
+  padding:2rem 1.75rem;
+}
+
+/* ③ サムネイルをカード上部いっぱいに表示 */
+.job-thumb{
+  width:100%;
+  max-height:160px;
+  object-fit:cover;
+  border-radius:.5rem;
+}
+
+/* ④ タイトル／説明の余白調整 */
+.job-info{margin-top:1rem}
+.job-title{font-size:1.1rem; line-height:1.45}
+
+/* ⑤ ボタンを中央に配置 */
+.job-card .btn{
+  margin:1.4rem auto 0;
+}
+/* =====================================================
+   Recruit – card visual tuning (2025-05-08-b)
+   ----------------------------------------------------
+   1) サムネイルの縦を少し長く（200px）※比率は cover
+   2) タイトル・説明の高さを揃えカード天地がずれない
+===================================================== */
+
+/* ① 画像を縦長に */
+.job-thumb{
+  max-height:200px;          /* ← 160px → 200px に伸ばす */
+}/* =====================================================
+   Recruit – company / role separation (2025-05-08-c)
+===================================================== */
+
+/* 会社名（上段・小見出し） ------------------------- */
+.job-company{
+  font-size:.85rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:var(--color-gray);
+  margin-bottom:.25rem;
+  text-align:center;
+}
+
+/* 募集職種（中央・メイン見出し） ------------------- */
+.job-role{
+  font-size:1.25rem;          /* 以前の .job-title と同等 */
+  line-height:1.4;
+  font-weight:600;
+  color:var(--color-primary);
+  text-align:center;
+  margin:0;
+  min-height:72px;            /* 高さを確保して揃える */
+}
+
+/* job-info の高さバランスを微調整 ------------------- */
+.job-info{
+  min-height:155px;           /* 会社＋職種＋説明が入る余白 */
+}
+
+
+/* ② 情報ブロックで高さを統一する ------------------- */
+.job-info{                     /* タイトル＋説明コンテナ */
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+  align-items:center;          /* 横中央寄せ */
+  min-height:135px;            /* 全カードで共通の高さ */
+}
+
+/* タイトル（行数が少ないカードでも高さ固定） */
+.job-title{
+  font-size:1.15rem;
+  line-height:1.45;
+  font-weight:600;
+  min-height:64px;             /* ― 2 行想定で確保 */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* 説明（行数が変わってもカードが揃う） */
+.job-desc{
+  font-size:.9rem;
+  color:var(--color-gray);
+  min-height:60px;             /* ― 1〜2 行分のスペース */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+/* ================================
+   Recruit – 会社別セクション調整
+   ================================ */
+
+/* ① セクション間マージンを広げる
+   （前回 .job-section に指定した margin-top を拡大） */
+.job-section{
+  margin:6rem 0;        /* ← 以前 5rem → 6rem に拡大 */
+}
+
+/* ② カードの“箱”を等幅・等高に揃える
+   ― grid アイテム側を flex 化して高さを合わせる  */
+.card-grid{
+  /* 3 枚なら 300–1fr でも OK。端末幅が狭い場合は自動で 2→1 列に落ちる */
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+}
+
+.job-card{                /* カード本体 */
+  display:flex;           /* ← 追加：縦方向に伸びる箱に */
+  flex-direction:column;
+  min-height:480px;       /* 任意。全カードの高さを合わせる基準値 */
+}
+
+.job-card img{            /* 見出し画像（ヘッダ部分の高さ固定） */
+  height:160px;           /* 以前 120 → 160 に延長 */
+  object-fit:cover;
+}
+
+/* 本文を残り高にフィットさせ、ボタンは下に寄せる */
+.job-card .card__body{flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.job-card .btn{align-self:center;margin-top:1.75rem}
+/* --------------------------------------------------------
+   Footer – Imperial Hotel inspired, dark theme
+   -------------------------------------------------------- */
+.footer-dark{
+  background:#1d1d1d;
+  color:#f1f1f1;
+  padding:5rem 1rem 3rem;
+  text-align:center;
+}
+.footer-inner{max-width:1200px;margin-inline:auto}
+.footer-logo{height:72px;margin-inline:auto;margin-bottom:1.75rem}
+
+/* ── グループ拠点リンク ── */
+.footer-sites{display:flex;justify-content:center;gap:2.5rem;margin-bottom:2.5rem;font-size:1rem;font-weight:500}
+.footer-sites a{color:#f1f1f1;transition:opacity .25s}
+.footer-sites a:hover{opacity:.7}
+
+/* ── SNS ── */
+.footer-sns{display:flex;flex-direction:column;gap:1.4rem;margin-bottom:3rem}
+.sns-block{display:flex;align-items:center;justify-content:center;gap:1.2rem}
+.sns-label{font-size:.8rem;letter-spacing:.04em;color:#c7c7c7;margin-right:.75rem}
+.sns-icon{font-size:1.4rem;width:38px;height:38px;display:grid;place-items:center;border:1px solid #f1f1f1;border-radius:50%;transition:background .3s}
+.sns-icon:hover{background:#f1f1f1;color:#1d1d1d}
+
+/* ── ナビゲーション ── */
+.footer-nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-bottom:2.5rem;font-size:.9rem}
+.footer-nav a{color:#f1f1f1;position:relative;padding-bottom:.2rem}
+.footer-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:#f1f1f1;transition:width .25s}
+.footer-nav a:hover::after{width:100%}
+
+/* ── コピーライト ── */
+.footer-copy{font-size:.75rem;color:#c7c7c7}
+
+/* ── Responsive ── */
+@media(max-width:600px){
+  .footer-sites{flex-direction:column;gap:1rem}
+  .sns-block{flex-wrap:wrap;gap:.8rem}
+  .footer-nav ul{gap:1.2rem}
+}
+/* ===== footer – SNS alignment tweak ===== */
+.footer-sns{
+  /* 2 行以上あっても常に “列” をそろえるため grid を採用 */
+  display:grid;
+  row-gap:1.4rem;          /* 行の間隔 */
+  justify-content:center;  /* 全体を中央寄せ */
+}
+
+/* ラベル列＋アイコン3列 = 4列固定 */
+.sns-block{
+  display:grid;
+  grid-template-columns: 140px repeat(5, 42px); /* ← 1列目はラベル幅、残りはアイコン幅 */
+  column-gap:1.1rem;        /* 列間の間隔 */
+  align-items:center;       /* アイコンとラベルを中央揃え */
+}
+
+/* ラベルを右寄せにして“縦線”を意識させる */
+.sns-label{
+  text-align:right;
+  font-size:.8rem;
+  color:#c7c7c7;
+  margin:0;                 /* 既存の margin を打ち消す場合用 */
+}
+
+/* アイコンは中央寄せのまま */
+.sns-icon{
+  font-size:1.4rem;
+  width:42px;height:42px;
+  display:grid;place-items:center;
+  border:1px solid #f1f1f1;border-radius:50%;
+  transition:background .3s;
+}
+.sns-icon:hover{background:#f1f1f1;color:#1d1d1d}
