@@ -2112,3 +2112,15 @@ form button.btn{
 .section--accent .hero-btn{     /* 対象ボタン */
   margin-top:2.5rem;            /* 上側の余白を追加（お好みで調整） */
 }
+
+/* ── 数値カード：幅固定 & 中央寄せ ─────────── */
+.number-cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:center;
+}
+.number-card{
+  width:180px;              /* ← お好みで調整 */
+  flex:0 0 180px;           /* 幅固定 */
+}
