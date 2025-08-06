@@ -2238,3 +2238,26 @@ form button.btn{
 
 /* ニュース見出しと最初のカードの距離を詰める */
 .latest-news .heading-main{margin-bottom:0.8rem}
+
+/* 最新ニュース ─ スリム化＋枠線なし */
+.latest-news{max-width:900px;margin:3rem auto;text-align:center}
+
+.news-list{display:grid;gap:1rem}
+
+.news-item{
+  display:flex;align-items:flex-start;gap:1rem;
+  background:none;           /* 背景なし。必要なら薄色指定 */
+  border:none;               /* 枠線削除 */
+  padding:.8rem 0;           /* 余白縮小 */
+  max-width:520px;margin:0 auto
+}
+
+.news-date{flex:0 0 90px;color:#666;font-size:.85rem;text-align:left}
+.news-body{font-size:.95rem;line-height:1.5;text-align:left}
+
+
+.synergy-diagram{
+  max-width:720px;margin:0 auto;
+  overflow-x:auto;padding:0 .8rem;
+}
+.synergy-diagram svg{width:100%;height:auto}
