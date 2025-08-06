@@ -69,6 +69,101 @@
         </form>
       </div>
     </section>
+<!-- ====== Locations Section ====== -->
+<section id="locations" class="section locations">
+  <h2 class="section-title">店舗・オフィスのご案内</h2>
+
+  <div class="loc-grid">
+    <!-- 銀座本店 -->
+    <div class="loc-card">
+      <h3>銀座本店</h3>
+      <p>〒104-0061 東京都中央区銀座1-2-3</p>
+      <p>営業時間：11:00-20:00（年中無休）</p>
+      <ul class="loc-channels">
+        <li><a href="tel:+81312345678">☎ 03-1234-5678</a></li>
+        <li><a href="https://line.me/R/ti/p/@commitginza" target="_blank">LINE</a></li>
+        <li><a href="https://instagram.com/commit_ginza" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+
+    <!-- オンライン部門 -->
+    <div class="loc-card">
+      <h3>オンラインサポート</h3>
+      <p>受付時間：10:00-19:00（平日）</p>
+      <ul class="loc-channels">
+        <li><a href="tel:+815012345678">☎ 050-1234-5678</a></li>
+        <li><a href="mailto:support@commit-watch.co.jp">✉ support@commit-watch.co.jp</a></li>
+        <li><a href="https://twitter.com/commit_support" target="_blank">X（旧Twitter）</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ====== Map Section ====== -->
+<section id="access" class="section access">
+  <h2 class="section-title">アクセスマップ</h2>
+
+  <!-- Google Map Iframe（Place ID 推奨） -->
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=YOUR_EMBED_PARAMS"
+      width="100%" height="400" style="border:0;" allowfullscreen=""
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <!-- ルート案内 -->
+  <div class="route-guide">
+    <h3>最寄り駅からのルート</h3>
+    <ol>
+      <li>東京メトロ有楽町線「銀座一丁目駅」3 番出口を出る</li>
+      <li>中央通りを北へ徒歩2分</li>
+      <li>左手の●●ビル 1F が当店です</li>
+    </ol>
+    <a class="btn" href="https://goo.gl/maps/xxxx" target="_blank">
+      Google マップで開く
+    </a>
+  </div>
+</section>
+<!-- ====== FAQ Section ====== -->
+<section id="faq" class="section faq">
+  <h2 class="section-title">よくあるご質問</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Q. 取り置きはできますか？</button>
+      <div class="faq-a">
+        A. 店頭での取り置きは原則行っておりませんが、<br>
+        オンライン決済後の発送スケジュール調整は可能です。
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Q. 海外発送は対応していますか？</button>
+      <div class="faq-a">
+        A. 米国・EU など 20 ヵ国へ発送実績があります。<br>
+        送料と関税はお見積のうえご案内いたします。
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Q. LINE で査定は依頼できますか？</button>
+      <div class="faq-a">
+        A. 可能です。LINE 公式アカウントのメニューから<br>
+        商品画像を送付してください。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ トグル用 JS（簡易版） -->
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.classList.toggle('open');
+      btn.nextElementSibling.classList.toggle('show');
+    });
+  });
+</script>
+
   </main>
 
 <!-- ======= GLOBAL FOOTER (Commit – Imperial-style) ======= -->
@@ -237,4 +332,5 @@
 </style>
 </body>
 </html>
+
 
