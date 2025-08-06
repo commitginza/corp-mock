@@ -60,3 +60,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   nums.forEach(el => io.observe(el));
 });
+
+/* ===== Number cards count-up ========================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const nums = document.querySelectorAll('.number-card .num'); // ←数値に付けたクラス名
+  if (!nums.length) return;
+
+  nums.forEach(el => {
+    const tgt = parseFloat(el.textContent.replace(/[^0-9.]/g, ''));
+    el.dataset.tgt = tgt;
+    el.textContent = '0';
+  });
+
+  const ease = t => 1 - Math.pow(1 - t, 3);
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+
+      const el  = e.target;
+      const tot = parseFloat(el.dataset.tgt);
+      let start = null;
+
+      const tick = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 1000, 1);
+        const v = ease(p) * tot;
+        el.textContent = Number.isInteger(tot)
+          ? Math.floor(v).toLocaleString()
+          : v.toFixed(1);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      io.unobserve(el);
+    });
+  }, {threshold: 0.4});
+
+  nums.forEach(n => io.observe(n));
+});
+
+
