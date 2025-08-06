@@ -1697,3 +1697,31 @@ footer a{font-size:.85rem;color:#fff}
   .s-card{padding:1.6rem 1.2rem;}
   .footer-sns-grid{gap:1.4rem;}
 }
+
+/* =====================================================
+   Contact page – UX tweaks 2025-08-06
+   ===================================================== */
+
+/* 1. プライバシーポリシー同意行を横並びに */
+.form-row.checkbox{
+  display:flex;
+  align-items:center;
+  gap:.5rem;             /* チェックボックスと文言の間隔 */
+  flex-wrap:wrap;        /* スマホ幅で折り返し可 */
+}
+.form-row.checkbox input[type="checkbox"]{margin:0;}
+.form-row.checkbox label{margin:0;font-size:.9rem;line-height:1.5;}
+
+/* 2. 送信ボタンを中央寄せ */
+form button.btn{
+  display:block;         /* ブロック化して中央寄せ */
+  margin:2rem auto 0;    /* 上に余白・左右自動 */
+  width:fit-content;     /* ボタン幅は内容に合わせる */
+}
+
+/* 3. 店舗・オフィスのご案内カードを中央寄せ */
+.loc-grid{
+  max-width:900px;       /* 全幅だと間延びするので制限 */
+  margin:0 auto 3.5rem;  /* 中央寄せ & 下余白 */
+  justify-content:center;/* アイテムを中央に配置 */
+}
