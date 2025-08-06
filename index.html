@@ -190,31 +190,39 @@
         <svg viewBox="0 0 600 260" width="100%" aria-label="Synergy Map">
           <!-- ノード -->
           <g class="node" transform="translate(50,120)">
-            <circle r="60" class="node-circle"></circle>
-            <text class="node-label" text-anchor="middle" dy="5">Commit 銀座</text>
+            <circle r="60" class="node-circle" />
+            <text class="node-label" text-anchor="middle">
+              <tspan x="0" dy="5">Commit 銀座</tspan>
+            </text>
           </g>
       
           <g class="node" transform="translate(300,40)">
-            <circle r="60" class="node-circle"></circle>
-            <text class="node-label" text-anchor="middle" dy="5">Cielo8<br/>(花・空間演出)</text>
+            <circle r="60" class="node-circle" />
+            <text class="node-label" text-anchor="middle">
+              <tspan x="0" dy="-10">Cielo8</tspan>
+              <tspan x="0" dy="18">(花・空間演出)</tspan>
+            </text>
           </g>
       
           <g class="node" transform="translate(300,200)">
-            <circle r="60" class="node-circle"></circle>
-            <text class="node-label" text-anchor="middle" dy="5">Football Assist<br/>(スポーツ)</text>
+            <circle r="60" class="node-circle" />
+            <text class="node-label" text-anchor="middle">
+              <tspan x="0" dy="-10">Football Assist</tspan>
+              <tspan x="0" dy="18">(スポーツ)</tspan>
+            </text>
           </g>
       
           <!-- 矢印 -->
           <defs>
             <marker id="arrow" markerWidth="8" markerHeight="8"
                     refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
-              <path d="M0,0 L8,4 L0,8 Z"></path>
+              <path d="M0,0 L8,4 L0,8 Z" />
             </marker>
           </defs>
       
-          <line x1="110" y1="120" x2="240" y2="70"  class="link" marker-end="url(#arrow)"/>
-          <line x1="110" y1="120" x2="240" y2="190" class="link" marker-end="url(#arrow)"/>
-          <line x1="300" y1="100" x2="300" y2="140" class="link" marker-end="url(#arrow)"/>
+          <line x1="110" y1="120" x2="240" y2="70"  class="link" marker-end="url(#arrow)" />
+          <line x1="110" y1="120" x2="240" y2="190" class="link" marker-end="url(#arrow)" />
+          <line x1="300" y1="100" x2="300" y2="140" class="link" marker-end="url(#arrow)" />
         </svg>
       </div>
       <p class="synergy-caption">時計の顧客データを Cielo8 のフラワーギフト＆体験演出に、
@@ -538,6 +546,7 @@
 </body>
 
 </html>
+
 
 
 
