@@ -2017,3 +2017,40 @@ form button.btn{
 .local-nav{display:none!important}
 .local-content{max-width:1100px;margin:0 auto;padding-inline:1rem}
 
+
+/* =====================================================
+   About page – 会社概要カード幅 & 背景修正 2025-08-06
+   ===================================================== */
+
+/* 1. グレー背景 (.section--light) を白に上書き */
+#company-data.section--light{
+  background:#fff!important;
+}
+
+/* 2. テーブル＋Google Map を “見出しと同じ幅” に揃える
+      – 既に .container で横中央に入っているので
+        最大幅を共通の 900px に制限して左右 auto  */
+#company-data .corp-grid{
+  max-width:900px;        /* 見出しブロックと同幅 */
+  margin:0 auto 4rem;     /* 左右中央 */
+  padding:2rem;           /* 白カード余白 */
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  display:grid;
+  grid-template-columns:1fr 320px;  /* テーブル : Map */
+  gap:2rem;
+}
+
+/* 3. Map を 320px に固定しつつレスポンシブ対応 */
+#company-data .corp-grid iframe{
+  width:100%;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+/* モバイルは縦積み（テーブル→Map） */
+@media(max-width:640px){
+  #company-data .corp-grid{
+    grid-template-columns:1fr;
+  }
+}
