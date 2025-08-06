@@ -187,40 +187,34 @@
     <section id="synergy" class="section synergy">
       <h2 class="section-title">グループシナジー</h2>
       <div class="synergy-diagram">
-        <!-- 簡易 SVG。色や矢印は CSS で拡張可 -->
-        <svg viewbox="0 0 600 260" width="100%" aria-label="Synergy Map">
+        <svg viewBox="0 0 600 260" width="100%" aria-label="Synergy Map">
           <!-- ノード -->
           <g class="node" transform="translate(50,120)">
-            <circle r="60" class="node-circle">
-            </circle>
-            <text class="node-label" text-anchor="middle" dy="5">Commit 銀座
-              <br>（時計）</text>
+            <circle r="60" class="node-circle"></circle>
+            <text class="node-label" text-anchor="middle" dy="5">Commit 銀座</text>
           </g>
+      
           <g class="node" transform="translate(300,40)">
-            <circle r="60" class="node-circle">
-            </circle>
-            <text class="node-label" text-anchor="middle" dy="5">Cielo8
-              <br>（花・空間演出）</text>
+            <circle r="60" class="node-circle"></circle>
+            <text class="node-label" text-anchor="middle" dy="5">Cielo8<br/>(花・空間演出)</text>
           </g>
+      
           <g class="node" transform="translate(300,200)">
-            <circle r="60" class="node-circle">
-            </circle>
-            <text class="node-label" text-anchor="middle" dy="5">Football Assist
-              <br>（スポーツ）</text>
+            <circle r="60" class="node-circle"></circle>
+            <text class="node-label" text-anchor="middle" dy="5">Football Assist<br/>(スポーツ)</text>
           </g>
+      
           <!-- 矢印 -->
           <defs>
-            <marker id="arrow" markerwidth="8" markerheight="8" refx="8" refy="4" orient="auto" markerunits="strokeWidth">
-              <path d="M0,0 L8,4 L0,8 Z">
-              </path>
+            <marker id="arrow" markerWidth="8" markerHeight="8"
+                    refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L8,4 L0,8 Z"></path>
             </marker>
           </defs>
-          <line x1="110" y1="120" x2="240" y2="70" class="link" marker-end="url(#arrow)">
-          </line>
-          <line x1="110" y1="120" x2="240" y2="190" class="link" marker-end="url(#arrow)">
-          </line>
-          <line x1="300" y1="100" x2="300" y2="140" class="link" marker-end="url(#arrow)">
-          </line>
+      
+          <line x1="110" y1="120" x2="240" y2="70"  class="link" marker-end="url(#arrow)"/>
+          <line x1="110" y1="120" x2="240" y2="190" class="link" marker-end="url(#arrow)"/>
+          <line x1="300" y1="100" x2="300" y2="140" class="link" marker-end="url(#arrow)"/>
         </svg>
       </div>
       <p class="synergy-caption">時計の顧客データを Cielo8 のフラワーギフト＆体験演出に、
@@ -545,5 +539,6 @@
 </body>
 
 </html>
+
 
 
