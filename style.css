@@ -1951,3 +1951,58 @@ form button.btn{
 @media(max-width:640px){
   .local-content{padding-inline:.8rem}
 }
+
+/* =====================================================
+   About page fine-tuning 2025-08-06
+   ===================================================== */
+
+/* 1. 会社概要 ─ テーブル＋Google Map 横並び */
+.corp-grid{                      /* 会社概要を包むグリッド */
+  display:grid;
+  grid-template-columns:1fr 320px;   /* 表  :  地図 幅 */
+  gap:2rem;
+  justify-content:center;       /* 中央寄せ */
+  align-items:start;
+  max-width:900px;
+  margin:0 auto 4rem;
+}
+.corp-grid iframe{              /* Google マップ */
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  box-shadow:var(--shadow-elevated);
+}
+
+/* 2. 主要ポリシー & 内部監査ブロックを中央寄せ */
+.policy-list,
+.audit-block{
+  max-width:700px;
+  margin:0 auto 3rem;
+  text-align:center;
+}
+.policy-list ul,
+.audit-block p{
+  display:inline-block;         /* 中央のまま左寄せテキスト */
+  text-align:left;
+}
+
+/* 3. 沿革 見出しを中央揃え + タイムライン中央 */
+.history-section .section-title,
+.history h2{
+  text-align:center;
+}
+.history-timeline{
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* 4. スマホ幅で会社概要を縦積みに */
+@media(max-width:640px){
+  .corp-grid{
+    grid-template-columns:1fr;
+  }
+  .corp-grid iframe{
+    max-width:100%;
+    margin:0 auto;
+  }
+}
