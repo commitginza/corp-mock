@@ -120,6 +120,98 @@
         </div>
       </div>
     </section>
+<!-- ====== Cielo8 Detail ====== -->
+<section id="cielo8" class="section cielo8">
+  <h2 class="section-title">Cielo8 ― 空間を彩るフラワーデザイン</h2>
+
+  <div class="cielo8-wrapper">
+    <img src="img/cielo8-main.jpg" alt="Cielo8 Key Visual" class="cielo8-photo">
+
+    <div class="cielo8-text">
+      <h3 class="cielo8-tagline">“花で記憶に残る瞬間をデザインする”</h3>
+      <p>
+        Cielo8 は、ホテルロビーから高級ブティックまで多彩な空間演出を手がける
+        フラワーデザインブランド。職人技とデジタル演出を融合し、
+        年間 <strong>220 件</strong> 以上のプロジェクトを通して
+        “感動体験” を創出しています。
+      </p>
+      <ul class="cielo8-points">
+        <li>フラワースタイリング × ライティング演出</li>
+        <li>AR/VR を活用した空間シミュレーション</li>
+        <li>環境配慮型ドライフラワー（CO₂ 30%削減）</li>
+      </ul>
+      <a href="/service-cielo8.html" class="btn">詳しく見る</a>
+    </div>
+  </div>
+</section>
+<!-- ====== Portfolio Graph ====== -->
+<section id="portfolio" class="section portfolio">
+  <h2 class="section-title">ポートフォリオ構成比</h2>
+
+  <canvas id="portfolioChart" width="320" height="320"></canvas>
+</section>
+
+<!-- Chart.js CDN（必要に応じローカルビルドでも可） -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('portfolioChart');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Commit 銀座', 'Cielo8', 'Football Assist'],
+      datasets: [{
+        data: [55, 25, 20],                 // 例：売上比率
+        backgroundColor: ['#1e88e5','#43a047','#fbc02d'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { position: 'bottom' }
+      },
+      cutout: '65%'                        // ドーナツの穴サイズ
+    }
+  });
+</script>
+<!-- ====== Cross-Sell Cases ====== -->
+<section id="crosssell" class="section crosssell">
+  <h2 class="section-title">クロスセル成功事例</h2>
+
+  <div class="case-cards">
+
+    <!-- 事例 1 -->
+    <div class="case-card">
+      <h3 class="case-title">VIP 時計購入者 × Cielo8 フラワーギフト</h3>
+      <p class="case-desc">
+        ロレックス購入時に “記念日フラワーBOX” を提案。<br>
+        平均単価 +8%、LTV +15% を達成。
+      </p>
+      <span class="case-tag">BtoC</span>
+    </div>
+
+    <!-- 事例 2 -->
+    <div class="case-card">
+      <h3 class="case-title">Football Assist × 店舗イベント</h3>
+      <p class="case-desc">
+        スポンサー企業向けに店舗を貸切、<br>
+        選手トークショー＋時計体験会を開催。<br>
+        新規商談 32 件を創出。
+      </p>
+      <span class="case-tag">イベント</span>
+    </div>
+
+    <!-- 事例 3 -->
+    <div class="case-card">
+      <h3 class="case-title">Cielo8 × 法人リセール</h3>
+      <p class="case-desc">
+        Cielo8 法人顧客へ、不要高級時計リセールを提案。<br>
+        既存顧客価値を資産化し、買取件数 +12%。
+      </p>
+      <span class="case-tag">BtoB</span>
+    </div>
+
+  </div>
+</section>
 
   </main>
 
@@ -292,4 +384,5 @@
 
 </body>
 </html>
+
 
