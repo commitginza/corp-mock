@@ -2006,3 +2006,13 @@ form button.btn{
     margin:0 auto;
   }
 }
+
+/* ======= TEMP OVERRIDE 2025-08-06 ======= */
+.corp-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;max-width:900px;margin:0 auto 4rem}
+.corp-grid iframe{width:100%;border-radius:8px}
+.policy-list,.audit-block{max-width:700px;margin:0 auto 3rem;text-align:center}
+.policy-list ul,.audit-block p{display:inline-block;text-align:left}
+#history, .history-section .section-title{text-align:center}
+.history-timeline{max-width:600px;margin:0 auto}
+.local-nav{display:none!important}
+.local-content{max-width:1100px;margin:0 auto;padding-inline:1rem}
