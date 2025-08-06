@@ -1910,32 +1910,30 @@ form button.btn{
 }
 
 /* =====================================================
-   About page – layout fix (2025-08-06)
+   About page – アンカー削除 & センター寄せ 2025-08-06
    ===================================================== */
 
-/* 1. 左側アンカー（サイドナビ）を非表示 ※class="page-index" 想定 */
-.page-index,           /* ← もし ID 等なら書き換えてください */
-.page-index + hr{      /* 目次用水平線も一緒に消す */
-  display:none!important;
+/* 1. 左側アンカー（ローカルナビ）を非表示にする */
+.local-nav{
+  display:none!important;   /* スマホ・PC 共に非表示 */
 }
 
-/* 2. メインコンテンツをページ中央へ寄せる */
-.about-container{      /* ← メインラッパーのクラス名に置換 */
-  max-width:1100px;    /* 広がり過ぎ防止 */
-  margin:0 auto;       /* 左右 auto で中央寄せ */
-  padding-inline:1rem; /* 端が切れないよう少し余白 */
+/* 2. ラッパーをブロック化して中央寄せ */
+.local-nav-wrap{
+  display:block;            /* 2 カラム→単一カラムに */
 }
 
-/* 3. セクションごとのカード / グリッドを中央揃え */
-.leaders,              /* 経営陣カードのグリッド */
-.sustainability-cards, /* サステナビリティカード */
-.footer-sns-grid,      /* フッターSNSアイコン */
-.history-timeline {    /* 沿革タイムライン */
+/* 3. メインコンテンツ幅をサイト共通に合わせる */
+.local-content{
+  max-width:1100px;         /* 広がり過ぎ防止 */
+  margin:0 auto;            /* 中央寄せ */
+  padding-inline:1rem;      /* 端が切れないよう左右余白 */
+}
+
+/* 4. 下位グリッドも中央揃え（カードが少ない時に有効） */
+.leaders,
+.sustainability-cards,
+.history-timeline{
   justify-content:center;
   margin-inline:auto;
-}
-
-/* モバイル調整 */
-@media(max-width:640px){
-  .about-container{padding-inline:.8rem}
 }
