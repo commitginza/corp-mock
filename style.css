@@ -140,7 +140,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .checkbox{display:flex;align-items:center;gap:.5rem}
 
 /* ---------- Footer ---------- */
-footer{background:#1a1a1a;color:#fff;padding:3.5rem 0;margin-top:6rem}
+footer{background:#1a1a1a;color:#fff;padding:3.5rem 0;}
 footer .flex{justify-content:space-between;align-items:center;gap:2rem}
 footer a{font-size:.85rem;color:#fff}
 
@@ -2054,3 +2054,4 @@ form button.btn{
     grid-template-columns:1fr;
   }
 }
+
