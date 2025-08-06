@@ -2055,3 +2055,60 @@ form button.btn{
   }
 }
 
+
+/* ───────────────────────────────
+   トップ：コミットグループの数値
+   ─────────────────────────────── */
+.number-cards{
+  display:flex;                 /* 横並び（折り返し可） */
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:center;       /* 中央寄せ */
+  max-width:1000px;             /* 横に伸び過ぎないよう上限 */
+  margin:0 auto;                /* セクション中央配置 */
+}
+
+/* ───────────────────────────────
+   代表メッセージ
+   ─────────────────────────────── */
+#ceo-message .ceo-wrapper{
+  display:flex;
+  flex-direction:column;        /* 縦積み */
+  align-items:center;           /* 中央寄せ */
+  text-align:center;
+  gap:1.5rem;
+  max-width:800px;              /* 読み幅を抑える */
+  margin:0 auto;
+}
+
+/* ───────────────────────────────
+   グループシナジー
+   ─────────────────────────────── */
+#synergy .synergy-diagram{      /* 図（SVG／画像）を中央寄せ */
+  max-width:700px;
+  margin:0 auto;
+}
+#synergy .synergy-caption{      /* キャプション整形 */
+  text-align:center;
+  max-width:640px;
+  margin:1.5rem auto 0;
+  line-height:1.8;
+}
+
+/* ───────────────────────────────
+   最新ニュース（見出し幅を解放）
+   ─────────────────────────────── */
+.latest-news .heading-block{
+  max-width:none;               /* 500px 制限を解除 */
+  width:100%;
+  padding:0 1rem;
+}
+/* 見出しの文字間をやや広げてバランス調整（任意） */
+.latest-news .heading-main{letter-spacing:.08em;}
+
+/* ───────────────────────────────
+   CTA「ご相談・お問い合わせ」ボタン余白
+   ─────────────────────────────── */
+.section--accent .hero-btn{     /* 対象ボタン */
+  margin-top:2.5rem;            /* 上側の余白を追加（お好みで調整） */
+}
