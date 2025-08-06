@@ -1862,36 +1862,21 @@ form button.btn{
 }
 
 
-/* ============================================
-   Works ページ追加調整 2025-08-06
-   ============================================ */
+/* =====================================================
+   Emergency override for Works page (2025-08-06)
+   ===================================================== */
 
-/* 1) ── 実績一覧（フィルター＋カード）中央寄せ ───────── */
-.case-filter{
-  justify-content:center;           /* ボタン列を中央に */
-  margin-inline:auto;
-  max-width:600px;                  /* 広がり過ぎ防止 */
-}
-.case-grid{
-  max-width:1100px;                 /* カードグリッドを中央寄せ */
-  margin:0 auto 4rem;
-  justify-content:center;
-}
+/* 実績一覧フィルター & グリッド中央寄せ */
+.case-filter{display:flex;justify-content:center;max-width:640px;margin:2rem auto 3rem;flex-wrap:wrap;gap:.8rem}
+.case-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:1100px;margin:0 auto 4rem}
 
-/* 2) ── 数字で見る実績：中央寄せ＆幅制限 ───────────── */
-.kpi-cards{
-  max-width:900px;
-  margin:0 auto 4rem;
-}
-.kpi-card{margin-inline:auto;}      /* 1列時も中央に */
+/* 数字で見る実績：中央寄せ & カード幅調整 */
+.kpi-cards{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:900px;margin:0 auto 4rem}
 
-/* 3) ── お客様の声・インタビュー：動画中央 ────────── */
-.voice-video iframe{
-  display:block;
-  margin:0 auto 2.5rem;
-}
+/* お客様の声：動画中央寄せ */
+.voice-video iframe{display:block;margin:0 auto 2.5rem}
 
-/* モバイル補正 */
-@media(max-width:560px){
-  .case-filter{gap:.6rem}
-}
+/* KPI カウントアップ（ターゲット値は HTML 既存の数値）*/
+.kpi-number{opacity:0}
+@keyframes kpiCount{from{opacity:0}to{opacity:1}}
+.kpi-number[data-target]{animation:kpiCount .3s ease forwards}
