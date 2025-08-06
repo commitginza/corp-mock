@@ -2181,3 +2181,60 @@ form button.btn{
 
 .latest-news{margin-block:4rem 5rem}       /* セクション余白 */
 .news-list .news-item:first-child{margin-top:.8rem} /* 見出しとの間 */
+
+
+/* =====================================================
+   1. グループシナジー ─ SVG はみ出し対策
+   ===================================================== */
+/* SVG ラッパーをブロック化し、左右に余白を与えつつ
+   overflow を可視領域まで広げる */
+.synergy-diagram{
+  display:block;
+  overflow-x:auto;       /* 横スクロール許可で完全に見切れ防止 */
+  -webkit-overflow-scrolling:touch;
+  padding-inline:1rem;   /* スマホで端ピッタリを回避 */
+  max-width:700px;       /* 見出し幅に合わせる */
+  margin:0 auto;         /* 中央寄せ */
+}
+
+/* SVG そのものは適切な viewBox を持っているので width:100% で拡大 */
+.synergy-diagram svg{width:100%;height:auto}
+
+/* =====================================================
+   2. 最新ニュース ─ 細長カード・枠線除去・余白縮小
+   ===================================================== */
+.latest-news{max-width:900px;margin:3rem auto 4rem;text-align:center}
+
+.news-list{
+  display:grid;
+  gap:1rem;                /* 余白を詰める */
+}
+
+.news-item{
+  display:flex;
+  gap:1.2rem;
+  align-items:flex-start;
+  justify-content:flex-start;
+  padding:1rem 1.2rem;     /* 内側をタイトに */
+  background:#fafafa;      /* 薄い背景のみ。白にしたければ削除 */
+  border:none;             /* 枠線なし */
+  border-radius:12px;
+  max-width:480px;         /* “細長く” (= 縦長) 見せる */
+  margin:0 auto;           /* 列中央 */
+}
+
+.news-date{
+  flex:0 0 90px;
+  color:#777;
+  font-size:.8rem;
+  text-align:left;
+  line-height:1.4;
+}
+.news-body{
+  font-size:.9rem;
+  line-height:1.6;
+  text-align:left;
+}
+
+/* ニュース見出しと最初のカードの距離を詰める */
+.latest-news .heading-main{margin-bottom:0.8rem}
