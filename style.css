@@ -2124,3 +2124,9 @@ form button.btn{
   width:180px;              /* ← お好みで調整 */
   flex:0 0 180px;           /* 幅固定 */
 }
+
+.node-circle{fill:#fff;stroke:#a18152;stroke-width:4}
+.node-label{font-size:.9rem;font-weight:600;pointer-events:none}
+.link{stroke:#a18152;stroke-width:2;opacity:.75}
+.synergy-diagram{max-width:700px;margin:0 auto}
+.synergy-caption{text-align:center;margin-top:1rem}
