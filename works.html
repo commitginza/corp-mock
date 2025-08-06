@@ -70,49 +70,136 @@
     </section>
 
 
-    <!-- ===== Works Grid ===== -->
-    <section class="section" id="works-list">
-      <div class="container">
+<!-- ====== Case Filter Section ====== -->
+<section id="cases" class="section cases">
+  <h2 class="section-title">実績一覧（カテゴリで絞り込み）</h2>
 
-        <h2 class="sec-heading ja-en" data-animate>
-          <span class="jp">主な実績</span><span class="en">Case Studies</span>
-        </h2>
+  <!-- フィルターボタン -->
+  <div class="case-filter">
+    <button class="filter-btn is-active" data-filter="all">すべて</button>
+    <button class="filter-btn" data-filter="watch">時計売買</button>
+    <button class="filter-btn" data-filter="career">キャリア支援</button>
+    <button class="filter-btn" data-filter="space">空間演出</button>
+  </div>
 
-        <div class="work-grid" data-animate>
+  <!-- 事例カード -->
+  <div class="case-grid">
+    <div class="case-item" data-category="watch">
+      <img src="img/case_watch01.jpg" alt="" />
+      <h3>ロレックス デイデイト買取</h3>
+    </div>
 
-          <!--  work 1  -->
-          <article class="work-card">
-            <figure class="work-thumb">
-              <img src="116500.jpg" alt="ロレックス デイトナ 116500LN">
-            </figure>
-            <div class="work-body">
-              <h3 class="work-title">ロレックス デイトナ 116500LN</h3>
-              <p class="work-text">
-                オーナー様のご依頼から <strong>48&nbsp;時間以内</strong> に販売を成立。
-              </p>
-              <a href="#" class="arrow">詳しく</a>
-            </div>
-          </article>
+    <div class="case-item" data-category="career">
+      <img src="img/case_career01.jpg" alt="" />
+      <h3>プロサッカー選手セカンドキャリア支援</h3>
+    </div>
 
-          <!--  work 2  -->
-          <article class="work-card">
-            <figure class="work-thumb">
-              <img src="124d3330-7c4b-efe5-3b73-46045753.jpg" alt="JリーガーA選手キャリア支援">
-            </figure>
-            <div class="work-body">
-              <h3 class="work-title">JリーガーA選手 キャリア支援</h3>
-              <p class="work-text">
-                スポンサー獲得からイタリア留学手配までフルサポート。
-              </p>
-              <a href="#" class="arrow">詳しく</a>
-            </div>
-          </article>
+    <div class="case-item" data-category="space">
+      <img src="img/case_space01.jpg" alt="" />
+      <h3>ホテルロビー フラワー演出</h3>
+    </div>
 
-          <!-- 追加案件は同じマークアップで OK -->
+    <!-- …以下繰り返し… -->
+  </div>
+</section>
 
-        </div>
-      </div>
-    </section>
+<!-- シンプルな JS（Vanilla） -->
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items   = document.querySelectorAll('.case-item');
+
+  buttons.forEach(btn => btn.addEventListener('click', e => {
+    const filter = e.target.dataset.filter;
+    buttons.forEach(b => b.classList.remove('is-active'));
+    e.target.classList.add('is-active');
+    items.forEach(item => {
+      const show = filter === 'all' || item.dataset.category === filter;
+      item.style.display = show ? 'block' : 'none';
+    });
+  }));
+</script>
+<!-- ====== KPI Section ====== -->
+<section id="kpi" class="section kpi">
+  <h2 class="section-title">数字で見る実績</h2>
+
+  <div class="kpi-cards">
+    <div class="kpi-card">
+      <span class="kpi-number" data-count="5230">0</span>
+      <p class="kpi-label">年間時計取扱本数</p>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-number" data-count="97">0</span><span class="unit">%</span>
+      <p class="kpi-label">顧客満足度</p>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-number" data-count="32">0</span>
+      <p class="kpi-label">国際取引国数</p>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-number" data-count="12.4">0</span><span class="unit">B</span>
+      <p class="kpi-label">年間グループ売上（円）</p>
+    </div>
+  </div>
+</section>
+
+<!-- カウントアップ JS -->
+<script>
+  const nums = document.querySelectorAll('.kpi-number');
+  nums.forEach(el => {
+    const target = +el.dataset.count;
+    let current  = 0;
+    const step   = target / 60;          // 約1秒 (60fps) で到達
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(current).toLocaleString();
+    }, 16);
+  });
+</script>
+<!-- ====== Voices Section ====== -->
+<section id="voices" class="section voices">
+  <h2 class="section-title">お客様の声・インタビュー</h2>
+
+  <!-- 動画インタビュー（YouTube 埋め込み例） -->
+  <div class="voice-video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XXXXXXX"
+            title="Customer Interview" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+
+  <!-- テキスト証言スライダー -->
+  <div class="voice-slider">
+    <blockquote class="voice-quote">
+      <p>「購入からメンテナンスまで一貫対応で安心。<br>
+      提案されたフラワーギフトも妻に大好評でした！」</p>
+      <cite>— 40代 男性 / 会社経営</cite>
+    </blockquote>
+
+    <blockquote class="voice-quote">
+      <p>「引退後のキャリア相談で時計の資産価値も学べた。<br>
+      セカンドキャリアの不安が解消しました。」</p>
+      <cite>— 元プロサッカー選手</cite>
+    </blockquote>
+
+    <!-- …追加で複数 … -->
+  </div>
+</section>
+
+<!-- シンプルスライダー (Slick.js などお好みで) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $('.voice-slider').slick({
+    autoplay: true,
+    dots: true,
+    arrows: false,
+    adaptiveHeight: true
+  });
+</script>
 
   </main>
 
@@ -286,4 +373,5 @@
 
 </body>
 </html>
+
 
