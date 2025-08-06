@@ -945,3 +945,755 @@ footer a{font-size:.85rem;color:#fff}
   transition:background .3s;
 }
 .sns-icon:hover{background:#f1f1f1;color:#1d1d1d}
+
+/* ===== 1. 数字ハイライト (number-cards) ===== */
+.number-cards{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  margin-bottom:4rem;
+}
+.number-card{
+  background:var(--color-surface);
+  padding:2.5rem 1rem;
+  border-radius:var(--radius);
+  text-align:center;
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s ease;
+}
+.number-card:hover{transform:translateY(-4px);}
+.number-card .number{
+  font-size:2.6rem;
+  font-weight:700;
+  line-height:1;
+}
+.number-card .unit{
+  font-size:1.2rem;
+  vertical-align:super;
+}
+.number-card .label{
+  margin-top:.5rem;
+  font-size:.9rem;
+  color:var(--color-gray);
+}
+
+/* SP レイアウト調整 */
+@media(max-width:480px){
+  .number-card{padding:2rem 1rem;}
+  .number-card .number{font-size:2.25rem;}
+}
+
+/* ===== 2. 代表メッセージ (ceo-wrapper) ===== */
+.ceo-wrapper{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.ceo-photo{
+  flex:0 0 240px;
+  width:240px;
+  height:240px;
+  object-fit:cover;
+  border-radius:50%;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.ceo-text{flex:1 1 320px;}
+.ceo-name{
+  font-size:1.25rem;
+  font-weight:700;
+  margin-bottom:.4rem;
+  color:var(--color-primary);
+}
+.ceo-lead{
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:1rem;
+  color:var(--color-accent);
+}
+
+/* SP：縦並び＋中央寄せ */
+@media(max-width:640px){
+  .ceo-wrapper{flex-direction:column;text-align:center;}
+  .ceo-photo{margin-inline:auto;}
+}
+
+/* ===== 3. グループシナジー (synergy) ===== */
+.synergy-diagram{max-width:600px;margin-inline:auto;}
+.node-circle{
+  fill:var(--color-surface);
+  stroke:var(--color-accent);
+  stroke-width:4;
+}
+.node-label{
+  font-size:.9rem;
+  font-weight:600;
+  pointer-events:none;
+  fill:var(--color-primary);
+}
+.link{
+  stroke:var(--color-accent);
+  stroke-width:2;
+  opacity:.75;
+}
+.synergy-caption{
+  text-align:center;
+  margin-top:1.5rem;
+  font-size:.95rem;
+  color:var(--color-gray);
+}
+
+/* =======================================================
+   Recruit 追加スタイル – 2025-08-05
+   ======================================================= */
+
+/* ───────── 1. 社員インタビュー＆1日の流れ ───────── */
+.people-interview iframe{
+  width:100%;
+  max-width:720px;
+  margin:0 auto 2.5rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-elevated);
+}
+
+.daily-flow{margin-top:2rem;}
+.daily-flow h3{font-size:1.15rem;color:var(--color-primary);margin-bottom:1rem}
+.flow-list{
+  display:flex;flex-direction:column;gap:.75rem;
+}
+.flow-list li{
+  position:relative;
+  padding-left:2.8rem;
+  font-size:.95rem;
+}
+.flow-list time{
+  position:absolute;left:0;top:0;
+  width:2.4rem;
+  font-weight:700;
+  color:var(--color-primary);
+}
+
+/* ───────── 2. 福利厚生 & データハイライト ───────── */
+.benefit-stats{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  margin-bottom:3rem;
+}
+.stat-card{
+  background:var(--color-surface);
+  padding:2rem 1rem;
+  border-radius:var(--radius);
+  text-align:center;
+  box-shadow:var(--shadow-elevated);
+}
+.stat-number{
+  font-size:2.4rem;
+  font-weight:700;
+  color:var(--color-primary);
+  line-height:1;
+}
+.unit{font-size:1.2rem;vertical-align:super}
+.stat-label{margin-top:.45rem;font-size:.9rem;color:var(--color-gray)}
+
+.benefit-table table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:.95rem;
+  box-shadow:var(--shadow-elevated);
+}
+.benefit-table thead th{
+  background:var(--color-primary);
+  color:#fff;
+  font-weight:600;
+  padding:.9rem 1rem;
+  text-align:left;
+}
+.benefit-table tbody td{
+  padding:.9rem 1rem;
+  border-bottom:1px solid #e2e2e2;
+}
+.benefit-table tbody tr:nth-child(odd) td{background:#fafafa}
+
+/* ───────── 3. 選考フロー ───────── */
+.process-steps{
+  max-width:640px;
+  margin:2.5rem auto;
+}
+.process-steps ol{
+  counter-reset:step;
+  display:grid;
+  gap:1.4rem;
+}
+.process-steps li{
+  position:relative;
+  padding-left:3.2rem;
+  font-weight:500;
+}
+.process-steps li::before{
+  counter-increment:step;
+  content:counter(step);
+  position:absolute;left:0;top:50%;
+  transform:translateY(-50%);
+  width:2.2rem;height:2.2rem;
+  border-radius:50%;
+  background:var(--color-accent);
+  color:#fff;
+  display:grid;place-items:center;
+  font-size:.9rem;font-weight:700;
+}
+
+/* ───────── 4. FAQ アコーディオン ───────── */
+.faq{max-width:800px;margin:3rem auto 0;}
+.faq-item + .faq-item{margin-top:1.2rem}
+
+.faq-q{
+  width:100%;
+  background:var(--color-surface);
+  border:1px solid #deddda;
+  border-radius:var(--radius);
+  padding:1rem 1.25rem;
+  font-weight:600;
+  text-align:left;
+  cursor:pointer;
+  transition:background .25s ease,color .25s ease;
+}
+.faq-q.open{
+  background:var(--color-primary);
+  color:#fff;
+}
+
+.faq-a{
+  display:none;
+  padding:1rem 1.25rem 1.25rem;
+  border-left:3px solid var(--color-accent);
+  background:#fff;
+}
+.faq-a.show{display:block}
+
+/* ───────── 5. Responsive tweaks ───────── */
+@media(max-width:640px){
+  .benefit-stats{gap:1.4rem}
+  .stat-number{font-size:2.1rem}
+  .process-steps li{padding-left:2.6rem}
+  .process-steps li::before{width:1.9rem;height:1.9rem}
+}
+/* =====================================================
+   Service page – new blocks (2025-08-05)
+   ===================================================== */
+
+/* --- 共通：小見出し ------------------------------ */
+.section-title{
+  font-family:var(--font-heading);
+  font-size:1.9rem;
+  text-align:center;
+  margin-bottom:2.4rem;
+  color:var(--color-primary);
+}
+
+/* =====================================================
+   1) Cielo8 詳細ブロック
+   ----------------------------------------------------- */
+.cielo8-wrapper{
+  display:flex;
+  gap:3rem;
+  align-items:center;
+  flex-wrap:wrap;               /* SP で縦並び */
+}
+.cielo8-photo{
+  flex:0 0 46%;
+  max-width:520px;
+  border-radius:var(--radius);
+  object-fit:cover;
+  box-shadow:var(--shadow-elevated);
+}
+.cielo8-text{flex:1 1 300px;display:flex;flex-direction:column;gap:1.2rem;}
+.cielo8-tagline{
+  font-size:1.15rem;
+  font-weight:600;
+  color:var(--color-accent);
+}
+.cielo8-points{
+  display:flex;flex-direction:column;gap:.6rem;
+  padding-left:1rem;            /* ◆ の余白分 */
+}
+.cielo8-points li{
+  position:relative;
+  font-size:.95rem;
+  color:var(--color-dark);
+}
+.cielo8-points li::before{
+  content:"◆";
+  color:var(--color-accent);
+  position:absolute;left:-1rem;
+}
+
+/* SP レイアウト */
+@media(max-width:768px){
+  .cielo8-wrapper{flex-direction:column;text-align:center;}
+  .cielo8-photo{width:100%;}
+}
+
+/* =====================================================
+   2) ポートフォリオ構成比（Chart.js）
+   ----------------------------------------------------- */
+.portfolio{text-align:center;}
+#portfolioChart{
+  max-width:380px;width:100%;
+  margin:1rem auto 3rem;
+}
+
+/* =====================================================
+   3) クロスセル事例カード
+   ----------------------------------------------------- */
+.case-cards{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.case-card{
+  background:var(--color-surface);
+  padding:2rem 1.6rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s ease;
+  position:relative;
+}
+.case-card:hover{transform:translateY(-4px);}
+.case-title{
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--color-primary);
+  margin-bottom:.6rem;
+}
+.case-desc{
+  font-size:.95rem;
+  color:var(--color-gray);
+  line-height:1.7;
+  margin-bottom:1rem;
+}
+.case-tag{
+  position:absolute;top:1.2rem;right:1.2rem;
+  display:inline-block;
+  font-size:.75rem;font-weight:600;
+  padding:.3rem .9rem;
+  border-radius:1.25rem;
+  background:var(--color-accent);
+  color:#fff;
+}
+
+/* ===================================================== */
+/* =====================================================
+   Works page – missing styles (2025-08-05)
+   ===================================================== */
+
+/* ── 1. フィルター付き事例一覧 ─────────────────── */
+.case-filter{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  margin:2.5rem 0 3rem;
+}
+.filter-btn{
+  padding:.6rem 1.6rem;
+  font-weight:600;
+  font-size:.9rem;
+  border:2px solid var(--color-primary);
+  background:#fff;
+  color:var(--color-primary);
+  border-radius:2rem;
+  cursor:pointer;
+  transition:background .25s,color .25s;
+}
+.filter-btn:hover,
+.filter-btn.is-active{
+  background:var(--color-primary);
+  color:#fff;
+}
+
+.case-grid{
+  display:grid;
+  gap:2rem 2rem;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.case-item{
+  background:var(--color-surface);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s ease;
+  text-align:center;
+}
+.case-item:hover{transform:translateY(-4px);}
+.case-item img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+.case-item h3{
+  padding:1rem;
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--color-primary);
+}
+
+/* ── 2. 数値実績 KPI ─────────────────────────── */
+.kpi-cards{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  margin:3rem 0;
+}
+.kpi-card{
+  background:var(--color-surface);
+  padding:2.2rem 1rem;
+  border-radius:var(--radius);
+  text-align:center;
+  box-shadow:var(--shadow-elevated);
+}
+.kpi-number{
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--color-primary);
+  line-height:1;
+}
+.unit{font-size:1.2rem;vertical-align:super;}
+.kpi-label{
+  margin-top:.5rem;
+  font-size:.9rem;
+  color:var(--color-gray);
+}
+
+/* ── 3. お客様の声・動画インタビュー ───────────── */
+.voice-video iframe{
+  width:100%;
+  max-width:720px;
+  margin:0 auto 2.5rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-elevated);
+}
+
+.voice-slider{
+  max-width:780px;
+  margin:0 auto;
+}
+.voice-quote{
+  background:var(--color-surface);
+  border-left:4px solid var(--color-accent);
+  padding:1.6rem 1.8rem;
+  font-size:1rem;
+  line-height:1.75;
+  color:var(--color-dark);
+  box-shadow:var(--shadow-elevated);
+}
+.voice-quote cite{
+  display:block;
+  margin-top:.8rem;
+  font-size:.85rem;
+  color:var(--color-gray);
+  font-style:normal;
+}
+
+/* ── 4. レスポンシブ調整 ───────────────────────── */
+@media(max-width:640px){
+  .case-filter{flex-wrap:wrap;gap:.6rem}
+  .filter-btn{flex:1 1 110px}
+  .kpi-number{font-size:2.2rem}
+}
+/* =====================================================
+   Contact page – missing styles  (2025-08-06)
+   ===================================================== */
+
+/* ── 1. 拠点カード（.loc-grid / .loc-card） ────────── */
+.loc-grid{
+  display:grid;
+  gap:2.4rem 2rem;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin-block:2rem 3.5rem;
+}
+.loc-card{
+  background:var(--color-surface);
+  border-radius:var(--radius);
+  padding:2rem 1.6rem;
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s ease;
+}
+.loc-card:hover{transform:translateY(-4px);}
+.loc-card h3{
+  font-family:var(--font-heading);
+  font-size:1.25rem;
+  color:var(--color-primary);
+  margin-bottom:.5rem;
+}
+.loc-card p{font-size:.95rem;color:var(--color-dark);}
+.loc-channels{
+  margin-top:1rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.8rem 1.2rem;
+  font-size:.95rem;
+}
+.loc-channels a{
+  color:var(--color-link);
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  transition:color .25s ease;
+}
+.loc-channels a:hover{color:var(--color-accent);}
+
+/* ── 2. Google Map 埋め込み & ルート案内 ─────────── */
+.map-wrap iframe{
+  width:100%;
+  max-width:920px;
+  height:400px;
+  border:0;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-elevated);
+  display:block;
+  margin-inline:auto;
+}
+.route-guide{
+  max-width:660px;
+  margin:2rem auto 0;
+  text-align:left;
+}
+.route-guide h3{
+  font-size:1.15rem;
+  font-weight:600;
+  color:var(--color-primary);
+  margin-bottom:.8rem;
+}
+.route-guide ol{
+  padding-left:1.2rem;
+  margin-bottom:1.5rem;
+}
+.route-guide li{
+  list-style:decimal;
+  font-size:.95rem;
+  line-height:1.7;
+  color:var(--color-dark);
+}
+
+/* ── 3. FAQ アコーディオン（.faq-*） ─────────────── */
+.faq-list{max-width:760px;margin:3rem auto 0;}
+.faq-item + .faq-item{margin-top:1.3rem;}
+
+.faq-q{
+  width:100%;
+  background:var(--color-surface);
+  border:1px solid #deddda;
+  border-radius:var(--radius);
+  padding:1rem 1.25rem;
+  font-weight:600;
+  text-align:left;
+  cursor:pointer;
+  transition:background .25s ease,color .25s ease;
+}
+.faq-q.open{
+  background:var(--color-primary);
+  color:#fff;
+}
+
+.faq-a{
+  display:none;
+  padding:1rem 1.25rem 1.25rem;
+  border-left:3px solid var(--color-accent);
+  background:#fff;
+}
+.faq-a.show{display:block;}
+
+/* ── 4. Responsive tweaks ─────────────────────────── */
+@media(max-width:600px){
+  .loc-card{padding:1.6rem 1.2rem;}
+  .map-wrap iframe{height:320px;}
+}
+/* =====================================================
+   About page – missing styles (2025-08-06)
+   ===================================================== */
+
+/* ---------- 共通セクション見出し ---------- */
+.section-title{
+  font-family:var(--font-heading);
+  font-size:2rem;
+  text-align:center;
+  margin-bottom:2.5rem;
+  color:var(--color-primary);
+  position:relative;
+}
+.section-title::after{
+  content:"";
+  position:absolute;
+  left:50%;bottom:-10px;
+  width:60px;height:3px;
+  background:var(--color-accent);
+  transform:translateX(-50%);
+}
+
+/* ---------- 1. 経営陣紹介 ---------- */
+.leaders{
+  display:grid;
+  gap:2rem 2.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  margin-top:1.5rem;
+}
+.leader-card{
+  background:var(--color-surface);
+  border-radius:var(--radius);
+  padding:2rem 1.6rem;
+  text-align:center;
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s;
+}
+.leader-card:hover{transform:translateY(-4px);}
+.leader-photo{
+  width:140px;height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-inline:auto 1rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.leader-name{
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--color-primary);
+  margin:.8rem 0 .3rem;
+}
+.leader-role{
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--color-gray);
+  margin-bottom:.8rem;
+}
+.leader-bio{font-size:.95rem;color:var(--color-dark);}
+.leader-sns{
+  display:flex;justify-content:center;gap:1rem;margin-top:1rem;
+}
+.leader-sns a{color:var(--color-primary);font-size:1.2rem;transition:color .25s;}
+.leader-sns a:hover{color:var(--color-accent);}
+
+/* ---------- 2. ガバナンス ---------- */
+.governance-chart{
+  max-width:680px;width:100%;
+  margin:2rem auto 3rem;
+}
+.policy-list h3,
+.audit-block h3{
+  font-size:1.15rem;
+  font-weight:600;
+  color:var(--color-primary);
+  margin-bottom:.8rem;
+}
+.policy-list ul{
+  display:flex;flex-direction:column;gap:.6rem;
+  font-size:.95rem;
+}
+.policy-list a{color:var(--color-link);}
+.policy-list a:hover{color:var(--color-accent);}
+.audit-block p{font-size:.95rem;line-height:1.7;color:var(--color-dark);}
+
+/* ---------- 3. サステナビリティ ---------- */
+.sustainability-cards{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin-top:1.5rem;
+}
+.s-card{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:2rem 1.4rem;
+  text-align:center;
+  box-shadow:var(--shadow-elevated);
+  transition:transform .25s;
+}
+.s-card:hover{transform:translateY(-4px);}
+.s-icon{
+  width:52px;height:52px;
+  margin-inline:auto 1rem;
+}
+.s-title{
+  font-size:1.1rem;
+  font-weight:600;
+  color:var(--color-primary);
+  margin:.9rem 0 .4rem;
+}
+.s-desc{font-size:.95rem;color:var(--color-gray);line-height:1.7;}
+
+.esg-progress{
+  max-width:600px;
+  margin:3rem auto 0;
+}
+.progress-item{
+  margin-bottom:1.2rem;
+  font-size:.95rem;
+  font-weight:600;
+  color:var(--color-primary);
+}
+.progress-item .bar{
+  width:100%;height:10px;
+  background:#ecebe7;
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:.4rem;
+}
+.progress-item .bar span{
+  display:block;
+  height:100%;
+  background:var(--color-accent);
+  width:0;
+  animation:growBar 1.2s ease forwards;
+}
+@keyframes growBar{to{width:100%;}}
+
+/* ---------- 4. フッター（ダークカスタム） ---------- */
+.footer-dark-custom{
+  background:#222;
+  color:#d1d1d1;
+  text-align:center;
+  padding:4rem 1rem 2.5rem;
+}
+.footer-brand img{max-width:180px;margin:0 auto 2rem;}
+.footer-sns-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2rem;
+  margin:0 auto 5rem;
+}
+.footer-sns-grid .sns-block{
+  display:flex;gap:1rem;justify-content:center;
+}
+.footer-sns-grid .sns-icon{
+  font-size:1.5rem;width:38px;height:38px;
+  display:grid;place-items:center;
+  border:1px solid #d1d1d1;border-radius:50%;
+  transition:background .3s;
+}
+.footer-sns-grid .sns-icon:hover{background:#d1d1d1;color:#222;}
+.footer-copy{font-size:.85rem;color:#a0a0a0;}
+
+/* ---------- 5. Info-table fallback (無印クラス用) ---------- */
+.info-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.95rem;
+}
+.info-table th,
+.info-table td{
+  padding:.9rem 1rem;
+  border:1px solid #e2e2e2;
+}
+.info-table th{
+  width:28%;
+  font-weight:600;
+  background:#f6f6f4;
+  color:var(--color-primary);
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media(max-width:640px){
+  .leader-photo{width:120px;height:120px;}
+  .s-card{padding:1.6rem 1.2rem;}
+  .footer-sns-grid{gap:1.4rem;}
+}
