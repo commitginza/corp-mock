@@ -13,8 +13,8 @@
   --color-accent:#a88946;          /* antique gold */
   --color-link:#004236;
 
-  --font-heading:"Playfair Display","Meiryo",serif;
-  --font-body:"Noto Sans JP","Meiryo",sans-serif;
+  --font-heading:'Noto Serif JP', '游明朝', 'Yu Mincho', 'Hiragino Mincho ProN', 'BIZ UDMincho', serif;
+  --font-body:'Noto Serif JP', '游明朝', 'Yu Mincho', 'Hiragino Mincho ProN', 'BIZ UDMincho', serif;
 
   --container-max:1360px;
   --radius:.75rem;
@@ -25,7 +25,7 @@
 /* ---------- Reset ---------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-body);color:var(--color-dark);background:var(--color-bg);line-height:1.8;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);color:var(--color-dark);background:var(--color-bg);line-height:1.8;-webkit-font-smoothing:antialiased;background-color: white}
 img{max-width:100%;display:block;height:auto}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
@@ -1709,7 +1709,7 @@ footer a{font-size:.85rem;color:#fff}
   gap:.5rem;             /* チェックボックスと文言の間隔 */
   flex-wrap:wrap;        /* スマホ幅で折り返し可 */
 }
-.form-row.checkbox input[type="checkbox"]{margin:0;}
+.form-row.checkbox input[type="checkbox"]{margin:0;width: 30px;}
 .form-row.checkbox label{margin:0;font-size:.9rem;line-height:1.5;}
 
 /* 2. 送信ボタンを中央寄せ */
@@ -1725,3 +1725,4 @@ form button.btn{
   margin:0 auto 3.5rem;  /* 中央寄せ & 下余白 */
   justify-content:center;/* アイテムを中央に配置 */
 }
+
