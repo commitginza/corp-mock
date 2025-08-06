@@ -1201,13 +1201,6 @@ footer a{font-size:.85rem;color:#fff}
   align-items:center;
   flex-wrap:wrap;               /* SP で縦並び */
 }
-.cielo8-photo{
-  flex:0 0 46%;
-  max-width:520px;
-  border-radius:var(--radius);
-  object-fit:cover;
-  box-shadow:var(--shadow-elevated);
-}
 .cielo8-text{flex:1 1 300px;display:flex;flex-direction:column;gap:1.2rem;}
 .cielo8-tagline{
   font-size:1.15rem;
@@ -1905,3 +1898,13 @@ form button.btn{
 
 /* 4) 動画は既に中央寄せ済み… 念押し */
 .voice-video iframe{display:block;margin:0 auto 2.5rem}
+
+/* ========== Cross-Sell section center align (2025-08-06) ========== */
+.case-cards{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  max-width:900px;      /* 幅を絞って中央に */
+  margin:0 auto 4rem;   /* 左右 auto で中央寄せ */
+  justify-content:center; /* カード数が少ない場合も中央で揃う */
+}
