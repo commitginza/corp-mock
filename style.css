@@ -2152,3 +2152,32 @@ form button.btn{
 .news-date{flex:0 0 90px;color:#777;font-size:.85rem;text-align:left}
 .news-body{font-size:.95rem;line-height:1.6;text-align:left}
 
+
+/* ===== 最新ニュース レイアウト ====================== */
+.latest-news{
+  max-width:900px;           /* 横幅を広げる */
+  margin:0 auto;
+  text-align:center;
+}
+
+.news-list{
+  display:grid;
+  gap:1.6rem;
+}
+
+.news-item{
+  display:flex;
+  gap:1.2rem;
+  align-items:flex-start;
+  justify-content:flex-start;
+  padding:1.2rem 1.8rem;
+  border:none;               /* ボーダー削除 */
+  background:#fafafa;        /* 必要なら薄い背景 */
+  border-radius:10px;
+}
+
+.news-date{flex:0 0 95px;color:#777;font-size:.85rem}
+.news-body{font-size:.95rem;line-height:1.7;text-align:left}
+
+.latest-news{margin-block:4rem 5rem}       /* セクション余白 */
+.news-list .news-item:first-child{margin-top:.8rem} /* 見出しとの間 */
