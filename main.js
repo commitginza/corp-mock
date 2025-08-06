@@ -19,40 +19,44 @@
   targets.forEach(el => io.observe(el));
 })();
 
-/* ============================================
-   KPI カウントアップ（Intersection Observer）
-   ============================================ */
+/* ==============================================
+   KPI カウントアップ改良版
+   ============================================== */
 document.addEventListener('DOMContentLoaded', () => {
-  const nums = document.querySelectorAll('.stat-number[data-count]');
+  const nums = document.querySelectorAll('.stat-number');
   if (!nums.length) return;
 
-  const ease = n => (--n)*n*n+1;          // cubic easeOut
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      const el     = entry.target;
-      const target = parseFloat(el.dataset.count);
-      const unit   = el.nextElementSibling?.classList.contains('unit') ? el.nextElementSibling : null;
-      let   start  = null;
-
-      const step = timestamp => {
-        if (!start) start = timestamp;
-        const progress = Math.min((timestamp - start) / 1000, 1);   // 1s アニメ
-        const value = Math.floor(ease(progress) * target);
-        el.textContent = value.toLocaleString();
-        if (unit && progress === 1) unit.style.opacity = 1;
-        if (progress < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-      observer.unobserve(el);                // 一度だけ
-    });
-  }, {threshold: 0.4});
-
   nums.forEach(el => {
-    const unit = el.nextElementSibling;
-    if (unit) unit.style.opacity = 0;        // カウント完了後にフェードイン
-    observer.observe(el);
+    const raw = parseFloat(el.textContent.replace(/[^0-9.]/g, ''));
+    el.dataset.target = raw;      // 目標値保存
+    el.textContent = '0';         // 初期化
   });
+
+  const easeOut = t => 1 - Math.pow(1 - t, 3);   // cubic
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+
+      const num   = e.target;
+      const unit  = num.nextElementSibling?.classList.contains('unit') ? num.nextElementSibling : null;
+      const total = parseFloat(num.dataset.target);
+      let start   = null;
+
+      const tick = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 1000, 1);   // 1秒
+        const val = easeOut(p) * total;
+        num.textContent = Number.isInteger(total)
+          ? Math.floor(val).toLocaleString()
+          : (val).toFixed(1);
+        if (p < 1) requestAnimationFrame(tick);
+        else if (unit) unit.style.opacity = 1;
+      };
+      requestAnimationFrame(tick);
+      io.unobserve(num);
+    });
+  }, {threshold: 0.45});
+
+  nums.forEach(el => io.observe(el));
 });
