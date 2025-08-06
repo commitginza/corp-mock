@@ -1880,3 +1880,28 @@ form button.btn{
 .kpi-number{opacity:0}
 @keyframes kpiCount{from{opacity:0}to{opacity:1}}
 .kpi-number[data-target]{animation:kpiCount .3s ease forwards}
+
+/* =====================================================
+   Works ページ – 再微調整 2025-08-06
+   ===================================================== */
+
+/* 1) 実績カード：フィルター後も幅をキープして中央配置 */
+.case-grid{
+  /* 伸び過ぎを防ぎ、必ず“カード幅”で収まる */
+  grid-template-columns:repeat(auto-fit,minmax(260px,max-content));
+  justify-content:center;               /* グリッド自体を中央へ */
+  gap:2rem;
+}
+.case-item{
+  width:260px;        /* カード固定幅（画像 4:3）*/
+  max-width:100%;
+}
+
+/* 2) KPI 数値：常時表示（JS が上書きしてアニメ）*/
+.kpi-number{opacity:1!important}
+
+/* 3) KPI カードが 1 行だけでも中央に寄るように */
+.kpi-cards{justify-content:center}
+
+/* 4) 動画は既に中央寄せ済み… 念押し */
+.voice-video iframe{display:block;margin:0 auto 2.5rem}
