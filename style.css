@@ -1726,3 +1726,69 @@ form button.btn{
   justify-content:center;/* アイテムを中央に配置 */
 }
 
+
+/* ============================================
+   Recruit ページ追加調整 2025-08-06
+   ============================================ */
+
+/* 1. ── 社員インタビュー＆1日の流れ：中央寄せ ───────── */
+.people-interview iframe{
+  margin:0 auto 2rem;           /* true center */
+  display:block;
+}
+.daily-flow{
+  text-align:center;
+  max-width:580px;
+  margin:0 auto;
+}
+.flow-list{
+  align-items:center;           /* 中央寄せ */
+  padding-left:0;
+}
+.flow-list li{
+  position:relative;
+  padding-left:0;               /* インデント解除 */
+}
+.flow-list time{
+  display:inline-block;
+  font-weight:700;
+  margin-right:.5rem;
+  color:var(--color-primary);
+  position:static;              /* 絶対配置を解除 */
+}
+
+/* 2. ── 福利厚生・KPI：中央寄せ＆幅制限 ───────── */
+.benefit-stats{
+  max-width:900px;
+  margin:0 auto 3rem;
+  justify-content:center;
+}
+
+/* 3. ── 募集職種カード：横レイアウト＋コンパクト ───────── */
+.job-section .card-grid{
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.job-card{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  padding:1.2rem;
+  height:auto;                  /* 縦長 → 可変 */
+}
+.job-thumb{
+  width:90px;height:90px;
+  object-fit:cover;
+  border-radius:8px;
+}
+.job-card .card__body{
+  flex:1;
+}
+.job-card .btn--sm{
+  margin-top:.6rem;
+}
+
+/* SP 調整 */
+@media(max-width:640px){
+  .job-card{flex-direction:row;}
+  .job-thumb{width:70px;height:70px;}
+}
