@@ -1,110 +1,123 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>株式会社コミット｜Commit Group</title>
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script defer src="main.js"></script>
-</head>
-<body>
-
-  <!-- ==================================
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>株式会社コミット｜Commit Group</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <!-- ==================================
        HEADER（共通）
   =================================== -->
-  <input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
-  <header class="site-header">
-    <!-- top row: hamburger (mobile) + logo -->
-    <div class="header-top">
-      <label for="burger-toggle" class="burger" aria-label="menu"><span></span></label>
-      <h1 class="brand"><a href="index.html"><img src="commit-group-logo.png" alt="Commit Group logo"></a></h1>
-    </div>
-
-    <!-- desktop primary nav -->
-    <nav class="primary-nav">
-      <ul>
-        <li><a href="about.html">会社概要</a></li>
-        <li><a href="service.html">事業紹介</a></li>
-        <li><a href="works.html">実績</a></li>
-        <li><a href="news.html">ニュース</a></li>
-        <li><a href="recruit.html">採用情報</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-      </ul>
-    </nav>
-
-    <!-- mobile drawer nav (same links) -->
-    <nav class="drawer">
-      <ul>
-        <li><a href="about.html">会社概要</a></li>
-        <li><a href="service.html">事業紹介</a></li>
-        <li><a href="works.html">実績</a></li>
-        <li><a href="news.html">ニュース</a></li>
-        <li><a href="recruit.html">採用情報</a></li>
-        <li><a href="contact.html" class="btn btn--gold">お問い合わせ</a></li>
-      </ul>
-    </nav>
-  </header>
-  <label for="burger-toggle" class="drawer-overlay" aria-hidden="true"></label>
-
-  <!-- ==================================
+    <input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
+    <header class="site-header">
+      <!-- top row: hamburger (mobile) + logo -->
+      <div class="header-top">
+        <label for="burger-toggle" class="burger" aria-label="menu">
+          <span></span>
+        </label>
+        <h1 class="brand">
+          <a href="index.html">
+            <img src="commit-group-logo.png" alt="Commit Group logo">
+          </a>
+        </h1>
+      </div>
+      <!-- desktop primary nav -->
+      <nav class="primary-nav">
+        <ul>
+          <li>
+            <a href="about.html">会社概要</a>
+          </li>
+          <li>
+            <a href="service.html">事業紹介</a>
+          </li>
+          <li>
+            <a href="works.html">実績</a>
+          </li>
+          <li>
+            <a href="news.html">ニュース</a>
+          </li>
+          <li>
+            <a href="recruit.html">採用情報</a>
+          </li>
+          <li>
+            <a href="contact.html">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- mobile drawer nav (same links) -->
+      <nav class="drawer">
+        <ul>
+          <li>
+            <a href="about.html">会社概要</a>
+          </li>
+          <li>
+            <a href="service.html">事業紹介</a>
+          </li>
+          <li>
+            <a href="works.html">実績</a>
+          </li>
+          <li>
+            <a href="news.html">ニュース</a>
+          </li>
+          <li>
+            <a href="recruit.html">採用情報</a>
+          </li>
+          <li>
+            <a href="contact.html" class="btn btn--gold">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <label for="burger-toggle" class="drawer-overlay" aria-hidden="true"></label>
+    <!-- ==================================
        MAIN
   =================================== -->
-  <main>
-
-    <!-- ===== Hero ===== -->
-    <section class="page-hero page-hero--about">
-      <div class="page-hero__bg"
-           style="background-image:url(works-hero.jpg);"></div><!-- 画像は差し替え可 -->
-
-      <div class="container">
-        <ul class="page-hero__breadcrumb">
-          <li>実績</li>
-        </ul>
-        <h1 class="page-hero__title">Works</h1>
-        <p class="page-hero__lead">
-          株式会社コミットは日本国内で販売促進サービスを提供する事業会社です。
-        </p>
-      </div>
-    </section>
-
-
-<!-- ====== Case Filter Section ====== -->
-<section id="cases" class="section cases">
-  <h2 class="section-title">実績一覧（カテゴリで絞り込み）</h2>
-
-  <!-- フィルターボタン -->
-  <div class="case-filter">
-    <button class="filter-btn is-active" data-filter="all">すべて</button>
-    <button class="filter-btn" data-filter="watch">時計売買</button>
-    <button class="filter-btn" data-filter="career">キャリア支援</button>
-    <button class="filter-btn" data-filter="space">空間演出</button>
-  </div>
-
-  <!-- 事例カード -->
-  <div class="case-grid">
-    <div class="case-item" data-category="watch">
-      <img src="img/case_watch01.jpg" alt="" />
-      <h3>ロレックス デイデイト買取</h3>
-    </div>
-
-    <div class="case-item" data-category="career">
-      <img src="img/case_career01.jpg" alt="" />
-      <h3>プロサッカー選手セカンドキャリア支援</h3>
-    </div>
-
-    <div class="case-item" data-category="space">
-      <img src="img/case_space01.jpg" alt="" />
-      <h3>ホテルロビー フラワー演出</h3>
-    </div>
-
-    <!-- …以下繰り返し… -->
-  </div>
-</section>
-
-<!-- シンプルな JS（Vanilla） -->
-<script>
+    <main>
+      <!-- ===== Hero ===== -->
+      <section class="page-hero page-hero--about">
+        <div class="page-hero__bg" style="background-image:url(works-hero.jpg);"></div>
+        <!-- 画像は差し替え可 -->
+        <div class="container">
+          <ul class="page-hero__breadcrumb">
+            <li>実績</li>
+          </ul>
+          <h1 class="page-hero__title">Works</h1>
+          <p class="page-hero__lead">株式会社コミットは日本国内で販売促進サービスを提供する事業会社です。 </p>
+        </div>
+      </section>
+      <!-- ====== Case Filter Section ====== -->
+      <section id="cases" class="section cases">
+        <h2 class="section-title">実績一覧（カテゴリで絞り込み）</h2>
+        <!-- フィルターボタン -->
+        <div class="case-filter">
+          <button class="filter-btn is-active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="watch">時計売買</button>
+          <button class="filter-btn" data-filter="career">キャリア支援</button>
+          <button class="filter-btn" data-filter="space">空間演出</button>
+        </div>
+        <!-- 事例カード -->
+        <div class="case-grid">
+          <div class="case-item" data-category="watch">
+            <img src="img/case_watch01.jpg" alt="" />
+            <h3>ロレックス デイデイト買取</h3>
+          </div>
+          <div class="case-item" data-category="career">
+            <img src="img/case_career01.jpg" alt="" />
+            <h3>プロサッカー選手セカンドキャリア支援</h3>
+          </div>
+          <div class="case-item" data-category="space">
+            <img src="img/case_space01.jpg" alt="" />
+            <h3>ホテルロビー フラワー演出</h3>
+          </div>
+          <!-- …以下繰り返し… -->
+        </div>
+      </section>
+      <!-- シンプルな JS（Vanilla） -->
+      <script>
   const buttons = document.querySelectorAll('.filter-btn');
   const items   = document.querySelectorAll('.case-item');
 
@@ -118,32 +131,32 @@
     });
   }));
 </script>
-<!-- ====== KPI Section ====== -->
-<section id="kpi" class="section kpi">
-  <h2 class="section-title">数字で見る実績</h2>
-
-  <div class="kpi-cards">
-    <div class="kpi-card">
-      <span class="kpi-number" data-count="5230">0</span>
-      <p class="kpi-label">年間時計取扱本数</p>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-number" data-count="97">0</span><span class="unit">%</span>
-      <p class="kpi-label">顧客満足度</p>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-number" data-count="32">0</span>
-      <p class="kpi-label">国際取引国数</p>
-    </div>
-    <div class="kpi-card">
-      <span class="kpi-number" data-count="12.4">0</span><span class="unit">B</span>
-      <p class="kpi-label">年間グループ売上（円）</p>
-    </div>
-  </div>
-</section>
-
-<!-- カウントアップ JS -->
-<script>
+      <!-- ====== KPI Section ====== -->
+      <section id="kpi" class="section kpi">
+        <h2 class="section-title">数字で見る実績</h2>
+        <div class="kpi-cards">
+          <div class="kpi-card">
+            <span class="kpi-number" data-count="5230">0</span>
+            <p class="kpi-label">年間時計取扱本数</p>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-number" data-count="97">0</span>
+            <span class="unit">%</span>
+            <p class="kpi-label">顧客満足度</p>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-number" data-count="32">0</span>
+            <p class="kpi-label">国際取引国数</p>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-number" data-count="12.4">0</span>
+            <span class="unit">B</span>
+            <p class="kpi-label">年間グループ売上（円）</p>
+          </div>
+        </div>
+      </section>
+      <!-- カウントアップ JS -->
+      <script>
   const nums = document.querySelectorAll('.kpi-number');
   nums.forEach(el => {
     const target = +el.dataset.count;
@@ -159,40 +172,34 @@
     }, 16);
   });
 </script>
-<!-- ====== Voices Section ====== -->
-<section id="voices" class="section voices">
-  <h2 class="section-title">お客様の声・インタビュー</h2>
-
-  <!-- 動画インタビュー（YouTube 埋め込み例） -->
-  <div class="voice-video">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XXXXXXX"
-            title="Customer Interview" loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-  </div>
-
-  <!-- テキスト証言スライダー -->
-  <div class="voice-slider">
-    <blockquote class="voice-quote">
-      <p>「購入からメンテナンスまで一貫対応で安心。<br>
-      提案されたフラワーギフトも妻に大好評でした！」</p>
-      <cite>— 40代 男性 / 会社経営</cite>
-    </blockquote>
-
-    <blockquote class="voice-quote">
-      <p>「引退後のキャリア相談で時計の資産価値も学べた。<br>
-      セカンドキャリアの不安が解消しました。」</p>
-      <cite>— 元プロサッカー選手</cite>
-    </blockquote>
-
-    <!-- …追加で複数 … -->
-  </div>
-</section>
-
-<!-- シンプルスライダー (Slick.js などお好みで) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script>
+      <!-- ====== Voices Section ====== -->
+      <section id="voices" class="section voices">
+        <h2 class="section-title">お客様の声・インタビュー</h2>
+        <!-- 動画インタビュー（YouTube 埋め込み例） -->
+        <div class="voice-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/XXXXXXX" title="Customer Interview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- テキスト証言スライダー -->
+        <div class="voice-slider">
+          <blockquote class="voice-quote">
+            <p>「購入からメンテナンスまで一貫対応で安心。
+              <br>提案されたフラワーギフトも妻に大好評でした！」
+            </p>
+            <cite>— 40代 男性 / 会社経営</cite>
+          </blockquote>
+          <blockquote class="voice-quote">
+            <p>「引退後のキャリア相談で時計の資産価値も学べた。
+              <br>セカンドキャリアの不安が解消しました。」
+            </p>
+            <cite>— 元プロサッカー選手</cite>
+          </blockquote>
+          <!-- …追加で複数 … -->
+        </div>
+      </section>
+      <!-- シンプルスライダー (Slick.js などお好みで) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+      <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script>
   $('.voice-slider').slick({
     autoplay: true,
     dots: true,
@@ -200,178 +207,96 @@
     adaptiveHeight: true
   });
 </script>
-
-  </main>
-
-
-  <!-- ==================================
+    </main>
+    <!-- ==================================
        FOOTER（共通）
   =================================== -->
-<footer class="footer-dark-custom">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="https://cdn.shopify.com/s/files/1/0518/4844/6114/files/commit-group-logo.png?v=1754373673" alt="Commit Group" class="footer-logo">
-    </div>
-    <div class="footer-sns-grid">
-      <div>
-        <span class="sns-label">コミット銀座</span>
-        <div class="sns-block">
-          <a href="https://x.com/commit_ginza" aria-label="Commit Ginza on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://instagram.com/commit_ginza" aria-label="Commit Ginza on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="https://youtube.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-youtube"></i></a>
+    <footer class="footer-dark-custom">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="https://cdn.shopify.com/s/files/1/0518/4844/6114/files/commit-group-logo.png?v=1754373673" alt="Commit Group" class="footer-logo">
         </div>
-      </div>
-
-      <div>
-        <span class="sns-label">フットボールアシスト</span>
-        <div class="sns-block">
-          <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
+        <div class="footer-sns-grid">
+          <div>
+            <span class="sns-label">コミット銀座</span>
+            <div class="sns-block">
+              <a href="https://x.com/commit_ginza" aria-label="Commit Ginza on X" class="sns-icon">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://instagram.com/commit_ginza" aria-label="Commit Ginza on Instagram" class="sns-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+              <a href="https://youtube.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <span class="sns-label">フットボールアシスト</span>
+            <div class="sns-block">
+              <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <span class="sns-label">大津祐樹</span>
+            <div class="sns-block">
+              <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <span class="sns-label">Cielo8</span>
+            <div class="sns-block">
+              <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
         </div>
+        <nav class="footer-nav">
+          <ul>
+            <li>
+              <a href="/pages/about-corp">会社概要</a>
+            </li>
+            <li>
+              <a href="/service">事業紹介</a>
+            </li>
+            <li>
+              <a href="/blogs/news">ニュース</a>
+            </li>
+            <li>
+              <a href="/recruit">採用情報</a>
+            </li>
+            <li>
+              <a href="/contact">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+        <small class="footer-copy">© 
+          <script>document.write(new Date().getFullYear())</script>&nbsp;Commit&nbsp;Group&nbsp;Ltd. 
+        </small>
       </div>
-
-      <div>
-        <span class="sns-label">大津祐樹</span>
-        <div class="sns-block">
-          <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-tiktok"></i></a>
-        </div>
-      </div>
-
-      <div>
-        <span class="sns-label">Cielo8</span>
-        <div class="sns-block">
-          <a href="https://x.com/football_assist" aria-label="Football Assist on X" class="sns-icon"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://instagram.com/football_assist" aria-label="Football Assist on Instagram" class="sns-icon"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://tiktok.com/@commitginza" aria-label="Commit Ginza on YouTube" class="sns-icon"><i class="fa-brands fa-tiktok"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <nav class="footer-nav">
-      <ul>
-        <li><a href="/pages/about-corp">会社概要</a></li>
-        <li><a href="/service">事業紹介</a></li>
-        <li><a href="/blogs/news">ニュース</a></li>
-        <li><a href="/recruit">採用情報</a></li>
-        <li><a href="/contact">お問い合わせ</a></li>
-      </ul>
-    </nav>
-
-    <small class="footer-copy">
-      © <script>document.write(new Date().getFullYear())</script>&nbsp;Commit&nbsp;Group&nbsp;Ltd.
-    </small>
-  </div>
-</footer>
-<style>
-/*  =====  site-header  ===== */
-.site-header{position:fixed;top:0;left:0;right:0;background:rgba(0,0,0,.66);backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.1)}
-.header-inner{height:68px;max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;position:relative;padding:0 1.5rem}
-.brand img{height:40px;filter:invert(1);}
-
-.burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;display:none}
-.burger span,.burger::after{content:"";position:absolute;left:0;width:26px;height:2px;background:#111;transition:var(--transition)}
-.burger span{top:0}.burger::after{bottom:0}
-
-/* primary nav (desktop) */
-.primary-nav{border-top:1px solid #e5e5e5}
-.primary-nav ul{display:flex;justify-content:center;gap:2.5rem;list-style:none;padding:1rem 1rem;max-width:var(--container-max);margin:auto}
-.primary-nav a{color:#111;text-decoration:none;position:relative;font-weight:500}
-.primary-nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#111;transition:width .25s}
-.primary-nav a:hover::after{width:100%}
-
-/* ===== MOBILE ===== */
-@media(max-width:767px){
-  .burger{display:block}
-  .primary-nav{display:none}
-}
-
-/* ===== DRAWER ===== */
-.drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:#fff;padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transform:translateX(100%);transition:transform var(--transition);z-index:999}
-.drawer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.4rem}
-.drawer a{color:#111;text-decoration:none;font-weight:500}
-
-/* show drawer when burger checked */
-.burger-toggle:checked ~ .site-header .burger span{transform:translateY(9px) rotate(45deg)}
-.burger-toggle:checked ~ .site-header .burger::after{transform:translateY(-9px) rotate(-45deg)}
-.burger-toggle:checked ~ .site-header nav.drawer{transform:translateX(0)}
-
-/* overlay */
-.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:998}
-@media(max-width:767px){
-  .burger-toggle:checked ~ .drawer-overlay{display:block}
-}
-@media(min-width:768px){
-  .drawer{display:none}
-  .burger{display:none}
-}
-
-/*  footer  */
-.footer-dark{background:#1d1d1d;color:#f1f1f1;padding:5rem 1rem 3rem;text-align:center;margin-top:6rem}
-.footer-inner{max-width:1200px;margin-inline:auto}
-.footer-logo{height:72px;margin-inline:auto;margin-bottom:1.75rem}
-.footer-sites{display:flex;justify-content:center;gap:2.5rem;margin-bottom:2.5rem;font-size:1rem;font-weight:500;flex-wrap:wrap}
-.footer-sites a{color:#f1f1f1;text-decoration:none;transition:opacity .25s}
-.footer-sites a:hover{opacity:.7}
-.footer-sns{display:grid;row-gap:1.4rem;justify-content:center}
-.sns-block{margin-top: 10px;display: flex;}
-.sns-label{text-align:right;font-size:.8rem;color:#c7c7c7}
-.sns-icon:hover{background:#f1f1f1;color:#1d1d1d}
-.footer-nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2.2rem 2.8rem;max-width:440px;margin:0 auto 2rem;padding:0;list-style:none}
-.footer-nav a{color:#f1f1f1;text-decoration:none;position:relative}
-.footer-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:#f1f1f1;transition:width .25s}
-.footer-nav a:hover::after{width:100%}
-.footer-copy{font-size:.85rem;color:#c7c7c7}
-@media(max-width:600px){.footer-sites{flex-direction:column;gap:1rem}.sns-block{grid-template-columns:1fr repeat(5,42px)}.sns-label{text-align:left}}
-/***** HEADER WHITE THEME *****/
-.site-header{background:#fff;color:#111;position:fixed;inset-inline:0;top:0;z-index:1000;border-bottom:1px solid #e5e5e5}
-.header-top{max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;height:72px;position:relative;padding-inline:1rem}
-.brand img{height:46px;filter:none}
-/* ベース（前回と同じなら不要） */
-.footer-dark-custom{background:#222;color:#d1d1d1;text-align:center;padding:4rem 1rem 2.5rem}
-.footer-dark-custom a {
-    color: #d1d1d1;
-    transition: color .3s;
-    text-decoration: none;
-}
-.sns-icon {
-    width: 38px;
-    height: 38px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-}
-.footer-dark-custom a:hover{color:#fff}
-.footer-logo{max-width:180px;margin:0 auto 2rem}
-
-/* 事業リンク行 */
-.footer-sites{display:flex;justify-content:center;gap:2rem;margin-bottom:2.5rem;font-weight:500;font-size:.95rem}
-
-/* ── 事業ブロックをグリッドで3分割 ── */
-.footer-sns-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:2.5rem;
-  margin:0 auto 6.5rem;
-}
-/* 下部ナビ */
-.footer-nav ul{display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;font-size:.9rem;list-style-type: none;}
-
-/* コピーライト */
-.footer-copy{font-size:1.35rem;color:#888}
-
-/* ── SP 調整 ── */
-@media(max-width:640px){
-  .footer-sites{flex-direction:column;gap:1rem}
-  .sns-icon{width:34px;height:34px;}
-}
-
-</style>
-
-</body>
+    </footer>
+  </body>
 </html>
-
-
