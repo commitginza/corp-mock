@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-<!-- =======================================================
-     about.html  –  Commit Group  (Imperial-Hotel company layout)
-========================================================= -->
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>企業情報｜株式会社コミット</title>
   <link rel="stylesheet" href="style.css">
-  <!-- 既存テーマ -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script defer src="main.js"></script>
 </head>
 
 <body>
-  <!-- ======= global header / drawer (= 既存) ======= -->
   <input type="checkbox" id="burger-toggle" class="burger-toggle" hidden>
   <header class="site-header">
-    <!-- top row: hamburger (mobile) + logo -->
     <div class="header-top">
       <label for="burger-toggle" class="burger" aria-label="menu">
         <span>
@@ -30,7 +23,6 @@
         </a>
       </h1>
     </div>
-    <!-- desktop primary nav -->
     <nav class="primary-nav">
       <ul>
         <li>
@@ -53,7 +45,6 @@
         </li>
       </ul>
     </nav>
-    <!-- mobile drawer nav (same links) -->
     <nav class="drawer">
       <ul>
         <li>
@@ -79,15 +70,10 @@
   </header>
   <label for="burger-toggle" class="drawer-overlay" aria-hidden="true">
   </label>
-  <!-- =============================================== -->
   <main>
-    <!-- -------------------------------------------------
-         1. HERO（グラデーション付きビジュアル）
-    -------------------------------------------------- -->
     <section class="page-hero page-hero--about">
       <div class="page-hero__bg" style="background-image:url(about-hero.jpg);">
       </div>
-      <!-- 画像は差し替え可 -->
       <div class="container">
         <ul class="page-hero__breadcrumb">
           <li>企業情報</li>
@@ -96,20 +82,13 @@
         <p class="page-hero__lead">株式会社コミットは日本国内で販売促進サービスを提供する事業会社です。</p>
       </div>
     </section>
-    <!-- -------------------------------------------------
-         2. LOCAL NAV + CONTENT（Imperial Hotel 形式）
-    -------------------------------------------------- -->
     <div class="local-nav-wrap">
-      <!-- ▽ 2-2：メインコンテンツ -->
       <div class="local-content">
-        <!-- ======= 企業理念 (Mission / Vision) ======= -->
         <section id="philosophy" class="section philosophy-section" data-animate>
           <h2 class="section-heading">企業理念
             <span>Philosophy</span>
           </h2>
-          <!-- 横並び２カード -->
           <div class="philosophy-grid">
-            <!-- Mission card -->
             <article class="ph-card">
               <figure>
                 <img src="about_misison.jpg" alt="Mission">
@@ -119,25 +98,23 @@
                 <p>「循環と挑戦で、人生の“価値時間”をアップデートする。」― 時計リユース × キャリア支援 × 空間演出 ―３つの専門領域を通じて、人と社会が生み出す時間をもっと豊かにします。</p>
               </div>
             </article>
-            <!-- Vision card -->
             <article class="ph-card">
               <figure>
                 <img src="about_vision.jpg" alt="Vision">
               </figure>
               <div class="ph-card__body">
                 <h3>Vision</h3>
-                <p>ラグジュアリーとスポーツ、そして“体験”で<br>サステナブルな未来をデザインする。再流通・教育・カーボンオフセットを連動させ、2030 年までにグループ CO₂ 排出を実質ゼロに。</p>
+                <p>ラグジュアリーとスポーツ、そして“体験”で
+                  <br>サステナブルな未来をデザインする。再流通・教育・カーボンオフセットを連動させ、2030 年までにグループ CO₂ 排出を実質ゼロに。</p>
               </div>
             </article>
           </div>
         </section>
-        <!-- ======= 会社概要テーブル ======= -->
         <section class="section section--light" id="company-data">
           <h2 class="section-heading">会社概要
             <span>Corporate Data</span>
           </h2>
           <div class="container corp-grid" data-animate>
-            <!-- 左 : テーブル -->
             <div class="corp-data">
               <table class="info-table tidy">
                 <tbody>
@@ -178,25 +155,23 @@
             </div>
           </div>
         </section>
-        <!-- ====== Leadership Section ====== -->
         <section id="leadership" class="section leadership">
           <h2 class="section-heading">経営陣紹介
             <span>Management Team</span>
           </h2>
           <div class="leaders">
-            <!-- 代表 -->
             <div class="leader-card">
               <img src="Management1.jpg" alt="CEO Portrait" class="leader-photo">
               <h3 class="leader-name">幸田 卓朗</h3>
               <p class="leader-role">代表取締役 CEO</p>
-              <p class="leader-bio">接客の現場経験を礎に、グループ全体の戦略策定と<br>ブランド価値向上をリード。</p>
+              <p class="leader-bio">接客の現場経験を礎に、グループ全体の戦略策定と
+                <br>ブランド価値向上をリード。</p>
               <ul class="leader-sns">
                 <li>
                   <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
                 </li>
               </ul>
             </div>
-            <!-- 取締役 例 -->
             <div class="leader-card">
               <img src="Management2.jpg" alt="CFO Portrait" class="leader-photo">
               <h3 class="leader-name">大津 佑樹</h3>
@@ -204,7 +179,6 @@
               <p class="leader-bio">外資系投資銀行での M&A 経験を活かし、ファイナンスと
                 <br>ガバナンス体制を強化。</p>
             </div>
-            <!-- 取締役 例 -->
             <div class="leader-card">
               <img src="Management3.jpg" alt="COO Portrait" class="leader-photo">
               <h3 class="leader-name">佐藤 亮</h3>
@@ -213,16 +187,13 @@
             </div>
           </div>
         </section>
-        <!-- ====== Governance Section ====== -->
         <section id="governance" class="section governance">
           <h2 class="section-heading">コーポレートガバナンス
             <span>Corporate Governance</span>
           </h2>
-          <!-- 体制図 -->
           <div class="governance-chart">
             <img src="governance.png" alt="Governance Structure Diagram">
           </div>
-          <!-- 主要ポリシー一覧 -->
           <div class="policy-list">
             <h3>主要ポリシー</h3>
             <ul>
@@ -237,7 +208,6 @@
               </li>
             </ul>
           </div>
-          <!-- 内部監査・第三者評価 -->
           <div class="audit-block">
             <h3>内部監査 & 第三者評価</h3>
             <ul>
@@ -250,12 +220,10 @@
             </ul>
           </div>
         </section>
-        <!-- ====== Sustainability Section ====== -->
         <section id="sustainability" class="section sustainability">
           <h2 class="section-heading">サステナビリティへの取り組み
             <span>Sustainability Initiatives</span>
           </h2>
-          <!-- SDGs アイコン付きカード -->
           <div class="sustainability-cards">
             <div class="s-card">
               <img src="about_watch.png" alt="Reuse Icon" class="s-icon">
@@ -273,7 +241,6 @@
               <p class="s-desc">店舗運営と飲食店の排出量を算定し、太陽光発電・植林クレジットで相殺。</p>
             </div>
           </div>
-          <!-- KPI 進捗バー -->
           <div class="esg-progress">
             <h3>主要 ESG KPI 進捗</h3>
             <div class="progress-item">
@@ -292,14 +259,11 @@
             </div>
           </div>
         </section>
-        <!-- ======= 沿革 ======= -->
-        <!-- ========== History ========== -->
         <section class="section" id="history">
           <h2 class="section-heading">沿革
             <span>History</span>
           </h2>
           <ul class="history-timeline" data-animate>
-            <!-- 2015 -->
             <li class="history-item">
               <span class="dot">
               </span>
@@ -311,7 +275,6 @@
                 <p class="text">株式会社コミット設立、銀座8丁目に1号店開業</p>
               </div>
             </li>
-            <!-- 2017 -->
             <li class="history-item">
               <span class="dot">
               </span>
@@ -323,7 +286,6 @@
                 <p class="text">　「コミット銀座」新本店オープン</p>
               </div>
             </li>
-            <!-- 2021 -->
             <li class="history-item">
               <span class="dot">
               </span>
@@ -335,7 +297,6 @@
                 <p class="text">フットボールアシスト事業開始</p>
               </div>
             </li>
-            <!-- 2024 -->
             <li class="history-item">
               <span class="dot">
               </span>
@@ -347,7 +308,6 @@
                 <p class="text">銀座1丁目の新本店へ移転リニューアル</p>
               </div>
             </li>
-            <!-- 2025 -->
             <li class="history-item">
               <span class="dot">
               </span>
@@ -362,11 +322,8 @@
           </ul>
         </section>
       </div>
-      <!-- /.local-content -->
     </div>
-    <!-- /.local-nav-wrap -->
   </main>
-  <!-- ======= footer (既存) ======= -->
   <footer class="footer-dark-custom">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -452,113 +409,8 @@
       <small class="footer-copy">©
         <script>
   document.write(new Date().getFullYear())
-        </script> Commit Group Ltd.</small>
+        </script>Commit Group Ltd.</small>
     </div>
   </footer>
-  <style>
-  /*  =====  site-header  ===== */
-  .site-header{position:fixed;top:0;left:0;right:0;background:rgba(0,0,0,.66);backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.1)}
-  .header-inner{height:68px;max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;position:relative;padding:0 1.5rem}
-  .brand img{height:40px;filter:invert(1);}
-  
-  .burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;display:none}
-  .burger span,.burger::after{content:"";position:absolute;left:0;width:26px;height:2px;background:#111;transition:var(--transition)}
-  .burger span{top:0}.burger::after{bottom:0}
-  
-  /* primary nav (desktop) */
-  .primary-nav{border-top:1px solid #e5e5e5}
-  .primary-nav ul{display:flex;justify-content:center;gap:2.5rem;list-style:none;padding:1rem 1rem;max-width:var(--container-max);margin:auto}
-  .primary-nav a{color:#111;text-decoration:none;position:relative;font-weight:500}
-  .primary-nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#111;transition:width .25s}
-  .primary-nav a:hover::after{width:100%}
-  
-  /* ===== MOBILE ===== */
-  @media(max-width:767px){
-    .burger{display:block}
-    .primary-nav{display:none}
-  }
-  
-  /* ===== DRAWER ===== */
-  .drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:#fff;padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transform:translateX(100%);transition:transform var(--transition);z-index:999}
-  .drawer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.4rem}
-  .drawer a{color:#111;text-decoration:none;font-weight:500}
-  
-  /* show drawer when burger checked */
-  .burger-toggle:checked ~ .site-header .burger span{transform:translateY(9px) rotate(45deg)}
-  .burger-toggle:checked ~ .site-header .burger::after{transform:translateY(-9px) rotate(-45deg)}
-  .burger-toggle:checked ~ .site-header nav.drawer{transform:translateX(0)}
-  
-  /* overlay */
-  .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:998}
-  @media(max-width:767px){
-    .burger-toggle:checked ~ .drawer-overlay{display:block}
-  }
-  @media(min-width:768px){
-    .drawer{display:none}
-    .burger{display:none}
-  }
-  
-  /*  footer  */
-  .footer-dark{background:#1d1d1d;color:#f1f1f1;padding:5rem 1rem 3rem;text-align:center;margin-top:6rem}
-  .footer-inner{max-width:1200px;margin-inline:auto}
-  .footer-logo{height:72px;margin-inline:auto;margin-bottom:1.75rem}
-  .footer-sites{display:flex;justify-content:center;gap:2.5rem;margin-bottom:2.5rem;font-size:1rem;font-weight:500;flex-wrap:wrap}
-  .footer-sites a{color:#f1f1f1;text-decoration:none;transition:opacity .25s}
-  .footer-sites a:hover{opacity:.7}
-  .footer-sns{display:grid;row-gap:1.4rem;justify-content:center}
-  .sns-block{margin-top: 10px;display: flex;}
-  .sns-label{text-align:right;font-size:.8rem;color:#c7c7c7}
-  .sns-icon:hover{background:#f1f1f1;color:#1d1d1d}
-  .footer-nav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2.2rem 2.8rem;max-width:440px;margin:0 auto 2rem;padding:0;list-style:none}
-  .footer-nav a{color:#f1f1f1;text-decoration:none;position:relative}
-  .footer-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:#f1f1f1;transition:width .25s}
-  .footer-nav a:hover::after{width:100%}
-  .footer-copy{font-size:.85rem;color:#c7c7c7}
-  @media(max-width:600px){.footer-sites{flex-direction:column;gap:1rem}.sns-block{grid-template-columns:1fr repeat(5,42px)}.sns-label{text-align:left}}
-  /***** HEADER WHITE THEME *****/
-  .site-header{background:#fff;color:#111;position:fixed;inset-inline:0;top:0;z-index:1000;border-bottom:1px solid #e5e5e5}
-  .header-top{max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;height:72px;position:relative;padding-inline:1rem}
-  .brand img{height:46px;filter:none}
-  /* ベース（前回と同じなら不要） */
-  .footer-dark-custom{background:#222;color:#d1d1d1;text-align:center;padding:4rem 1rem 2.5rem}
-  .footer-dark-custom a {
-      color: #d1d1d1;
-      transition: color .3s;
-      text-decoration: none;
-  }
-  .sns-icon {
-      width: 38px;
-      height: 38px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-  }
-  .footer-dark-custom a:hover{color:#fff}
-  .footer-logo{max-width:180px;margin:0 auto 2rem}
-  
-  /* 事業リンク行 */
-  .footer-sites{display:flex;justify-content:center;gap:2rem;margin-bottom:2.5rem;font-weight:500;font-size:.95rem}
-  
-  /* ── 事業ブロックをグリッドで3分割 ── */
-  .footer-sns-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:2.5rem;
-    margin:0 auto 6.5rem;
-  }
-  /* 下部ナビ */
-  .footer-nav ul{display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;font-size:.9rem;list-style-type: none;}
-  
-  /* コピーライト */
-  .footer-copy{font-size:1.35rem;color:#888}
-  
-  /* ── SP 調整 ── */
-  @media(max-width:640px){
-    .footer-sites{flex-direction:column;gap:1rem}
-    .sns-icon{width:34px;height:34px;}
-  }
-  </style>
 </body>
-
 </html>
