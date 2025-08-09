@@ -1436,13 +1436,15 @@ footer a {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: .45rem;
-  color: var(--color-primary)
+  color: var(--color-primary);
+  line-height: 1;
 }
 
 .card__text {
   font-size: .95rem;
   color: var(--color-gray);
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  line-height: 1;
 }
 
 .arrow {
@@ -2841,20 +2843,19 @@ textarea:focus {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
   padding: 1rem 1.25rem;
   background: var(--color-surface);
   border: 1px solid #deddda;
   border-radius: var(--radius);
   box-shadow: 0 4px 14px rgba(0, 0, 0, .05);
   transition: transform .25s ease, box-shadow .25s ease;
-  gap: 1rem;
-  height: auto;
   min-width: 260px;
-  max-width:100%;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
   min-height: 140px;
+  max-width: none;
+  height: 100%;
 }
 
 .job-card:hover {
@@ -2876,15 +2877,6 @@ textarea:focus {
   flex-direction: column;
   justify-content: space-between;
   gap: .35rem;
-}
-
-.job-card .btn--sm {
-  margin-top: .6rem
-}
-
-.job-card img {
-  height: 160px;
-  object-fit: cover
 }
 
 .perks-list {
@@ -3161,12 +3153,12 @@ textarea:focus {
 
 @media(max-width:768px) {
   .job-card {
-    flex-direction: column;
     align-items: flex-start;
-    padding: .9rem;
-    gap: .8rem;
+    padding: 0;
     min-height: auto;
     max-width: 100%;
+    width: 100%;
+    display: block;
   }
 
   .job-thumb {
@@ -3174,13 +3166,12 @@ textarea:focus {
     height:auto;
     aspect-ratio:16/9;
     object-fit:cover;
-    border-radius:.6rem;
+    border-radius:0;
   }
 
   .job-card .btn {
     align-self:flex-start;
-    margin-left: 0;
-    margin-top: 1rem;
+    margin: 0 auto;
     font-size: .8rem;
     padding: .45rem .9rem;
   }
@@ -3231,19 +3222,7 @@ textarea:focus {
   }
   .job-card .card__body{
     width:100%;
-  }
-}
-
-@media(max-width:480px) {
-  .job-card {
-    flex-direction: row;
-    gap: .8rem;
-    width: 100%;
-  }
-
-  .job-thumb {
-    width: 64px;
-    height: 64px
+    padding: .75rem;
   }
 }
 
@@ -3410,3 +3389,4 @@ form button.btn {
     height: 320px
   }
 }
+
