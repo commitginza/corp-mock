@@ -177,8 +177,8 @@ footer a{font-size:.85rem;color:#fff}
 /* トップ */
 .heading-block{position:relative;text-align:center;margin:4rem 0 7rem}
 .heading-bg{font-size:clamp(4rem,15vw,11rem);font-weight:800;line-height:1;letter-spacing:.05em;color:#d9d9d9;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;z-index:0}
-.heading-main{position:relative;z-index:1;font-size:clamp(1.75rem,5vw,3rem);font-weight:800;letter-spacing:.05em;margin:0;top:30%;transform:translateY(30%);text-shadow:0 2px 4px rgba(0,0,0,.25)}
-.heading-sub{position:relative;z-index:1;font-size:1.5rem;margin-top:.4rem;top:30%;transform:translateY(30%);text-shadow:0 2px 4px rgba(0,0,0,.25)}
+.heading-main{position:relative;z-index:1;font-size:clamp(1.75rem,5vw,3rem);font-weight:800;letter-spacing:.05em;margin:0;line-height: 1;top:30%;transform:translateY(30%);text-shadow:0 2px 4px rgba(0,0,0,.25)}
+.heading-sub{position:relative;z-index:1;font-size:1.5rem;margin-top:.8rem;line-height: 1;top:30%;transform:translateY(30%);text-shadow:0 2px 4px rgba(0,0,0,.25)}
 /* 会社概要 */
 .section-heading{font-family:var(--font-heading);font-size:1.9rem;margin-bottom:2.2rem;color:var(--color-primary);display:flex;align-items:baseline;gap:.8rem}
 .section-heading span{font-family:var(--font-body);font-size:.9rem;color:var(--color-gray);letter-spacing:.05em}
@@ -198,7 +198,17 @@ footer a{font-size:.85rem;color:#fff}
 .hero-lead{font-size:clamp(1.1rem,2.5vw,1.5rem);max-width:40rem;line-height:1.6;margin-bottom:2.5rem}
 .hero-btn{display:inline-block;padding:1rem 2.75rem;border:2px solid #fff;border-radius:9999px;font-weight:600;letter-spacing:.05em;color:#fff;text-decoration:none;transition:background .3s,color .3s}
 .hero-btn:hover{background:#fff;color:#000}
-@media(max-width:767px){.hero-video{height:100vh;width: 100%}.hero-title{font-size:clamp(1.8rem,6vw,2.4rem)}.hero-lead{font-size:clamp(1rem,3.8vw,1.2rem);max-width:26rem}.hero-btn{padding:.85rem 2.25rem}}
+@media(max-width:767px){
+.hero-video{height:100vh;width: 100%}
+.hero-title{font-size:clamp(1.8rem,6vw,2.4rem)}
+.hero-lead{font-size:clamp(1rem,3.8vw,1.2rem);max-width:26rem}
+.hero-btn{padding:.85rem 2.25rem}
+.heading-main{font-size: clamp(0.75rem, 5vw, 3rem);}
+.heading-sub{font-size: 0.85rem;}
+.heading-block{margin: 4rem 0 3rem;}
+.section {padding: 6rem 1rem;}
+.news-date{flex: 0 0 70px;}
+}
 
 /* =====================================================
    トップの事業領域
@@ -229,8 +239,8 @@ footer a{font-size:.85rem;color:#fff}
 /* =====================================================
    トップのニュース欄＆ニュースページ
 ===================================================== */
-.news-list{margin-top:1.2rem;display:grid;gap:1rem;grid-template-columns:1fr;max-width:500px;margin:0 auto;list-style:none;padding:0:}
-.news-list li{display:flex;align-items:flex-start;gap:1rem;background:none;border:none;padding:.8rem 0;max-width:520px;margin:0 auto}
+.news-list{display:grid;gap:1rem;grid-template-columns:1fr;max-width:500px;margin:0 auto;list-style:none;padding:0;}
+.news-list li{display:flex;align-items:baseline;gap:1rem;background:none;border:none;padding:0;min-width:570px;margin:0 auto}
 .news-list li:first-child{margin-top:.8rem}
 .news-list li:hover{background:#f3f2f0}
 .news-date{flex:0 0 90px;color:var(--color-gray);font-size:.8rem;text-align:left;line-height:1.4;white-space:nowrap}
@@ -241,7 +251,6 @@ footer a{font-size:.85rem;color:#fff}
 .news-tag.blog{background:#4f7f57}
 .news-body{font-size:.95rem;line-height:1.5;text-align:left}
 .latest-news{margin-block:4rem 5rem;max-width:900px;margin:3rem auto 4rem;text-align:center}
-.latest-news .heading-main{margin-bottom:0.8rem}
 .news-cards{display:flex;flex-direction:column;gap:1.2rem;max-width:920px;margin-inline:auto}
 .news-card{display:grid;grid-template-columns:140px 100px 1fr;align-items:center;gap:1.2rem;padding:1.35rem 1.6rem;border:1px solid #deddda;border-radius:.85rem;background:var(--color-surface);transition:background .2s ease, transform .25s ease}
 .news-card:hover{background:#f4f4f2;transform:translateY(-3px)}
@@ -250,6 +259,7 @@ footer a{font-size:.85rem;color:#fff}
 
 @media(max-width:767px){
 .news-list{padding:0 40px}
+.news-list li{min-width: initial;}
 }
 
 /* =====================================================
@@ -430,7 +440,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .synergy-diagram svg{width:100%;height:auto;display: block;}
 .synergy-caption{text-align:center;max-width:640px;margin:1.5rem auto 0;line-height:1.8}
 .latest-news .heading-block{max-width:none;width:100%;padding:0 1rem}
-.latest-news .heading-main{letter-spacing:.08em}
 .section--accent .hero-btn{margin-top:2.5rem}
 .number-card{width:180px;flex:0 0 180px;background: var(--color-surface);padding: 2.2rem 1rem;border-radius: var(--radius);text-align: center;box-shadow: var(--shadow-elevated);}
 .number-card .num {font-size: 2.5rem;font-weight: 700;color: var(--color-primary);line-height: 1;}
@@ -615,5 +624,6 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
