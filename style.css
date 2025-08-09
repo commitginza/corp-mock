@@ -507,9 +507,18 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 @keyframes kpiCount{from{opacity:0}to{opacity:1}}
 @media(max-width:640px){
 .case-cards{margin: 4rem auto 4rem;}
-.case-filter{flex-wrap:wrap;gap:.6rem}
-.filter-btn{flex:1 1 110px}
-.kpi-number{font-size:2.2rem}
+.case-filter{gap:.4rem;margin:1.5rem auto 2rem;}
+.filter-btn{padding:.45rem 1rem;font-size:.8rem;border:1.5px solid var(--color-primary);flex:1 1 100px;}
+.case-grid{grid-template-columns:1fr;gap:1.2rem;}
+.case-item{width:100%;max-width:100%;}
+.case-item img{aspect-ratio:16/9;object-fit:cover;}
+.case-item h3{font-size:.95rem;padding:.8rem;}
+#kpi.section{padding:4rem 1rem;}
+.kpi-cards{grid-template-columns:repeat(2,1fr);gap:1rem;max-width:500px;}
+.kpi-card{padding:1.4rem .6rem;}
+.kpi-number{font-size:1.8rem;}
+.unit{font-size:.9rem;}
+.kpi-label{font-size:.8rem;margin-top:.4rem;}
 }
 
 /* =====================================================
@@ -659,6 +668,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
