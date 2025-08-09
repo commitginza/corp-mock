@@ -584,17 +584,18 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
    採用ページ
 ===================================================== */
 .lead-copy{font-size:1.05rem;margin:0 0 1.8rem;text-align:center;color:var(--color-dark)}
-.job-card{display:flex;flex-direction:column;align-items:center;gap:1.6rem;padding:1.75rem 2rem;background:var(--color-surface);border:1px solid #deddda;border-radius:var(--radius);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .25s ease, box-shadow .25s ease;gap:1rem;height:auto;min-width:260px;max-width:420px;margin:0 auto;text-align:center;min-height:480px;}
+.job-card{display:flex;flex-direction:row;align-items:center;gap:1.4rem;padding:1.5rem 1.75rem;background:var(--color-surface);border:1px solid #deddda;border-radius:var(--radius);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .25s ease, box-shadow .25s ease;gap:1rem;height:auto;min-width:260px;max-width:680px;margin:0 auto;text-align:left;min-height:160px;}
 .job-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
-.job-card .btn{align-self:center;margin-top:1.75rem}
-.job-card .card__body{flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.job-card .btn{align-self:center;margin-top:0;margin-left:auto;}
+.job-card .card__body{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:.5rem;}
 .job-card .btn--sm{margin-top:.6rem}
 .job-card img{height:160px;object-fit:cover}
 .perks-list{justify-content:center;text-align:center}
-.job-thumb{width:110px;height:110px;border-radius:.5rem;object-fit:cover;flex-shrink:0;max-height:200px}
+.job-thumb{width:120px;height:120px;border-radius:.5rem;object-fit:cover;flex-shrink:0;max-height:200px;}
 .job-info{display:flex;flex-direction:column;gap:.6rem;align-items:center;min-height:135px;margin-top:1rem;flex:1;}
 .job-title{font-size:1.15rem;font-family:var(--font-heading);color:var(--color-primary);margin:0 0 .35rem;line-height:1.45;font-weight:600;text-align:center;min-height:64px;display:flex;align-items:center;justify-content:center;}
 .job-desc{font-size:.9rem;color:var(--color-gray);margin:0;min-height:60px;display:flex;align-items:center;justify-content:center;text-align:center;}
+
 .positions-grid{gap:2rem 2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:1200px}
 .job-section{margin:6rem 0}
 .card-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
@@ -628,12 +629,19 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .faq-a.show{display:block}
 
 @media(max-width:640px){
-.benefit-stats{gap:1.4rem}
+#benefits.section{padding:4rem 1rem;}
+.benefit-stats{grid-template-columns:repeat(2,1fr);gap:1rem;max-width:500px;}
+.stat-card{padding:1.4rem .6rem;}
+.stat-number{font-size:1.8rem;}
+.unit{font-size:.9rem;}
+.stat-label{font-size:.8rem;margin-top:.4rem;}
 .stat-number{font-size:2.1rem}
 .process-steps li{padding-left:2.6rem}
 .process-steps li::before{width:1.9rem;height:1.9rem}
-.job-card{flex-direction:row}
-.job-thumb{width:70px;height:70px}
+.job-card{flex-direction:row;gap:1rem;padding:1.25rem;}
+.job-thumb{width:90px;height:90px}
+.job-card .btn{font-size:.85rem;padding:.55rem 1rem;}
+.job-section .card-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;}
 }
 @media(max-width:480px){
 .job-card{flex-direction:row;gap:.8rem}
@@ -674,6 +682,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
