@@ -555,6 +555,13 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .feature-list{gap:.4rem;}
 .feature-list li{font-size:.8rem;}
 .svc-body .btn--sm{padding:.55rem 1rem;align-self:flex-start;font-size:.85rem;margin-top:.4rem;}
+#crosssell.section{padding:4rem 1rem;}
+#crosssell .section-title{font-size:1.6rem;margin-bottom:1.2rem;}
+.case-cards{gap:1.5rem;}
+.case-card{position:relative;padding:1.6rem 1.2rem;border-radius:12px;box-shadow:0 1px 6px rgba(0,0,0,.05);background:#fff;}
+.case-title{font-size:1.1rem;line-height:1.45;margin-bottom:.8rem;}
+.case-desc{font-size:.9rem;line-height:1.7;}
+.case-tag{position:absolute;top:-.75rem;right:1rem;padding:.25rem .7rem;font-size:.7rem;border-radius:1rem;background:var(--color-accent);color:#fff;font-weight:600;}
 }
 
 /* =====================================================
@@ -651,6 +658,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
