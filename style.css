@@ -121,9 +121,10 @@ nav li:hover::after{width:100%}
 .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:998}
 @media(max-width:767px){
 .primary-nav{display:none}
+.burger{display:block}
+.drawer{display: flex;transform: translateX(100%);}
 .burger-toggle:checked ~ .drawer-overlay{display:block}
-.drawer{display:none}
-.burger{display:none}
+.burger-toggle:checked ~ .drawer {transform: translateX(0);}
 }
 
 /* =====================================================
@@ -626,6 +627,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
