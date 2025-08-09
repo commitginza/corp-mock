@@ -12,7 +12,7 @@
   --container-max:1360px;
   --radius:.75rem;
   --shadow-elevated:0 8px 20px rgba(0,0,0,.06);
-  --transition:.28s cubic-bezier(.4,.2,.3,1)
+  --transition: .35s ease;
 }
 
 /* =====================================================
@@ -81,25 +81,27 @@ nav li:hover::after{width:100%}
 /* ====== Imperial-style Header ====== */
 .lang-btn{background:none;border:none;color:#fff;cursor:pointer;display:grid;place-items:center;}
 .lang-btn svg{width:18px;height:18px;stroke:#fff;}
-.burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;z-index:1002;display:none}
 
-.burger span,.burger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#000;transition:var(--transition);}
-.burger span{top:0;}
+.burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;z-index:1002;display:none}
+/* 3 本線を before / span / after で構成 */
+.burger span,
+.burger::before,
+.burger::after{content:"";position:absolute;left:0;width:100%;height:2px;background:var(--color-dark);transition:var(--transition);}
+.burger span{top:50%;transform:translateY(-50%);}
+.burger::before{top:0;}
 .burger::after{bottom:0;}
 
-/* open animation */
-.burger-toggle:checked ~ .site-header .burger span{transform:translateY(9px) rotate(45deg)}
-.burger-toggle:checked ~ .site-header .burger::after{transform:translateY(-9px) rotate(-45deg)}
+/* ─── ハンバーガー開閉アニメ ─── */
+.burger-toggle:checked + .burger span{opacity:0;}
+.burger-toggle:checked + .burger::before{transform:translateY(9px) rotate(45deg);}
+.burger-toggle:checked + .burger::aftertransform:translateY(-9px) rotate(-45deg);}
 
-/* drawer menu */
-.drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--color-bg);padding:6rem 2rem 3rem;display:none;flex-direction:column;gap:1.5rem;transition:right var(--transition);box-shadow:-4px 0 12px rgba(0,0,0,.15);z-index:1101;}
-.drawer ul{display:flex;flex-direction:column;gap:1.5rem;list-style:none;margin:0;padding:0;}
+.drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--color-bg);padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transition:right var(--transition);box-shadow:-4px 0 12px rgba(0,0,0,.15);z-index:1101;}
+.drawer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.5rem;}
 .drawer a{font-size:1rem;text-decoration:none;font-weight:500;color:var(--color-dark)}
-/* drawer open */
-.burger-toggle:checked ~ .site-header nav.drawer{transform:translateX(0)}
+.burger-toggle:checked ~ .drawer{transform:translateX(0);}
+.drawer-overlay{position:fixed;inset:0;width:100vw; height:100vh;background:rgba(0,0,0,.45);cursor:pointer;display:none;z-index:1001;}
 .burger-toggle:checked ~ .drawer-overlay{display:block;}
-.drawer .btn{align-self:flex-start;margin-top:1rem}
-.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);cursor:pointer;display:none;z-index:998;width:100vw; height:100vh;}
 
 .primary-nav{border-top:1px solid #e5e5e5}
 .primary-nav ul{display:flex;justify-content:center;gap:2.5rem;list-style:none;padding:1rem 1rem;max-width:var(--container-max);margin:auto}
@@ -107,17 +109,12 @@ nav li:hover::after{width:100%}
 .primary-nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#111;transition:width .25s}
 .primary-nav a:hover::after{width:100%}
 
-@media(max-width:767px){
+@media(min-width:767px){
 nav.drawer{display: none !important;visibility: hidden !important;}
 }
 @media(max-width:767px){
-nav.drawer {z-index: 2000;background: #fff;}
-.drawer-overlay {z-index: 1500;}
 .primary-nav{display:none}
 .burger{display:block}
-.drawer{display: flex;transform: translateX(100%);}
-.burger-toggle:checked ~ .drawer-overlay{display:block}
-.burger-toggle:checked ~ .drawer {transform: translateX(0);}
 }
 
 /* =====================================================
@@ -620,6 +617,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
