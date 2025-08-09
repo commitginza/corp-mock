@@ -94,7 +94,7 @@ nav li:hover::after{width:100%}
 /* ─── ハンバーガー開閉アニメ ─── */
 .burger-toggle:checked + .burger span{opacity:0;}
 .burger-toggle:checked + .burger::before{transform:translateY(9px) rotate(45deg);}
-.burger-toggle:checked + .burger::aftertransform:translateY(-9px) rotate(-45deg);}
+.burger-toggle:checked + .burger::after{transform:translateY(-9px) rotate(-45deg);}
 
 .drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--color-bg);padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transition:right var(--transition);box-shadow:-4px 0 12px rgba(0,0,0,.15);z-index:1101;}
 .drawer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.5rem;}
@@ -617,6 +617,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
