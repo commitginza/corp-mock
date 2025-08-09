@@ -426,18 +426,17 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 
 .number-cards{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;max-width:1000px;margin:0 auto}
 #ceo-message .ceo-wrapper{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;max-width:800px;margin:0 auto}
-#synergy .synergy-diagram{max-width:700px;margin:0 auto}
-#synergy .synergy-caption{text-align:center;max-width:640px;margin:1.5rem auto 0;line-height:1.8}
+.synergy-diagram{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-inline:1rem;max-width:700px;margin:0 auto}
+.synergy-diagram svg{width:100%;height:auto;display: block;}
+.synergy-caption{text-align:center;max-width:640px;margin:1.5rem auto 0;line-height:1.8}
 .latest-news .heading-block{max-width:none;width:100%;padding:0 1rem}
 .latest-news .heading-main{letter-spacing:.08em}
 .section--accent .hero-btn{margin-top:2.5rem}
-.number-card{width:180px;flex:0 0 180px}
+.number-card{width:180px;flex:0 0 180px;background: var(--color-surface);padding: 2.2rem 1rem;border-radius: var(--radius);text-align: center;box-shadow: var(--shadow-elevated);}
+.number-card .num {font-size: 2.5rem;font-weight: 700;color: var(--color-primary);line-height: 1;}
 .node-circle{fill:#fff;stroke:#a18152;stroke-width:4}
 .node-label{font-size:.9rem;font-weight:600;pointer-events:none}
 .link{stroke:#a18152;stroke-width:2;opacity:.75}
-.synergy-diagram{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-inline:1rem;max-width:700px;margin:0 auto}
-.synergy-diagram svg{width:100%;height:auto}
-.synergy-caption{text-align:center;margin-top:1rem}
 
 @keyframes growBar{to{width:100%}}
 @media(max-width:768px){
@@ -616,4 +615,5 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
