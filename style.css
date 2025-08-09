@@ -58,9 +58,15 @@ h1,h2,h3,h4,h5,h6{font-weight:700;margin:0}
    共通ヘッダー＆ナビゲーション
 ===================================================== */
 /* ----- Basic Sticky Header (global) ----- */
+.site-header{position:fixed;top:0;left:0;right:0;backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid #e5e5e5;inset-inline:0;color:#111;}
 header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 2px 6px rgba(0,0,0,.05)}
 header .container{display:flex;justify-content:space-between;align-items:center;padding-block:.75rem}
-.logo img{height:42px}
+.header-inner{max-width:var(--container-max);margin-inline:auto;height:70px;display:flex;align-items:center;justify-content:center;position:relative;}
+.header-actions{display:flex;align-items:center;gap:1.25rem;position:absolute;right:1.5rem;}
+.brand img{height:46px;filter:none}
+.header-top{max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;height:72px;position:relative;padding-inline:1rem}
+.header-inner{height:68px;max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;position:relative;padding:0 1.5rem}
+
 nav ul{display:flex;gap:2.25rem;align-items:center;font-weight:500}
 nav li{position:relative}
 nav li::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--color-accent);transition:var(--transition)}
@@ -73,52 +79,34 @@ nav li:hover::after{width:100%}
 @media(max-width:768px){header .container{gap:1rem}nav ul{position:fixed;top:0;right:-100%;width:70%;height:100vh;background:#fff;flex-direction:column;align-items:flex-start;padding:6rem 2rem;gap:2rem;box-shadow:-4px 0 12px rgba(0,0,0,.08);transition:right var(--transition)}.nav-toggle:checked + .hamburger + nav ul{right:0}.hamburger{display:flex}.nav-toggle:checked + .hamburger span:nth-child(1){transform:translateY(9px) rotate(45deg)}.nav-toggle:checked + .hamburger span:nth-child(2){opacity:0}.nav-toggle:checked + .hamburger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}}
 
 /* ====== Imperial-style Header ====== */
-.header-inner{max-width:var(--container-max);margin-inline:auto;height:70px;display:flex;align-items:center;justify-content:center;position:relative;}
-.brand img{height:40px;}
-.header-actions{display:flex;align-items:center;gap:1.25rem;position:absolute;right:1.5rem;}
 .lang-btn{background:none;border:none;color:#fff;cursor:pointer;display:grid;place-items:center;}
 .lang-btn svg{width:18px;height:18px;stroke:#fff;}
-.burger{width:22px;height:16px;position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);cursor:pointer;z-index:1002;}
+.burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;z-index:1002;display:none}
+
 .burger span,.burger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#fff;transition:var(--transition);}
 .burger span{top:0;}
 .burger::after{bottom:0;}
 
 /* open animation */
-.burger-toggle:checked + .header-inner .burger span{transform:translateY(8px) rotate(45deg)}
-.burger-toggle:checked + .header-inner .burger::after{transform:translateY(-8px) rotate(-45deg)}
-/* drawer open */
 .burger-toggle:checked ~ .site-header .burger span{transform:translateY(9px) rotate(45deg)}
 .burger-toggle:checked ~ .site-header .burger::after{transform:translateY(-9px) rotate(-45deg)}
+/* drawer open */
 .burger-toggle:checked ~ .site-header nav.drawer{right:0;transform:translateX(0)}
 
 /* drawer menu */
-.drawer{position:fixed;top:0;right:-280px;width:280px;height:100vh;background:var(--color-bg);padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transition:right var(--transition);box-shadow:-4px 0 12px rgba(0,0,0,.15);z-index:1101;}
-.drawer ul{display:flex;flex-direction:column;gap:1.5rem;}
-.drawer a{font-size:1rem;font-weight:500;color:var(--color-dark)}
+.drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--color-bg);padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transition:right var(--transition);box-shadow:-4px 0 12px rgba(0,0,0,.15);z-index:1101;}
+.drawer ul{display:flex;flex-direction:column;gap:1.5rem;list-style:none;margin:0;padding:0;}
+.drawer a{font-size:1rem;text-decoration:none;font-weight:500;color:var(--color-dark)}
 .drawer .btn{align-self:flex-start;margin-top:1rem}
 .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);cursor:pointer;display:none;z-index:1000;width:100vw; height:100vh;}
 .burger-toggle:checked ~ .drawer-overlay{display:block;}
 
-/* =====================================================
-  共通ヘッダー
-===================================================== */
-.site-header{position:fixed;top:0;left:0;right:0;backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid #e5e5e5;inset-inline:0;color:#111;}
-.header-top{max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;height:72px;position:relative;padding-inline:1rem}
-.header-inner{height:68px;max-width:var(--container-max);margin-inline:auto;display:flex;align-items:center;justify-content:center;position:relative;padding:0 1.5rem}
-.brand img{height:46px;filter:none}
-
-.burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;display:none}
-.burger span,.burger::after{content:"";position:absolute;left:0;width:26px;height:2px;background:#111;transition:var(--transition)}
-.burger span{top:0}.burger::after{bottom:0}
 .primary-nav{border-top:1px solid #e5e5e5}
 .primary-nav ul{display:flex;justify-content:center;gap:2.5rem;list-style:none;padding:1rem 1rem;max-width:var(--container-max);margin:auto}
 .primary-nav a{color:#111;text-decoration:none;position:relative;font-weight:500}
 .primary-nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:#111;transition:width .25s}
 .primary-nav a:hover::after{width:100%}
-.drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:#fff;padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transform:translateX(100%);transition:transform var(--transition);z-index:999}
-.drawer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.4rem}
-.drawer a{color:#111;text-decoration:none;font-weight:500}
-.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:998}
+
 @media(max-width:767px){
 .primary-nav{display:none}
 .burger{display:block}
@@ -627,6 +615,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
