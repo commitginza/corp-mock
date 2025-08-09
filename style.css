@@ -586,14 +586,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .job-card .card__body{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:.35rem;}
 .job-card .btn--sm{margin-top:.6rem}
 .job-card img{height:160px;object-fit:cover}
-@media(max-width:768px){
-.job-card{flex-direction:column;align-items:flex-start;padding:.9rem;gap:.8rem;min-height:110px;max-width:100%;}
-.job-thumb{width:70px;height:70px;}
-.job-card .btn{margin-left:0;margin-top:1rem;font-size:.8rem;padding:.45rem .9rem;}
-.job-section .card-grid{grid-template-columns:1fr;}
-}
-
-
 
 .perks-list{justify-content:center;text-align:center}
 .job-thumb{width:120px;height:120px;border-radius:.5rem;object-fit:cover;flex-shrink:0;max-height:200px;}
@@ -633,7 +625,11 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .faq-a{display:none;padding:1rem 1.25rem 1.25rem;border-left:3px solid var(--color-accent);background:#fff}
 .faq-a.show{display:block}
 
-@media(max-width:640px){
+@media(max-width:768px){
+.job-card{flex-direction:column;align-items:flex-start;padding:.9rem;gap:.8rem;min-height:110px;max-width:100%;}
+.job-thumb{width:70px;height:70px;}
+.job-card .btn{margin-left:0;margin-top:1rem;font-size:.8rem;padding:.45rem .9rem;}
+.job-section .card-grid{grid-template-columns:1fr;}
 #benefits.section{padding:4rem 1rem;}
 .benefit-stats{grid-template-columns:repeat(2,1fr);gap:1rem;max-width:500px;}
 .stat-card{padding:1.4rem .6rem;}
@@ -643,10 +639,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .stat-number{font-size:2.1rem}
 .process-steps li{padding-left:2.6rem}
 .process-steps li::before{width:1.9rem;height:1.9rem}
-.job-card{flex-direction:row;gap:1rem;padding:1.25rem;}
-.job-thumb{width:90px;height:90px}
-.job-card .btn{font-size:.85rem;padding:.55rem 1rem;}
-.job-section .card-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;}
 }
 @media(max-width:480px){
 .job-card{flex-direction:row;gap:.8rem}
@@ -687,6 +679,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
