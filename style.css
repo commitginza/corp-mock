@@ -321,15 +321,6 @@ footer a{font-size:.85rem;color:#fff}
 .feature-list li{display:flex;align-items:center;gap:.4rem;font-size:.95rem}
 .feature-list li::before{content:"◆";color:var(--color-accent);font-size:.7rem}
 
-/* Job Cards (generic base) */
-.job-card{display:flex;align-items:center;gap:2rem;padding:2rem 2.5rem;border-radius:var(--radius);background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .25s ease}
-.job-card:hover{transform:translateY(-4px)}
-.job-thumb{width:120px;height:120px;border-radius:.5rem;object-fit:cover;flex-shrink:0}
-.job-info h4{font-size:1.2rem;color:var(--color-primary);margin-bottom:.35rem}
-.job-info p{font-size:.95rem;color:var(--color-gray)}
-.job-card .btn{margin-left:auto}
-@media(max-width:768px){.job-card{flex-direction:column;align-items:flex-start}.job-card .btn{margin-left:0;margin-top:1rem}}
-
 /* Timeline (horizontal) */
 .timeline{display:flex;gap:2rem;margin-top:2.5rem;position:relative;align-items:flex-start}
 .timeline::before{content:"";position:absolute;top:calc(50% -1px);left:0;right:0;height:2px;background:#deddda}
@@ -583,13 +574,27 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 /* =====================================================
    採用ページ
 ===================================================== */
+/* Job Cards (generic base) */
+.job-thumb{width:90px;height:90px;border-radius:.4rem;object-fit:cover;flex-shrink:0}
+.job-info h4{font-size:1.2rem;color:var(--color-primary);margin-bottom:.35rem}
+.job-info p{font-size:.95rem;color:var(--color-gray)}
+
 .lead-copy{font-size:1.05rem;margin:0 0 1.8rem;text-align:center;color:var(--color-dark)}
-.job-card{display:flex;flex-direction:row;align-items:center;gap:1.4rem;padding:1.5rem 1.75rem;background:var(--color-surface);border:1px solid #deddda;border-radius:var(--radius);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .25s ease, box-shadow .25s ease;gap:1rem;height:auto;min-width:260px;max-width:680px;margin:0 auto;text-align:left;min-height:160px;}
+.job-card{display:flex;flex-direction:row;align-items:center;gap:1rem;padding:1rem 1.25rem;background:var(--color-surface);border:1px solid #deddda;border-radius:var(--radius);box-shadow:0 4px 14px rgba(0,0,0,.05);transition:transform .25s ease, box-shadow .25s ease;gap:1rem;height:auto;min-width:260px;max-width:680px;margin:0 auto;text-align:left;min-height:140px;}
 .job-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
-.job-card .btn{align-self:center;margin-top:0;margin-left:auto;}
-.job-card .card__body{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:.5rem;}
+.job-card .btn{align-self:center;margin-top:0;margin-left:auto;font-size:.85rem;padding:.55rem 1.1rem;}
+.job-card .card__body{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:.35rem;}
 .job-card .btn--sm{margin-top:.6rem}
 .job-card img{height:160px;object-fit:cover}
+@media(max-width:768px){
+.job-card{flex-direction:column;align-items:flex-start;padding:.9rem;gap:.8rem;min-height:110px;max-width:100%;}
+.job-thumb{width:70px;height:70px;}
+.job-card .btn{margin-left:0;margin-top:1rem;font-size:.8rem;padding:.45rem .9rem;}
+.job-section .card-grid{grid-template-columns:1fr;}
+}
+
+
+
 .perks-list{justify-content:center;text-align:center}
 .job-thumb{width:120px;height:120px;border-radius:.5rem;object-fit:cover;flex-shrink:0;max-height:200px;}
 .job-info{display:flex;flex-direction:column;gap:.6rem;align-items:center;min-height:135px;margin-top:1rem;flex:1;}
@@ -682,6 +687,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
