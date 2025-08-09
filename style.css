@@ -261,6 +261,12 @@ footer a{font-size:.85rem;color:#fff}
 @media(max-width:767px){
 .news-list{padding:0 40px}
 .news-list li{min-width: initial;}
+#news-archive.section{padding:4rem 1rem;}
+.news-cards{gap:1rem;}
+.news-card{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 1rem;}
+.news-meta{font-size:.8rem;color:var(--color-gray);}
+.news-tag{font-size:.7rem;padding:.25rem .8rem;border-radius:1rem;align-self:flex-start;}
+.news-title{font-size:.95rem;line-height:1.55;}
 }
 
 /* =====================================================
@@ -668,6 +674,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
