@@ -83,23 +83,23 @@ nav li:hover::after{width:100%}
 .lang-btn svg{width:18px;height:18px;stroke:#fff;}
 .burger{width:26px;height:20px;position:absolute;left:1rem;top:50%;transform:translateY(-50%);cursor:pointer;z-index:1002;display:none}
 
-.burger span,.burger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#fff;transition:var(--transition);}
+.burger span,.burger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#000;transition:var(--transition);}
 .burger span{top:0;}
 .burger::after{bottom:0;}
 
 /* open animation */
 .burger-toggle:checked ~ .site-header .burger span{transform:translateY(9px) rotate(45deg)}
 .burger-toggle:checked ~ .site-header .burger::after{transform:translateY(-9px) rotate(-45deg)}
-/* drawer open */
-.burger-toggle:checked ~ .site-header nav.drawer{right:0;transform:translateX(0)}
 
 /* drawer menu */
 .drawer{position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--color-bg);padding:6rem 2rem 3rem;display:flex;flex-direction:column;gap:1.5rem;transition:right var(--transition);box-shadow:-4px 0 12px rgba(0,0,0,.15);z-index:1101;}
 .drawer ul{display:flex;flex-direction:column;gap:1.5rem;list-style:none;margin:0;padding:0;}
 .drawer a{font-size:1rem;text-decoration:none;font-weight:500;color:var(--color-dark)}
-.drawer .btn{align-self:flex-start;margin-top:1rem}
-.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);cursor:pointer;display:none;z-index:1000;width:100vw; height:100vh;}
+/* drawer open */
+.burger-toggle:checked ~ .site-header nav.drawer{transform:translateX(0)}
 .burger-toggle:checked ~ .drawer-overlay{display:block;}
+.drawer .btn{align-self:flex-start;margin-top:1rem}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);cursor:pointer;display:none;z-index:998;width:100vw; height:100vh;}
 
 .primary-nav{border-top:1px solid #e5e5e5}
 .primary-nav ul{display:flex;justify-content:center;gap:2.5rem;list-style:none;padding:1rem 1rem;max-width:var(--container-max);margin:auto}
@@ -615,6 +615,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
