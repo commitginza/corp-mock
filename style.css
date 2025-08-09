@@ -451,6 +451,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 
 @keyframes growBar{to{width:100%}}
 @media(max-width:768px){
+.info-table.tidy{font-size: .65rem;}
 .number-cards{gap: 1rem;}
 .number-card{width:calc(50% - .5rem);flex:0 0 calc(50% - .5rem);padding:1.8rem .5rem;}
 .number-card .num{font-size:2rem;}
@@ -467,7 +468,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--color-accent);outline
 .local-content{padding-inline:.8rem}
 .corp-grid{grid-template-columns:1fr}
 .corp-grid iframe{max-width:100%;margin:0 auto}
-#company-data .corp-grid{grid-template-columns:1fr}
+#company-data .corp-grid{grid-template-columns:1fr;padding: 0;margin: 0;width: 100%;}
 }
 
 /* =====================================================
@@ -631,6 +632,7 @@ form button.btn{display:block;margin:2rem auto 0;width:fit-content}
 .loc-card{padding:1.6rem 1.2rem}
 .map-wrap iframe{height:320px}
 }
+
 
 
 
