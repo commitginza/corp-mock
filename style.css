@@ -2177,15 +2177,6 @@ textarea:focus {
   margin: 0;
 }
 
-/* Diagram */
-.synergy-diagram-figure{
-  max-width: 1000px;
-  margin: 24px auto 8px auto;
-  padding: 16px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, var(--elev), transparent);
-}
-
 .node-circle{
   fill: var(--card);
   stroke: var(--border);
@@ -3594,6 +3585,7 @@ form button.btn {
     height: 320px
   }
 }
+
 
 
 
