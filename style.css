@@ -1131,15 +1131,18 @@ footer a {
   color: #000
 }
 .card-quote{
-  margin: 14px 8px 0;
-  padding: 14px 16px;
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  margin-top: 14px;
   color:#111;
 }
 .card-quote .quote{ margin:0; }
-.card-quote .quote footer{ color:#555; font-size:12px; }
+.card-quote .quote footer{
+  color: #555;
+  font-size: 12px;
+  background: #ebebeb;
+  padding: 10px;
+  border-radius: 0px 24px 24px 0px;
+  border-left: 8px solid #a18152;
+}
 
 @media(max-width:767px) {
   .services-modern {
@@ -2350,15 +2353,11 @@ textarea:focus {
   color: var(--text);
   line-height: 1.8;
 }
-.quote{
-  margin: 8px 0 0 0;
-  padding: 10px 12px;
-  border-left: 3px solid var(--accent);
-  background: linear-gradient(180deg, var(--elev), transparent);
-  border-radius: 8px;
-  color: var(--text);
+.quote p{
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  height: 90px;
 }
-.quote p{ margin: 0 0 6px 0; }
 .quote footer{
   color: var(--muted);
   font-size: 12px;
@@ -2378,7 +2377,7 @@ textarea:focus {
 /* Closing */
 .closing{
   max-width: 1000px;
-  margin: 8px auto 0;
+  margin: 60px auto 0;
   padding-top: 4px;
   border-top: 1px dashed var(--border);
 }
@@ -3658,6 +3657,7 @@ form button.btn {
     height: 320px
   }
 }
+
 
 
 
