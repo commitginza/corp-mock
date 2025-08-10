@@ -1063,20 +1063,6 @@ footer a {
   opacity: .85
 }
 
-.card-meta {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-  width: 100%;
-  padding: 2.25rem;
-  color: #fff;
-  font-family: 'Noto Serif JP', '游明朝', serif;
-  transform: translateY(40%);
-  opacity: 0;
-  transition: all .6s cubic-bezier(.4, .2, .2, 1)
-}
-
 .service-card:hover .card-meta {
   transform: translateY(0);
   opacity: 1
@@ -1110,6 +1096,16 @@ footer a {
   background: #fff;
   color: #000
 }
+.card-quote{
+  margin: 14px 8px 0;
+  padding: 14px 16px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  color:#111;
+}
+.card-quote .quote{ margin:0; }
+.card-quote .quote footer{ color:#555; font-size:12px; }
 
 @media(max-width:767px) {
   .services-modern {
@@ -3627,6 +3623,7 @@ form button.btn {
     height: 320px
   }
 }
+
 
 
 
