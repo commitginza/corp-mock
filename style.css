@@ -992,15 +992,35 @@ footer a {
 .services-modern {
   padding: 5rem 10rem
 }
+.services-modern .service-card{
+  position: relative;
+  overflow: hidden;
+  min-height: 420px; /* 必要に応じて高さ調整 */
+}
 /* PCでも最初からテキストを出す */
 .services-modern .service-card .card-meta{
-  transform: none !important;
-  opacity: 1 !important;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 2.25rem;
+  color: #fff;
+  transform: none;
+  opacity: 1;
+  z-index: 2;        /* 画像・グラデの上 */
 }
 
 /* 背景のグラデを少し強めにして可読性を担保（任意） */
 .services-modern .service-card::after{
-  opacity: .85;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.65) 0%,
+    rgba(0,0,0,.35) 55%,
+    rgba(0,0,0,0) 80%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* blockquote を見える位置にレイヤー固定（カード下辺寄せ） */
@@ -1025,6 +1045,20 @@ footer a {
 .services-modern .service-card .quote footer{
   color: rgba(255,255,255,.85);
 }
+.services-modern .service-card > img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;                 /* 初期状態では拡大しない */
+}
+
+/* ホバー時のスケールは残す場合 */
+.services-modern .service-card:hover > img{
+  transform: scale(1.05);
+}
+
 .services-grid {
   display: grid;
   gap: 2.5rem;
@@ -1116,6 +1150,7 @@ footer a {
   }
   .services-modern .service-card .card-meta{
     padding: 1.5rem;   /* 既存指定を尊重 */
+    background: linear-gradient(0deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 60%);
   }
   .services-modern .service-card .card-disc{
     position: static;
@@ -3623,6 +3658,7 @@ form button.btn {
     height: 320px
   }
 }
+
 
 
 
