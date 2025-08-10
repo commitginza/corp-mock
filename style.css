@@ -1039,12 +1039,6 @@ footer a {
   margin-bottom: .75rem
 }
 
-.card-address {
-  font-size: .85rem;
-  opacity: .8;
-  margin-bottom: 1.5rem
-}
-
 .card-btn {
   display: inline-block;
   padding: .55rem 1.9rem;
@@ -1088,12 +1082,6 @@ footer a {
     font-size: .65rem;
     line-height: 1.6;
     margin: 0
-  }
-
-  .card-address {
-    font-size: .65rem;
-    opacity: .8;
-    margin-bottom: .5rem
   }
 
   .card-btn {
@@ -3400,5 +3388,6 @@ form button.btn {
     height: 320px
   }
 }
+
 
 
