@@ -992,7 +992,39 @@ footer a {
 .services-modern {
   padding: 5rem 10rem
 }
+/* PCでも最初からテキストを出す */
+.services-modern .service-card .card-meta{
+  transform: none !important;
+  opacity: 1 !important;
+}
 
+/* 背景のグラデを少し強めにして可読性を担保（任意） */
+.services-modern .service-card::after{
+  opacity: .85;
+}
+
+/* blockquote を見える位置にレイヤー固定（カード下辺寄せ） */
+.services-modern .service-card .card-disc{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 92px;        /* ボタンの上に重ならない程度に調整 */
+  padding: 0 2.25rem;
+  z-index: 2;          /* 画像・グラデより上 */
+  pointer-events: none;/* クリックは下のリンクに通す（必要なら外してください） */
+}
+
+/* blockquote のビジュアル（白文字・影で読みやすく） */
+.services-modern .service-card .quote{
+  color: #fff;
+  background: transparent;
+  border: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,.45);
+  line-height: 1.7;
+}
+.services-modern .service-card .quote footer{
+  color: rgba(255,255,255,.85);
+}
 .services-grid {
   display: grid;
   gap: 2.5rem;
@@ -1083,7 +1115,17 @@ footer a {
   .services-modern {
     padding: 1rem
   }
-
+  .services-modern .service-card{
+    min-height: auto;
+  }
+  .services-modern .service-card .card-meta{
+    padding: 1.5rem;   /* 既存指定を尊重 */
+  }
+  .services-modern .service-card .card-disc{
+    position: static;
+    padding: .75rem 1.5rem 1rem;
+    pointer-events: auto;
+  }
   .service-card {
     min-height: auto;
     border-radius: 10px;
@@ -3585,6 +3627,7 @@ form button.btn {
     height: 320px
   }
 }
+
 
 
 
