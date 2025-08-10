@@ -3662,9 +3662,14 @@ form button.btn {
    代表挨拶ページ
 ===================================================== */
 .greet{
-  display: grid; margin-bottom: 18px;
+  display: grid;
 }
-
+.leaders-intro{
+  margin: 0 auto;
+  max-width: 1100px;
+  text-align: center;
+  padding: 3rem;
+}
 /* 1枚の挨拶カード：写真フルブリード + 上に本文、下に引用  */
 .greet-card{
   border: 1px solid var(--ld-line);
@@ -3779,6 +3784,7 @@ form button.btn {
   position: relative; z-index: 1;
   text-align: center;                      /* 文字を中央揃え */
   color: #fff;
+  display:flex;
   padding: clamp(16px, 4vw, 32px);
   max-width: 1100px;
 }
@@ -3840,6 +3846,7 @@ form button.btn {
     border-top: 1px solid rgba(0,0,0,.1);
   }
 }
+
 
 
 
