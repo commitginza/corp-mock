@@ -136,73 +136,60 @@
       <figure class="synergy-diagram-figure">
         <figcaption class="sr-only">時計・人材派遣・飲食・花の4事業が完全相互に連携するシナジー図</figcaption>
         <div class="synergy-diagram">
-          <svg viewBox="0 0 400 260" width="100%" preserveAspectRatio="xMidYMid meet" aria-label="Group Synergy">
-            <style>
-              .node-circle{ fill:#fff; stroke:#a15e2f; stroke-width:6; }
-              .node-label{ font: 700 16px "Noto Sans JP", system-ui, sans-serif; fill:#222; }
-              .node-sub{ font: 400 12px "Noto Sans JP", system-ui, sans-serif; fill:#777; }
-              .link{ stroke:#6aa6ff; stroke-width:8; fill:none; }
-              .arrow path{ fill:#6aa6ff; }
-            </style>
-        
-            <!-- 矢印定義 -->
-            <defs>
-              <marker id="arrow" class="arrow" viewBox="0 0 10 10" refX="10" refY="5"
-                      markerWidth="10" markerHeight="10" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 Z"></path>
-              </marker>
-            </defs>
-        
-            <!-- ノード配置（左・上・右・下のダイヤ配置） -->
-            <!-- 左：時計事業 -->
+          <svg viewBox="0 0 400 260" width="100%" preserveAspectRatio="xMidYMid meet" aria-label="Synergy Map: 4 Businesses">
+            <!-- ノード（事業） -->
             <g class="node" transform="translate(60,130)">
-              <circle r="56" class="node-circle"></circle>
+              <circle r="50" class="node-circle"></circle>
               <text class="node-label" text-anchor="middle">
                 <tspan x="0" dy="-4">時計事業</tspan>
-                <tspan x="0" dy="20" class="node-sub">COMMIT GINZA</tspan>
+                <tspan x="0" dy="18" class="node-sub">Commit 銀座</tspan>
               </text>
             </g>
-        
-            <!-- 上：花事業 -->
+    
             <g class="node" transform="translate(200,40)">
-              <circle r="56" class="node-circle"></circle>
+              <circle r="50" class="node-circle"></circle>
               <text class="node-label" text-anchor="middle">
                 <tspan x="0" dy="-4">花事業</tspan>
-                <tspan x="0" dy="20" class="node-sub">cielo8</tspan>
+                <tspan x="0" dy="18" class="node-sub">cielo8</tspan>
               </text>
             </g>
-        
-            <!-- 右：飲食事業 -->
+    
             <g class="node" transform="translate(340,130)">
-              <circle r="56" class="node-circle"></circle>
+              <circle r="50" class="node-circle"></circle>
               <text class="node-label" text-anchor="middle">
                 <tspan x="0" dy="-4">飲食事業</tspan>
-                <tspan x="0" dy="20" class="node-sub">cielo8</tspan>
+                <tspan x="0" dy="18" class="node-sub">cielo8</tspan>
               </text>
             </g>
-        
-            <!-- 下：人材派遣事業 -->
+    
             <g class="node" transform="translate(200,220)">
-              <circle r="56" class="node-circle"></circle>
+              <circle r="50" class="node-circle"></circle>
               <text class="node-label" text-anchor="middle">
                 <tspan x="0" dy="-4">人材派遣事業</tspan>
-                <tspan x="0" dy="20" class="node-sub">Football Assist</tspan>
+                <tspan x="0" dy="18" class="node-sub">Football Assist</tspan>
               </text>
             </g>
-        
-            <!-- 矢印（画像の向きに合わせて） -->
-            <!-- 上 → 左 -->
-            <line x1="200" y1="90" x2="110" y2="130" class="link" marker-end="url(#arrow)"></line>
-            <!-- 上 → 右 -->
-            <line x1="200" y1="90" x2="290" y2="130" class="link" marker-end="url(#arrow)"></line>
-            <!-- 上 → 下 -->
-            <line x1="200" y1="90" x2="200" y2="180" class="link" marker-end="url(#arrow)"></line>
-            <!-- 右 → 左（中央の横矢印） -->
-            <line x1="290" y1="130" x2="110" y2="130" class="link" marker-end="url(#arrow)"></line>
-            <!-- 下 → 左（右下→左上の斜め） -->
-            <line x1="200" y1="180" x2="110" y2="130" class="link" marker-end="url(#arrow)"></line>
-            <!-- 下 → 右（左下→右上の斜め） -->
-            <line x1="200" y1="180" x2="290" y2="130" class="link" marker-end="url(#arrow)"></line>
+    
+            <!-- 矢印定義（双方向） -->
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L8,4 L0,8 Z"></path>
+              </marker>
+            </defs>
+    
+            <!-- 相互関係（全ペア 6本：K4） -->
+            <!-- 左 ↔ 上 -->
+            <line x1="110" y1="130" x2="200" y2="90" class="link" marker-start="url(#arrow)" marker-end="url(#arrow)"></line>
+            <!-- 上 ↔ 右 -->
+            <line x1="200" y1="90" x2="290" y2="130" class="link" marker-start="url(#arrow)" marker-end="url(#arrow)"></line>
+            <!-- 右 ↔ 下 -->
+            <line x1="290" y1="130" x2="200" y2="180" class="link" marker-start="url(#arrow)" marker-end="url(#arrow)"></line>
+            <!-- 下 ↔ 左 -->
+            <line x1="200" y1="180" x2="110" y2="130" class="link" marker-start="url(#arrow)" marker-end="url(#arrow)"></line>
+            <!-- 左 ↔ 右（対角） -->
+            <line x1="110" y1="130" x2="290" y2="130" class="link link-dash" marker-start="url(#arrow)" marker-end="url(#arrow)"></line>
+            <!-- 上 ↔ 下（対角） -->
+            <line x1="200" y1="90" x2="200" y2="180" class="link link-dash" marker-start="url(#arrow)" marker-end="url(#arrow)"></line>
           </svg>
         </div>
       </figure>
@@ -434,6 +421,7 @@
 </body>
 
 </html>
+
 
 
 
