@@ -3662,7 +3662,7 @@ form button.btn {
    代表挨拶ページ
 ===================================================== */
 .greet{
-  display: grid; gap: 22px; margin-bottom: 18px;
+  display: grid; margin-bottom: 18px;
 }
 
 /* 1枚の挨拶カード：写真フルブリード + 上に本文、下に引用  */
@@ -3833,7 +3833,6 @@ form button.btn {
 }
 /* 2カラム風に見せる（デスクトップ時） */
 @media (min-width: 960px){
-  .greet{ gap: 28px; }
   .greet-card{ display:grid; grid-template-rows: auto auto; }
   .greet-figure{ min-height: 420px; }
   .greet-quote{
@@ -3841,5 +3840,6 @@ form button.btn {
     border-top: 1px solid rgba(0,0,0,.1);
   }
 }
+
 
 
