@@ -2123,7 +2123,6 @@ textarea:focus {
 
 .synergy-diagram {
   display: block;
-  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding-inline: 1rem;
   max-width: 700px;
@@ -2147,8 +2146,6 @@ textarea:focus {
   display: inline;
 }
 .group-synergy{
-  color: var(--text);
-  background: var(--bg);
   padding: clamp(20px, 4vw, 48px);
 }
 
@@ -2157,6 +2154,8 @@ textarea:focus {
   max-width: 1100px;
   margin: 0 auto 28px auto;
   text-align: left;
+  background: none;
+  box-shadow: none;
 }
 .eyebrow{
   display:inline-block;
@@ -2173,7 +2172,7 @@ textarea:focus {
 }
 .lead{
   font-size: clamp(14px, 2.4vw, 18px);
-  color: var(--muted);
+  color: var(--color-dark);
   max-width: 70ch;
   margin: 0;
 }
@@ -2185,15 +2184,7 @@ textarea:focus {
   padding: 16px;
   border-radius: 16px;
   background: linear-gradient(180deg, var(--elev), transparent);
-  border: 1px solid var(--border);
 }
-.synergy-diagram{
-  width: 100%;
-  aspect-ratio: 16/9;
-  display:grid;
-  place-items:center;
-}
-.synergy-diagram svg{ width: 100%; height: auto; }
 
 .node-circle{
   fill: var(--card);
@@ -2203,7 +2194,7 @@ textarea:focus {
 }
 .node-label{
   font-size: 12.5px;
-  fill: var(--text);
+  fill: var(--color-dark);
 }
 .node-sub{
   font-size: 11px;
@@ -2241,7 +2232,7 @@ textarea:focus {
 .group-intro p{
   margin: 0;
   line-height: 1.9;
-  color: var(--text);
+  color: var(--color-dark);
 }
 .group-intro a{
   color: var(--accent);
@@ -2333,7 +2324,7 @@ textarea:focus {
 }
 .closing p{
   margin: 0 0 8px 0;
-  color: var(--text);
+  color: var(--color-dark);
   line-height: 1.9;
 }
 
@@ -2382,12 +2373,6 @@ textarea:focus {
   font-size: .9rem;
   font-weight: 600;
   pointer-events: none
-}
-
-.link {
-  stroke: #a18152;
-  stroke-width: 2;
-  opacity: .75
 }
 
 @keyframes growBar {
@@ -3609,6 +3594,7 @@ form button.btn {
     height: 320px
   }
 }
+
 
 
 
