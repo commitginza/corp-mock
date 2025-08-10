@@ -3662,7 +3662,7 @@ form button.btn {
    代表挨拶ページ
 ===================================================== */
 .greet{
-  display: grid; gap: 22px; margin-top: 18px;
+  display: grid; gap: 22px; margin-bottom: 18px;
 }
 
 /* 1枚の挨拶カード：写真フルブリード + 上に本文、下に引用  */
@@ -3756,7 +3756,81 @@ form button.btn {
 }
 .chip--gold{ background: rgba(165,123,67,.25); border-color: rgba(165,123,67,.55) }
 .greet-meta a{ color:#fff; text-decoration: underline; text-underline-offset: 2px; }
+.bio-hero{
+  position: relative;
+  width: 100%;
+  min-height: clamp(520px, 70vh, 820px);   /* 画面に応じた高さ */
+  background-position: center;
+  background-size: cover;                  /* 背景は横幅いっぱい */
+  display: grid;
+  place-items: center;                     /* コンテンツ中央寄せ */
+  overflow: hidden;
+}
+.bio-hero + .bio-hero{ margin-top: 0 }     /* セクション間の隙間を詰める */
 
+.bio-hero__overlay{
+  position: absolute; inset: 0;
+  /* 可読性を上げるためのグラデーション（上：淡、中央：やや濃、下：淡） */
+  background: radial-gradient(1200px 600px at 50% 0%, rgba(0,0,0,.18), transparent 60%),
+              linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.45) 50%, rgba(0,0,0,.25));
+}
+
+.bio-hero__content{
+  position: relative; z-index: 1;
+  text-align: center;                      /* 文字を中央揃え */
+  color: #fff;
+  padding: clamp(16px, 4vw, 32px);
+  max-width: 1100px;
+}
+
+.bio-hero__avatar{
+  width: clamp(160px, 20vw, 280px);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(255,255,255,.85);
+  box-shadow: 0 10px 35px rgba(0,0,0,.35);
+  margin: 0 auto clamp(16px, 2.8vw, 24px);
+  background: #fff;
+}
+
+.bio-hero__name{
+  margin: 0 0 6px;
+  font-size: clamp(28px, 6vw, 72px);
+  letter-spacing: .06em;
+}
+
+.bio-hero__title{
+  margin: 0 0 10px;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 700;
+}
+.bio-hero__title span{
+  display: inline-block;
+  font-weight: 500;
+  margin-left: .4em;
+  font-size: .92em;
+  opacity: .9;
+}
+
+.bio-hero__text{
+  margin: 0 auto;
+  max-width: 70ch;
+  font-size: clamp(14px, 2.2vw, 18px);
+  line-height: 1.9;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+@media (prefers-color-scheme: light){
+  .bio-hero__overlay{
+    background: radial-gradient(1200px 600px at 50% 0%, rgba(0,0,0,.12), transparent 60%),
+                linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.35) 50%, rgba(0,0,0,.18));
+  }
+}
+
+/* 余白や段落をもう少し詰めたい時はここを調整 */
+@media (max-width: 640px){
+  .bio-hero{ min-height: 520px; }
+}
 /* 2カラム風に見せる（デスクトップ時） */
 @media (min-width: 960px){
   .greet{ gap: 28px; }
@@ -3767,4 +3841,5 @@ form button.btn {
     border-top: 1px solid rgba(0,0,0,.1);
   }
 }
+
 
