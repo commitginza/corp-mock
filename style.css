@@ -2942,7 +2942,7 @@ textarea:focus {
 .venue-info{
   display:flex;
   flex-direction:column;
-  gap: 1rem;
+  gap: .25rem;
   color: var(--color-dark);
 }
 .venue-head{
@@ -2950,12 +2950,27 @@ textarea:focus {
 }
 .venue-name{
   font-size: clamp(32px, 6vw, 56px);
-  font-weight: 700; line-height: 1; letter-spacing:.02em;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing:.02em;
+  margin-bottom:0 !important;
 }
 .venue-ig{
-  margin-left:.25rem; display:inline-grid; place-items:center;
-  width: 36px; height:36px; border-radius:50%;
-  color:#fff; background: radial-gradient(45deg,#f58529,#dd2a7b 60%,#8134af);
+  display:inline-block;
+  width: 40px;
+  height: 40px;
+  margin-left:.25rem;
+  place-items:center;
+  border-radius:50%;
+  color:#fff;
+  background: radial-gradient(45deg,#f58529,#dd2a7b 60%,#8134af);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+.icon-instagram {
+  background-image: url("https://storage.googleapis.com/studio-design-asset-files/projects/1pqDePN6aj/s-40x40_6c915b2a-a931-4f6e-91d4-07c377ee0076.svg");
 }
 .venue-sub{
   font-size: 20px; font-weight:600; margin-top:.25rem;
@@ -3924,6 +3939,7 @@ form button.btn {
     border-top: 1px solid rgba(0,0,0,.1);
   }
 }
+
 
 
 
