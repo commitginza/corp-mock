@@ -2949,6 +2949,7 @@ textarea:focus {
   display:flex;
   align-items:center;
   gap:.75rem;
+  justify-content: space-between;
 }
 .sns-icons {
   display: flex;
@@ -3945,6 +3946,7 @@ form button.btn {
     border-top: 1px solid rgba(0,0,0,.1);
   }
 }
+
 
 
 
