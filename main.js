@@ -99,4 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
   nums.forEach(n => io.observe(n));
 });
 
+// シンプルな横スライド（各スライダー独立）
+document.querySelectorAll('.venue-slider').forEach(slider => {
+  const track = slider.querySelector('.slides');
+  const slides = [...track.children];
+  let i = 0;
 
+  const go = (to) => {
+    i = (to + slides.length) % slides.length;
+    track.style.transform = `translateX(${-100 * i}%)`;
+  };
+
+  slider.querySelector('.prev').addEventListener('click', () => go(i - 1));
+  slider.querySelector('.next').addEventListener('click', () => go(i + 1));
+
+  // スワイプ対応（軽量）
+  let sx = 0;
+  track.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+  });
+});
