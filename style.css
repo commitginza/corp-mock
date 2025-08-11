@@ -2946,7 +2946,13 @@ textarea:focus {
   color: var(--color-dark);
 }
 .venue-head{
-  display:flex; align-items:center; gap:.75rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.sns-icons {
+  display: flex;
+  gap: 0.4rem;
 }
 .venue-name{
   font-size: clamp(32px, 6vw, 56px);
@@ -3939,6 +3945,7 @@ form button.btn {
     border-top: 1px solid rgba(0,0,0,.1);
   }
 }
+
 
 
 
